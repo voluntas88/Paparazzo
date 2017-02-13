@@ -1,9 +1,9 @@
-protocol ApplicationLifecycleObservingService {
+protocol ApplicationLifecycleListeningService {
     var onApplicationWillResignActive: (() -> ())? { get set }
     var onApplicationDidBecomeActive: (() -> ())? { get set }
 }
 
-final class ApplicationLifecycleObservingServiceImpl: ApplicationLifecycleObservingService {
+final class ApplicationLifecycleListeningServiceImpl: ApplicationLifecycleListeningService {
     var notificationCenter: NotificationCenter {
         return NotificationCenter.default
     }
@@ -28,7 +28,7 @@ final class ApplicationLifecycleObservingServiceImpl: ApplicationLifecycleObserv
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: - ApplicationLifecycleObservingService
+    // MARK: - ApplicationLifecycleListeningService
     var onApplicationWillResignActive: (() -> ())?
     var onApplicationDidBecomeActive: (() -> ())?
     

@@ -14,14 +14,25 @@ final class CameraServiceImpl: CameraService {
     private var backCamera: AVCaptureDevice?
     private var frontCamera: AVCaptureDevice?
     private var activeCamera: AVCaptureDevice?
+    
+    private let applicationLifecycleListeningService: ApplicationLifecycleListeningService
 
     // MARK: - Init
     
-    init() {
+    init(applicationLifecycleListeningService: ApplicationLifecycleListeningService) {
         let videoDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice]
         
         backCamera = videoDevices?.filter({ $0.position == .back }).first
         frontCamera = videoDevices?.filter({ $0.position == .front }).first
+        
+        self.applicationLifecycleListeningService = applicationLifecycleListeningService
+        self.applicationLifecycleListeningService.onApplicationWillResignActive = { [weak self] in
+            self?.stopCapture()
+        }
+        
+        self.applicationLifecycleListeningService.onApplicationDidBecomeActive = { [weak self] in
+            self?.startCapture()
+        }
     }
     
     func getImageOutput(completion: @escaping (GPUImageOutput?) -> ()) {

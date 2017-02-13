@@ -12,14 +12,13 @@ final class CameraAssemblyImpl: CameraAssembly {
     
     func module() -> (UIView, CameraModuleInput) {
         
-        let cameraService = CameraServiceImpl()
         let deviceOrientationService = DeviceOrientationServiceImpl()
-        let applicationLifecycleObservingService = ApplicationLifecycleObservingServiceImpl()
+        let applicationLifecycleListeningService = ApplicationLifecycleListeningServiceImpl()
+        let cameraService = CameraServiceImpl(applicationLifecycleListeningService: applicationLifecycleListeningService)
         
         let interactor = CameraInteractorImpl(
             cameraService: cameraService,
-            deviceOrientationService: deviceOrientationService,
-            applicationLifecycleObservingService: applicationLifecycleObservingService
+            deviceOrientationService: deviceOrientationService
         )
         
         let presenter = CameraPresenter(

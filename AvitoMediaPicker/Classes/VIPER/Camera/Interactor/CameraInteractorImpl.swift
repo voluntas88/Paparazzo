@@ -4,25 +4,14 @@ final class CameraInteractorImpl: CameraInteractor {
     
     private let cameraService: CameraService
     private let deviceOrientationService: DeviceOrientationService
-    private let applicationLifecycleObservingService: ApplicationLifecycleObservingService
     private var previewImagesSizeForNewPhotos: CGSize?
     
     init(
         cameraService: CameraService,
-        deviceOrientationService: DeviceOrientationService,
-        applicationLifecycleObservingService: ApplicationLifecycleObservingService )
+        deviceOrientationService: DeviceOrientationService )
     {
         self.cameraService = cameraService
         self.deviceOrientationService = deviceOrientationService
-        self.applicationLifecycleObservingService = applicationLifecycleObservingService
-        
-        self.applicationLifecycleObservingService.onApplicationWillResignActive = { [weak self] in
-            self?.stopCapture()
-        }
-        
-        self.applicationLifecycleObservingService.onApplicationDidBecomeActive = { [weak self] in
-            self?.startCapture()
-        }
     }
     
     // MARK: - CameraInteractor
