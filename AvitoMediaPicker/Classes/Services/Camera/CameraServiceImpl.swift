@@ -61,10 +61,16 @@ final class CameraServiceImpl: CameraService {
     
     func startCapture() {
         cameraOutput?.resumeCameraCapture()
+        cameraOutput?.startCapture()
     }
     
     func stopCapture() {
         cameraOutput?.pauseCapture()
+        cameraOutput?.stopCapture()
+        
+        runSynchronouslyOnVideoProcessingQueue { 
+            glFinish()
+        }
     }
     
     private let cameraOutputQueue = DispatchQueue(label: "ru.avito.CameraServiceImpl.cameraOutputQueue")

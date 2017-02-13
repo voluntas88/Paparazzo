@@ -14,10 +14,12 @@ final class CameraAssemblyImpl: CameraAssembly {
         
         let cameraService = CameraServiceImpl()
         let deviceOrientationService = DeviceOrientationServiceImpl()
+        let applicationLifecycleObservingService = ApplicationLifecycleObservingServiceImpl()
         
         let interactor = CameraInteractorImpl(
             cameraService: cameraService,
-            deviceOrientationService: deviceOrientationService
+            deviceOrientationService: deviceOrientationService,
+            applicationLifecycleObservingService: applicationLifecycleObservingService
         )
         
         let presenter = CameraPresenter(
