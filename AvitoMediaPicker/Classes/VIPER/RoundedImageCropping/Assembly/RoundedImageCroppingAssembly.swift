@@ -8,7 +8,7 @@ protocol RoundedImageCroppingAssembly: class {
         image: ImageSource,
         canvasSize: CGSize,
         routerSeed: RouterSeed,
-        configuration: (ImageCroppingModule) -> ()
+        configuration: (RoundedImageCroppingModule) -> ()
         ) -> UIViewController
 }
 
