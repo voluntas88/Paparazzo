@@ -1,4 +1,4 @@
-public final class AssemblyFactory: CameraAssemblyFactory, MediaPickerAssemblyFactory, ImageCroppingAssemblyFactory, PhotoLibraryAssemblyFactory {
+public final class AssemblyFactory: CameraAssemblyFactory, MediaPickerAssemblyFactory, ImageCroppingAssemblyFactory, PhotoLibraryAssemblyFactory, RoundedImageCroppingAssemblyFactory {
     
     private let theme: MediaPickerUITheme
     
@@ -20,5 +20,9 @@ public final class AssemblyFactory: CameraAssemblyFactory, MediaPickerAssemblyFa
 
     public func photoLibraryAssembly() -> PhotoLibraryAssembly {
         return PhotoLibraryAssemblyImpl(theme: theme)
+    }
+    
+    public func roundedImageCroppingAssembly() -> RoundedImageCroppingAssembly {
+        return RoundedImageCroppingAssemblyImpl()
     }
 }

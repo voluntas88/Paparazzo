@@ -2,11 +2,10 @@ import UIKit
 import ImageSource
 import Marshroute
 
-protocol RoundedImageCroppingAssembly: class {
+public protocol RoundedImageCroppingAssembly: class {
     
-    func viewController(
-        image: ImageSource,
-        canvasSize: CGSize,
+    func module(
+        item: MediaPickerItem,
         routerSeed: RouterSeed,
         configuration: (RoundedImageCroppingModule) -> ()
         ) -> UIViewController
