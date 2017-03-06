@@ -13,12 +13,27 @@ public extension CGImage {
     
     func scaled(_ scale: CGFloat) -> CGImage? {
         
-        // TODO: test. This can cause regression: https://jr.avito.ru/browse/AI-3942
-        let ciContext = CIContext.fixed_context(options: [kCIContextUseSoftwareRenderer: false])
-        let transform = CGAffineTransform(scaleX: scale, y: scale)
-        let ciImage = CIImage(cgImage: self).applying(transform)
+        // Don't try to use CoreImage instead of Core Graphics here without futher research
+        // for it will cause AI-4794
         
-        return ciContext.createCGImage(ciImage, from: ciImage.extent)
+        let outputWidth = CGFloat(width) * scale
+        let outputHeight = CGFloat(height) * scale
+        
+        guard let colorSpace = colorSpace,
+            let context = CGContext(
+                data: nil,
+                width: Int(outputWidth),
+                height: Int(outputHeight),
+                bitsPerComponent: bitsPerComponent,
+                bytesPerRow: bytesPerRow * Int(UIScreen.main.scale),   // AI-4111
+                space: colorSpace,
+                bitmapInfo: bitmapInfo.rawValue
+            ) else { return nil }
+        
+        context.interpolationQuality = .high
+        context.draw(self, in: CGRect(origin: .zero, size: CGSize(width: outputWidth, height: outputHeight)))
+        
+        return context.makeImage()
     }
     
     func resized(toFit size: CGSize) -> CGImage? {
