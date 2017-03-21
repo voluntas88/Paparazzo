@@ -35,6 +35,7 @@ protocol MediaPickerViewInput: class {
     func updateItem(_: MediaPickerItem)
     func removeItem(_: MediaPickerItem)
     func selectItem(_: MediaPickerItem)
+    func moveItem(from sourceIndex: Int, to destinationIndex: Int)
     func scrollToItemThumbnail(_: MediaPickerItem, animated: Bool)
     
     func selectCamera()

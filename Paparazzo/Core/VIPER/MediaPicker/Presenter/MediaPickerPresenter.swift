@@ -156,9 +156,12 @@ final class MediaPickerPresenter: MediaPickerModule {
                     self?.adjustViewForSelectedItem(item, animated: true)
                 }
             })
+            
+            self?.view?.moveItem(from: sourceIndex, to: destinationIndex)
         }
         
         view?.onCameraThumbnailTap = { [weak self] in
+            self?.interactor.selectItem(nil)
             self?.view?.setMode(.camera)
             self?.view?.scrollToCameraThumbnail(animated: true)
         }
@@ -251,6 +254,7 @@ final class MediaPickerPresenter: MediaPickerModule {
     }
     
     private func selectCamera() {
+        interactor.selectItem(nil)
         view?.setMode(.camera)
         view?.scrollToCameraThumbnail(animated: false)
     }

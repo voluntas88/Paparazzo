@@ -9,7 +9,7 @@ protocol MediaPickerInteractor: class {
     // `completion` вызывается с соседним item'ом — это item, который нужно выделить после того, как удалили `item`
     func removeItem(_: MediaPickerItem, completion: @escaping (_ adjacentItem: MediaPickerItem?, _ canAddItems: Bool) -> ())
     
-    func selectItem(_: MediaPickerItem)
+    func selectItem(_: MediaPickerItem?)
     func selectedItem(completion: @escaping (MediaPickerItem?) -> ())
     
     func moveItem(from sourceIndex: Int, to destionationIndex: Int)
