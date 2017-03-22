@@ -26,7 +26,7 @@ final class ThumbnailsViewLayout: UICollectionViewFlowLayout {
     
     private func setUpGestureRecognizer() {
         if let collectionView = collectionView, longPressGestureRecognizer == nil {
-            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(ThumbnailsViewLayout.handleLongPress(longPress:)))
+            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(_:)))
             longPressGestureRecognizer.minimumPressDuration = 0.2
             self.longPressGestureRecognizer = longPressGestureRecognizer
             
@@ -63,9 +63,9 @@ final class ThumbnailsViewLayout: UICollectionViewFlowLayout {
         attributes?.transform = itemsTransform
     }
     
-    @objc fileprivate func handleLongPress(longPress: UILongPressGestureRecognizer) {
-        let location = longPress.location(in: collectionView)
-        switch longPress.state {
+    @objc private func onLongPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        let location = gestureRecognizer.location(in: collectionView)
+        switch gestureRecognizer.state {
         case .began: startDragAtLocation(location: location)
         case .changed: updateDragAtLocation(location: location)
         case .ended: endDragAtLocation(location: location)
@@ -129,7 +129,7 @@ final class ThumbnailsViewLayout: UICollectionViewFlowLayout {
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
             dragView.center = targetCenter
-            dragView.transform = CGAffineTransform.identity
+            dragView.transform = .identity
             
         }) { (completed) in
             cell.isHidden = false
