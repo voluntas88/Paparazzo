@@ -236,7 +236,7 @@ final class ThumbnailsView: UIView, UICollectionViewDataSource, MediaRibbonLayou
         }
     }
     
-    func canMoveTo(_ indexPath: IndexPath) -> Bool {
+    func canMove(to indexPath: IndexPath) -> Bool {
         let cameraCellVisible = dataSource.cameraCellVisible ? 1 : 0
         
         let lastSectionIndex = collectionView.numberOfSections - 1
