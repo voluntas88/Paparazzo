@@ -154,6 +154,11 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
         set { mediaPickerView.onItemSelect = newValue }
     }
     
+    var onItemMove: ((Int, Int) -> ())? {
+        get { return mediaPickerView.onItemMove }
+        set { mediaPickerView.onItemMove = newValue }
+    }
+    
     var onRemoveButtonTap: (() -> ())? {
         get { return mediaPickerView.onRemoveButtonTap }
         set { mediaPickerView.onRemoveButtonTap = newValue }
@@ -280,6 +285,10 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
     func selectItem(_ item: MediaPickerItem) {
         mediaPickerView.selectItem(item)
         onItemSelect?(item)
+    }
+    
+    func moveItem(from sourceIndex: Int, to destinationIndex: Int) {
+        mediaPickerView.moveItem(from: sourceIndex, to: destinationIndex)
     }
     
     func scrollToItemThumbnail(_ item: MediaPickerItem, animated: Bool) {
