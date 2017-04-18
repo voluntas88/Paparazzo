@@ -15,19 +15,15 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
     // MARK: - MediaPickerAssembly
     
     public func module(
-        items: [MediaPickerItem],
-        selectedItem: MediaPickerItem?,
-        maxItemsCount: Int?,
-        cropEnabled: Bool,
-        cropCanvasSize: CGSize,
+        data: MediaPickerData,
         configure: (MediaPickerModule) -> ())
         -> UIViewController
     {
         let interactor = MediaPickerInteractorImpl(
-            items: items,
-            selectedItem: selectedItem,
-            maxItemsCount: maxItemsCount,
-            cropCanvasSize: cropCanvasSize,
+            items: data.items,
+            selectedItem: data.selectedItem,
+            maxItemsCount: data.maxItemsCount,
+            cropCanvasSize: data.cropCanvasSize,
             deviceOrientationService: DeviceOrientationServiceImpl(),
             latestLibraryPhotoProvider: PhotoLibraryLatestPhotoProviderImpl()
         )
@@ -39,7 +35,7 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
             viewController: viewController
         )
         
-        let cameraAssembly = assemblyFactory.cameraAssembly()
+        let cameraAssembly = assemblyFactory.cameraAssembly(initialActiveCamera: data.initalActiveCamera)
         let (cameraView, cameraModuleInput) = cameraAssembly.module()
         
         let presenter = MediaPickerPresenter(
@@ -51,7 +47,7 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
         viewController.addDisposable(presenter)
         viewController.setCameraView(cameraView)
         viewController.setTheme(theme)
-        viewController.setShowsCropButton(cropEnabled)
+        viewController.setShowsCropButton(data.cropEnabled)
         
         presenter.view = viewController
         

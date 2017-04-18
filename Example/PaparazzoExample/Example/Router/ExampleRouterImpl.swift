@@ -21,12 +21,16 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
             
             let assembly = mediaPickerAssemblyFactory.mediaPickerAssembly()
             
-            return assembly.module(
+            let data = MediaPickerData(
                 items: items,
                 selectedItem: selectedItem,
                 maxItemsCount: maxItemsCount,
                 cropEnabled: true,
-                cropCanvasSize: cropCanvasSize,
+                cropCanvasSize: cropCanvasSize
+            )
+            
+            return assembly.module(
+                data: data,
                 routerSeed: routerSeed,
                 configure: configure
             )

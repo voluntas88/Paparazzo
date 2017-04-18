@@ -2,11 +2,7 @@ import UIKit
 
 public protocol MediaPickerAssembly: class {
     func module(
-        items: [MediaPickerItem],
-        selectedItem: MediaPickerItem?,
-        maxItemsCount: Int?,
-        cropEnabled: Bool,
-        cropCanvasSize: CGSize,
+        data: MediaPickerData,
         configure: (MediaPickerModule) -> ())
         -> UIViewController
 }
