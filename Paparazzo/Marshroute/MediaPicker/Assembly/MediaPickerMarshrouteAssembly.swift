@@ -3,7 +3,7 @@ import UIKit
 
 public protocol MediaPickerMarshrouteAssembly: class {
     func module(
-        data: MediaPickerData,
+        seed: MediaPickerSeed,
         routerSeed: RouterSeed,
         configure: (MediaPickerModule) -> ())
         -> UIViewController

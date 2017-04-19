@@ -10,8 +10,8 @@ public final class MarshrouteAssemblyFactory:
         self.theme = theme
     }
     
-    func cameraAssembly(initialActiveCamera: CameraType) -> CameraAssembly {
-        return CameraAssemblyImpl(theme: theme, initialActiveCamera: initialActiveCamera)
+    func cameraAssembly(initialActiveCameraType: CameraType) -> CameraAssembly {
+        return CameraAssemblyImpl(theme: theme, initialActiveCameraType: initialActiveCameraType)
     }
     
     public func mediaPickerAssembly() -> MediaPickerMarshrouteAssembly {

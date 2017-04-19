@@ -21,7 +21,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
             
             let assembly = mediaPickerAssemblyFactory.mediaPickerAssembly()
             
-            let data = MediaPickerData(
+            let seed = MediaPickerSeed(
                 items: items,
                 selectedItem: selectedItem,
                 maxItemsCount: maxItemsCount,
@@ -30,7 +30,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
             )
             
             return assembly.module(
-                data: data,
+                seed: seed,
                 routerSeed: routerSeed,
                 configure: configure
             )
