@@ -1,3 +1,5 @@
+import ImageSource
+
 final class CircleImageCroppingViewController:
     PaparazzoViewController,
     CircleImageCroppingViewInput,
@@ -30,6 +32,36 @@ final class CircleImageCroppingViewController:
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    // MARK: - CircleImageCroppingViewInput
+    
+    var onConfirmButtonTap: ((CGImage?) -> ())?
+    
+    var onCancelButtonTap: (() -> ())?
+    
+    var onRetakePhotoButtonTap: (() -> ())?
+    
+    var onCroppingParametersChange: ((ImageCroppingParameters) -> ())?
+    
+    @nonobjc func setTitle(_ title: String) {
+        
+    }
+    
+    func setImage(_ imageSource: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {
+        
+    }
+    
+    func setCanvasSize(_ canvasSize: CGSize) {
+        
+    }
+    
+    func setControlsEnabled(_ controlsEnabled: Bool) {
+        
+    }
+    
+    func setCroppingParameters(_ parameters: ImageCroppingParameters) {
+        
     }
     
     // MARK: - UIThemeConfigurable
