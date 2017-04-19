@@ -309,8 +309,13 @@ final class MediaPickerPresenter: MediaPickerModule {
         
         interactor.numberOfItemsAvailableForAdding { [weak self] maxItemsCount in
             self?.interactor.photoLibraryItems { photoLibraryItems in
+                
+                let seed = PhotoLibrarySeed(
+                    selectedItems: [],
+                    maxSelectedItemsCount: maxItemsCount
+                )
              
-                self?.router.showPhotoLibrary(selectedItems: [], maxSelectedItemsCount: maxItemsCount) { module in
+                self?.router.showPhotoLibrary(seed: seed) { module in
                     
                     module.onFinish = { result in
                         self?.router.focusOnCurrentModule()

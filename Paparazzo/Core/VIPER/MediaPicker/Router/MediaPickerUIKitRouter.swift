@@ -16,15 +16,13 @@ final class MediaPickerUIKitRouter: BaseUIKitRouter, MediaPickerRouter {
     // MARK: - PhotoPickerRouter
 
     func showPhotoLibrary(
-        selectedItems: [PhotoLibraryItem],
-        maxSelectedItemsCount: Int?,
+        seed: PhotoLibrarySeed,
         configure: (PhotoLibraryModule) -> ())
     {
         let assembly = assemblyFactory.photoLibraryAssembly()
         
         let viewController = assembly.module(
-            selectedItems: selectedItems,
-            maxSelectedItemsCount: maxSelectedItemsCount,
+            seed: seed,
             configure: configure
         )
         

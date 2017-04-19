@@ -3,8 +3,7 @@ import ImageSource
 protocol MediaPickerRouter: class {
     
     func showPhotoLibrary(
-        selectedItems: [PhotoLibraryItem],
-        maxSelectedItemsCount: Int?,
+        seed: PhotoLibrarySeed,
         configure: (PhotoLibraryModule) -> ()
     )
     

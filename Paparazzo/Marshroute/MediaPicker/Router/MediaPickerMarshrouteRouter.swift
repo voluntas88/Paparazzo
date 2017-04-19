@@ -15,8 +15,7 @@ final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
     // MARK: - PhotoPickerRouter
 
     func showPhotoLibrary(
-        selectedItems: [PhotoLibraryItem],
-        maxSelectedItemsCount: Int?,
+        seed: PhotoLibrarySeed,
         configure: (PhotoLibraryModule) -> ())
     {
         presentModalNavigationControllerWithRootViewControllerDerivedFrom { routerSeed in
@@ -24,8 +23,8 @@ final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
             let assembly = assemblyFactory.photoLibraryAssembly()
             
             return assembly.module(
-                selectedItems: selectedItems,
-                maxSelectedItemsCount: maxSelectedItemsCount,
+                selectedItems: seed.selectedItems,
+                maxSelectedItemsCount: seed.maxSelectedItemsCount,
                 routerSeed: routerSeed,
                 configure: configure
             )

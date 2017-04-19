@@ -9,16 +9,15 @@ public final class PhotoLibraryAssemblyImpl: PhotoLibraryAssembly {
     }
     
     public func module(
-        selectedItems: [PhotoLibraryItem],
-        maxSelectedItemsCount: Int?,
+        seed: PhotoLibrarySeed,
         configure: (PhotoLibraryModule) -> ())
         -> UIViewController
     {
         let photoLibraryItemsService = PhotoLibraryItemsServiceImpl()
         
         let interactor = PhotoLibraryInteractorImpl(
-            selectedItems: selectedItems,
-            maxSelectedItemsCount: maxSelectedItemsCount,
+            selectedItems: seed.selectedItems,
+            maxSelectedItemsCount: seed.maxSelectedItemsCount,
             photoLibraryItemsService: photoLibraryItemsService
         )
         
