@@ -6,7 +6,7 @@ public struct PaparazzoUITheme:
     ImageCroppingUITheme,
     CircleImageCroppingUITheme
 {
-
+    
     public init() {}
 
     // MARK: - MediaPickerRootModuleUITheme
@@ -55,6 +55,10 @@ public struct PaparazzoUITheme:
     public var cancelRotationBackgroundColor = UIColor.RGB(red: 25, green: 25, blue: 25, alpha: 1)
     public var cancelRotationTitleColor = UIColor.white
     public var cancelRotationTitleFont = UIFont.boldSystemFont(ofSize: 14)
+    
+    // MARK: - CircleImageCroppingUITheme
+    
+    public var circleCropperRemovePhotoIcon = PaparazzoUITheme.image(named: "delete")
 
     // MARK: - Private
 

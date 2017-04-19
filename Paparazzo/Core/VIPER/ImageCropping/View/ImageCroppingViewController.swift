@@ -151,7 +151,6 @@ final class ImageCroppingViewController: UIViewController, ImageCroppingViewInpu
         disposables.append(object)
     }
     
-    
     // MARK: - Private
     
     private func forcePortraitOrientation() {        

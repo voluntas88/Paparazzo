@@ -1,4 +1,10 @@
-public final class AssemblyFactory: CameraAssemblyFactory, MediaPickerAssemblyFactory, ImageCroppingAssemblyFactory, PhotoLibraryAssemblyFactory {
+public final class AssemblyFactory:
+    CameraAssemblyFactory,
+    MediaPickerAssemblyFactory,
+    PhotoLibraryAssemblyFactory,
+    ImageCroppingAssemblyFactory,
+    CircleImageCroppingAssemblyFactory
+{
     
     private let theme: PaparazzoUITheme
     
@@ -20,5 +26,9 @@ public final class AssemblyFactory: CameraAssemblyFactory, MediaPickerAssemblyFa
 
     public func photoLibraryAssembly() -> PhotoLibraryAssembly {
         return PhotoLibraryAssemblyImpl(theme: theme)
+    }
+    
+    public func circleImageCroppingAssembly() -> CircleImageCroppingAssembly {
+        return CircleImageCroppingAssemblyImpl(theme: theme)
     }
 }

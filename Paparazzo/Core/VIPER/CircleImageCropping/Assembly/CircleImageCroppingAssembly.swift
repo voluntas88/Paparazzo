@@ -1,14 +1,13 @@
 import ImageSource
 import UIKit
 
-protocol CircleImageCroppingAssembly: class {
+public protocol CircleImageCroppingAssembly: class {
     func module(
-        image: ImageSource,
-        canvasSize: CGSize,
+        seed: CircleImageCroppingSeed,
         configure: (CircleImageCroppingModule) -> ())
         -> UIViewController
 }
 
-protocol CircleImageCroppingAssemblyFactory: class {
-    func imageCroppingAssembly() -> CircleImageCroppingAssembly
+public protocol CircleImageCroppingAssemblyFactory: class {
+    func circleImageCroppingAssembly() -> CircleImageCroppingAssembly
 }
