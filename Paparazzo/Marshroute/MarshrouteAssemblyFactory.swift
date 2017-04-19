@@ -19,10 +19,17 @@ public final class MarshrouteAssemblyFactory:
     }
 
     func imageCroppingAssembly() -> ImageCroppingAssembly {
-        return ImageCroppingAssemblyImpl(theme: theme)
+        return ImageCroppingAssemblyImpl(assemblySeed: assemblySeed())
     }
 
     public func photoLibraryAssembly() -> PhotoLibraryMarshrouteAssembly {
         return PhotoLibraryMarshrouteAssemblyImpl(theme: theme)
+    }
+    
+    private func assemblySeed() -> PaparazzoAssemblySeed {
+        return PaparazzoAssemblySeed(
+            theme: theme,
+            serviceFactory: ServiceFactoryImpl()
+        )
     }
 }

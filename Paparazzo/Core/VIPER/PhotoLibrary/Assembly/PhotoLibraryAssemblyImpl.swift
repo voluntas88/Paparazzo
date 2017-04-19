@@ -1,12 +1,6 @@
 import UIKit
 
-public final class PhotoLibraryAssemblyImpl: PhotoLibraryAssembly {
-    
-    private let theme: PhotoLibraryUITheme
-    
-    init(theme: PhotoLibraryUITheme) {
-        self.theme = theme
-    }
+public final class PhotoLibraryAssemblyImpl: BasePaparazzoAssembly, PhotoLibraryAssembly {
     
     public func module(
         seed: PhotoLibrarySeed,

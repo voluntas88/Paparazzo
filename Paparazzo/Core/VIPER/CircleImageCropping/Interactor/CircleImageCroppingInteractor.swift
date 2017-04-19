@@ -1,3 +1,3 @@
-protocol CircleImageCroppingInteractor {
+public protocol CircleImageCroppingInteractor {
     
 }

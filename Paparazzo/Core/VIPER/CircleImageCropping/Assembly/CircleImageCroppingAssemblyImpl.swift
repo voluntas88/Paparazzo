@@ -1,13 +1,7 @@
 import ImageSource
 import UIKit
 
-public final class CircleImageCroppingAssemblyImpl: CircleImageCroppingAssembly {
-    
-    private let theme: CircleImageCroppingUITheme
-    
-    init(theme: CircleImageCroppingUITheme) {
-        self.theme = theme
-    }
+public final class CircleImageCroppingAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingAssembly {
     
     public func module(
         seed: CircleImageCroppingSeed,

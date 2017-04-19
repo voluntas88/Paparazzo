@@ -21,14 +21,21 @@ public final class AssemblyFactory:
     }
 
     func imageCroppingAssembly() -> ImageCroppingAssembly {
-        return ImageCroppingAssemblyImpl(theme: theme)
+        return ImageCroppingAssemblyImpl(assemblySeed: assemblySeed())
     }
 
     public func photoLibraryAssembly() -> PhotoLibraryAssembly {
-        return PhotoLibraryAssemblyImpl(theme: theme)
+        return PhotoLibraryAssemblyImpl(assemblySeed: assemblySeed())
     }
     
     public func circleImageCroppingAssembly() -> CircleImageCroppingAssembly {
-        return CircleImageCroppingAssemblyImpl(theme: theme)
+        return CircleImageCroppingAssemblyImpl(assemblySeed: assemblySeed())
+    }
+    
+    private func assemblySeed() -> PaparazzoAssemblySeed {
+        return PaparazzoAssemblySeed(
+            theme: theme,
+            serviceFactory: ServiceFactoryImpl()
+        )
     }
 }
