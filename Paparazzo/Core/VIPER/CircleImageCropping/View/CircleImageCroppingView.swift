@@ -1,9 +1,22 @@
-//
-//  CircleImageCroppingView.swift
-//  Pods
-//
-//  Created by Калтырин Владимир on 18.04.17.
-//
-//
+import ImageSource
+import UIKit
 
-import Foundation
+final class CircleImageCroppingView: UIView {
+    
+    private let overlayView = CircleMaskOverlayView()
+    private let previewView = PhotoTweakView()
+    
+    // MARK: - Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = .white
+        clipsToBounds = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
