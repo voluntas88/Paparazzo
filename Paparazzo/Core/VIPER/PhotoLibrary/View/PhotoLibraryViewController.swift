@@ -1,6 +1,8 @@
 import UIKit
 
-final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput {
+final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput, UIThemeConfigurable {
+    
+    typealias UIThemeType = PhotoLibraryUITheme
     
     private let photoLibraryView = PhotoLibraryView()
     
@@ -26,6 +28,13 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput 
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // MARK: - UIThemeConfigurable
+    
+    func setTheme(_ theme: UIThemeType) {
+        self.theme = theme
+        photoLibraryView.setTheme(theme)
     }
     
     // MARK: - PhotoLibraryViewInput
@@ -88,11 +97,6 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput 
     
     func scrollToBottom() {
         photoLibraryView.scrollToBottom()
-    }
-    
-    func setTheme(_ theme: PhotoLibraryUITheme) {
-        self.theme = theme
-        photoLibraryView.setTheme(theme)
     }
     
     func setAccessDeniedViewVisible(_ visible: Bool) {

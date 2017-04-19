@@ -1,7 +1,9 @@
 import ImageSource
 import UIKit
 
-final class MediaPickerView: UIView {
+final class MediaPickerView: UIView, UIThemeConfigurable {
+    
+    typealias UIThemeType = MediaPickerRootModuleUITheme
     
     // MARK: - Subviews
     
@@ -169,6 +171,45 @@ final class MediaPickerView: UIView {
         layoutPhotoTitleLabel()
 
         flashView.frame = cameraFrame
+    }
+    
+    // MARK: - UIThemeConfigurable
+    
+    func setTheme(_ theme: UIThemeType) {
+        
+        cameraControlsView.setTheme(theme)
+        photoControlsView.setTheme(theme)
+        thumbnailRibbonView.setTheme(theme)
+        
+        continueButton.setTitleColor(theme.cameraContinueButtonTitleColor, for: .normal)
+        continueButton.titleLabel?.font = theme.cameraContinueButtonTitleFont
+        
+        closeButton.setImage(theme.closeCameraIcon, for: .normal)
+        
+        continueButton.setTitleColor(
+            theme.cameraContinueButtonTitleColor,
+            for: .normal
+        )
+        continueButton.setTitleColor(
+            theme.cameraContinueButtonTitleHighlightedColor,
+            for: .highlighted
+        )
+        
+        let onePointSize = CGSize(width: 1, height: 1)
+        for button in [continueButton, closeButton] {
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.cameraButtonsBackgroundNormalColor, imageSize: onePointSize),
+                for: .normal
+            )
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.cameraButtonsBackgroundHighlightedColor, imageSize: onePointSize),
+                for: .highlighted
+            )
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.cameraButtonsBackgroundDisabledColor, imageSize: onePointSize),
+                for: .disabled
+            )
+        }
     }
     
     // MARK: - MediaPickerView
@@ -401,43 +442,6 @@ final class MediaPickerView: UIView {
     
     func setContinueButtonEnabled(_ enabled: Bool) {
         continueButton.isEnabled = enabled
-    }
-    
-    func setTheme(_ theme: MediaPickerRootModuleUITheme) {
-
-        cameraControlsView.setTheme(theme)
-        photoControlsView.setTheme(theme)
-        thumbnailRibbonView.setTheme(theme)
-
-        continueButton.setTitleColor(theme.cameraContinueButtonTitleColor, for: .normal)
-        continueButton.titleLabel?.font = theme.cameraContinueButtonTitleFont
-
-        closeButton.setImage(theme.closeCameraIcon, for: .normal)
-        
-        continueButton.setTitleColor(
-            theme.cameraContinueButtonTitleColor,
-            for: .normal
-        )
-        continueButton.setTitleColor(
-            theme.cameraContinueButtonTitleHighlightedColor,
-            for: .highlighted
-        )
-        
-        let onePointSize = CGSize(width: 1, height: 1)
-        for button in [continueButton, closeButton] {
-            button.setBackgroundImage(
-                UIImage.imageWithColor(theme.cameraButtonsBackgroundNormalColor, imageSize: onePointSize),
-                for: .normal
-            )
-            button.setBackgroundImage(
-                UIImage.imageWithColor(theme.cameraButtonsBackgroundHighlightedColor, imageSize: onePointSize),
-                for: .highlighted
-            )
-            button.setBackgroundImage(
-                UIImage.imageWithColor(theme.cameraButtonsBackgroundDisabledColor, imageSize: onePointSize),
-                for: .disabled
-            )
-        }
     }
     
     func setShowsCropButton(_ showsCropButton: Bool) {

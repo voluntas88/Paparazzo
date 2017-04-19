@@ -1,7 +1,9 @@
 import ImageSource
 import UIKit
 
-final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
+final class MediaPickerViewController: UIViewController, MediaPickerViewInput, UIThemeConfigurable {
+    
+    typealias UIThemeType = MediaPickerRootModuleUITheme
     
     private var isBeingRotated: Bool = false
     private let mediaPickerView = MediaPickerView()
@@ -324,14 +326,16 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
         mediaPickerView.setPhotoLibraryButtonEnabled(enabled)
     }
     
+    // MARK: - UIThemeConfigurable
+    
+    func setTheme(_ theme: UIThemeType) {
+        mediaPickerView.setTheme(theme)
+    }
+    
     // MARK: - MediaPickerViewController
     
     func setCameraView(_ view: UIView) {
         mediaPickerView.setCameraView(view)
-    }
-    
-    func setTheme(_ theme: MediaPickerRootModuleUITheme) {
-        mediaPickerView.setTheme(theme)
     }
     
     func setShowsCropButton(_ showsCropButton: Bool) {

@@ -1,7 +1,9 @@
 import ImageSource
 import UIKit
 
-final class ImageCroppingView: UIView {
+final class ImageCroppingView: UIView, UIThemeConfigurable {
+    
+    typealias UIThemeType = ImageCroppingUITheme
     
     // MARK: - Subviews
     
@@ -99,6 +101,12 @@ final class ImageCroppingView: UIView {
         splashView.center = previewView.center
     }
     
+    // MARK: - UIThemeConfigurable
+    
+    func setTheme(_ theme: UIThemeType) {
+        controlsView.setTheme(theme)
+    }
+    
     // MARK: - ImageCroppingView
     
     var onDiscardButtonTap: (() -> ())? {
@@ -186,10 +194,6 @@ final class ImageCroppingView: UIView {
     func setControlsEnabled(_ enabled: Bool) {
         controlsView.setControlsEnabled(enabled)
         aspectRatioButton.isEnabled = enabled
-    }
-    
-    func setTheme(_ theme: ImageCroppingUITheme) {
-        controlsView.setTheme(theme)
     }
     
     func setTitle(_ title: String) {

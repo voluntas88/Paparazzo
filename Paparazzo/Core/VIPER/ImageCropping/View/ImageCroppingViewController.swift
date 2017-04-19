@@ -1,7 +1,9 @@
 import ImageSource
 import UIKit
 
-final class ImageCroppingViewController: UIViewController, ImageCroppingViewInput {
+final class ImageCroppingViewController: UIViewController, ImageCroppingViewInput, UIThemeConfigurable {
+    
+    typealias UIThemeType = ImageCroppingUITheme
     
     private let imageCroppingView = ImageCroppingView()
     
@@ -135,9 +137,9 @@ final class ImageCroppingViewController: UIViewController, ImageCroppingViewInpu
         imageCroppingView.setGridButtonSelected(selected)
     }
     
-    // MARK: - ImageCroppingViewController
+    // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: ImageCroppingUITheme) {
+    func setTheme(_ theme: UIThemeType) {
         imageCroppingView.setTheme(theme)
     }
     
