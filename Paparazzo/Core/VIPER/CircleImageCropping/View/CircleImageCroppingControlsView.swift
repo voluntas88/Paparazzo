@@ -1,6 +1,8 @@
 import UIKit
 
-final class CircleImageCroppingControlsView: UIView {
+final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
+    
+    typealias UIThemeType = CircleImageCroppingUITheme
     
     // MARK: - Subviews
     
@@ -10,6 +12,14 @@ final class CircleImageCroppingControlsView: UIView {
     
     init() {
         super.init(frame: .zero)
+        
+        addSubview(deleteButton)
+        
+        deleteButton.addTarget(
+            self,
+            action: #selector(onDeleteTap(_:)),
+            for: .touchUpInside
+        )
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,16 +31,27 @@ final class CircleImageCroppingControlsView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-//        deleteButton.size = CGSize(
-//            width: 30,
-//            height: 30
-//        )
-//        
-//        deleteButton.centerX = centerX
-//        deleteButton.bottom = height - 22
+        deleteButton.size = CGSize(
+            width: 30,
+            height: 30
+        )
+        
+        deleteButton.centerX = centerX
+        deleteButton.bottom = height - 22
+    }
+    
+    // MARK: - UIThemeConfigurable
+    
+    func setTheme(_ theme: UIThemeType) {
+        
     }
     
     // MARK: - CircleImageCroppingControlsView
     
     var onDeleteTap: (() -> ())?
+    
+    // MARK: - Actions
+    @objc private func onDeleteTap(_ sender: UIButton) {
+        onDeleteTap?()
+    }
 }
