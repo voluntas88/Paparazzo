@@ -2,8 +2,8 @@ final class CircleMaskOverlayView: UIView {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
         
         isOpaque = false
     }
