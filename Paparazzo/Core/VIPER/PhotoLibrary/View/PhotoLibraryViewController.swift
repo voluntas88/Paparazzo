@@ -1,6 +1,6 @@
 import UIKit
 
-final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput, UIThemeConfigurable {
+final class PhotoLibraryViewController: PaparazzoViewController, PhotoLibraryViewInput, UIThemeConfigurable {
     
     typealias UIThemeType = PhotoLibraryUITheme
     
@@ -113,14 +113,6 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryViewInput,
     
     func setAccessDeniedButtonTitle(_ title: String) {
         photoLibraryView.setAccessDeniedButtonTitle(title)
-    }
-    
-    // MARK: - Dispose bag
-    
-    private var disposables = [AnyObject]()
-    
-    func addDisposable(_ object: AnyObject) {
-        disposables.append(object)
     }
     
     // MARK: - Private

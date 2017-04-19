@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class MediaPickerViewController: UIViewController, MediaPickerViewInput, UIThemeConfigurable {
+final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewInput, UIThemeConfigurable {
     
     typealias UIThemeType = MediaPickerRootModuleUITheme
     
@@ -352,12 +352,5 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput, U
         mediaPickerView.transform = CGAffineTransform(interfaceOrientation: interfaceOrientation)
         mediaPickerView.frame = view.bounds
     }
-    
-    // MARK: - Dispose bag
-    
-    private var disposables = [AnyObject]()
-    
-    func addDisposable(_ object: AnyObject) {
-        disposables.append(object)
-    }
+
 }
