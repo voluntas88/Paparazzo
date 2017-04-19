@@ -5,5 +5,5 @@ protocol CameraAssembly: class {
 }
 
 protocol CameraAssemblyFactory {
-    func cameraAssembly() -> CameraAssembly
+    func cameraAssembly(initialActiveCameraType: CameraType) -> CameraAssembly
 }

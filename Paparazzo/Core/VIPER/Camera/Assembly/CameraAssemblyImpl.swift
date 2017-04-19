@@ -3,16 +3,19 @@ import UIKit
 final class CameraAssemblyImpl: CameraAssembly {
     
     private let theme: MediaPickerRootModuleUITheme
+    private let initialActiveCameraType: CameraType
     
-    init(theme: MediaPickerRootModuleUITheme) {
+    init(theme: MediaPickerRootModuleUITheme, initialActiveCameraType: CameraType)
+    {
         self.theme = theme
+        self.initialActiveCameraType = initialActiveCameraType
     }
     
     // MARK: - CameraAssembly
     
     func module() -> (UIView, CameraModuleInput) {
         
-        let cameraService = CameraServiceImpl()
+        let cameraService = CameraServiceImpl(initialActiveCameraType: initialActiveCameraType)
         let deviceOrientationService = DeviceOrientationServiceImpl()
         
         let interactor = CameraInteractorImpl(

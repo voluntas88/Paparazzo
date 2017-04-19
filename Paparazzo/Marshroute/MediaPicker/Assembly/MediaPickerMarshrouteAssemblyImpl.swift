@@ -16,20 +16,16 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
     // MARK: - MediaPickerAssembly
     
     public func module(
-        items: [MediaPickerItem],
-        selectedItem: MediaPickerItem?,
-        maxItemsCount: Int?,
-        cropEnabled: Bool,
-        cropCanvasSize: CGSize,
+        seed: MediaPickerSeed,
         routerSeed: RouterSeed,
-        configuration: (MediaPickerModule) -> ())
+        configure: (MediaPickerModule) -> ())
         -> UIViewController
     {
         let interactor = MediaPickerInteractorImpl(
-            items: items,
-            selectedItem: selectedItem,
-            maxItemsCount: maxItemsCount,
-            cropCanvasSize: cropCanvasSize,
+            items: seed.items,
+            selectedItem: seed.selectedItem,
+            maxItemsCount: seed.maxItemsCount,
+            cropCanvasSize: seed.cropCanvasSize,
             deviceOrientationService: DeviceOrientationServiceImpl(),
             latestLibraryPhotoProvider: PhotoLibraryLatestPhotoProviderImpl()
         )
@@ -39,7 +35,7 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
             routerSeed: routerSeed
         )
         
-        let cameraAssembly = assemblyFactory.cameraAssembly()
+        let cameraAssembly = assemblyFactory.cameraAssembly(initialActiveCameraType: seed.initialActiveCameraType)
         let (cameraView, cameraModuleInput) = cameraAssembly.module()
         
         let presenter = MediaPickerPresenter(
@@ -52,11 +48,11 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
         viewController.addDisposable(presenter)
         viewController.setCameraView(cameraView)
         viewController.setTheme(theme)
-        viewController.setShowsCropButton(cropEnabled)
+        viewController.setShowsCropButton(seed.cropEnabled)
         
         presenter.view = viewController
         
-        configuration(presenter)
+        configure(presenter)
         
         return viewController
     }

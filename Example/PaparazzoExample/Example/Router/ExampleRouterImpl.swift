@@ -15,20 +15,24 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropCanvasSize: CGSize,
-        configuration: (MediaPickerModule) -> ()
+        configure: (MediaPickerModule) -> ()
     ) {
         pushViewControllerDerivedFrom { routerSeed in
             
             let assembly = mediaPickerAssemblyFactory.mediaPickerAssembly()
             
-            return assembly.module(
+            let seed = MediaPickerSeed(
                 items: items,
                 selectedItem: selectedItem,
                 maxItemsCount: maxItemsCount,
                 cropEnabled: true,
-                cropCanvasSize: cropCanvasSize,
+                cropCanvasSize: cropCanvasSize
+            )
+            
+            return assembly.module(
+                seed: seed,
                 routerSeed: routerSeed,
-                configuration: configuration
+                configure: configure
             )
         }
     }
@@ -36,7 +40,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
     func showPhotoLibrary(
         selectedItems: [PhotoLibraryItem],
         maxSelectedItemsCount: Int?,
-        configuration: (PhotoLibraryModule) -> ()
+        configure: (PhotoLibraryModule) -> ()
     ) {
         presentModalNavigationControllerWithRootViewControllerDerivedFrom { routerSeed in
             
@@ -46,7 +50,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
                 selectedItems: selectedItems,
                 maxSelectedItemsCount: maxSelectedItemsCount,
                 routerSeed: routerSeed,
-                configuration: configuration
+                configure: configure
             )
         }
     }
