@@ -2,7 +2,7 @@ import UIKit
 
 public protocol MediaPickerAssembly: class {
     func module(
-        data: MediaPickerData,
+        seed: MediaPickerSeed,
         configure: (MediaPickerModule) -> ())
         -> UIViewController
 }

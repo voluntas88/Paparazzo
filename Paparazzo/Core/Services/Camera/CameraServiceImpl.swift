@@ -19,18 +19,18 @@ final class CameraServiceImpl: CameraService {
     private var frontCamera: AVCaptureDevice?
     private var activeCamera: AVCaptureDevice?
     
-    private let initialActiveCamera: CameraType
+    private let initialActiveCameraType: CameraType
 
 
     // MARK: - Init
     
-    init(initialActiveCamera: CameraType) {
+    init(initialActiveCameraType: CameraType) {
         let videoDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice]
         
         backCamera = videoDevices?.filter({ $0.position == .back }).first
         frontCamera = videoDevices?.filter({ $0.position == .front }).first
         
-        self.initialActiveCamera = initialActiveCamera
+        self.initialActiveCameraType = initialActiveCameraType
     }
     
     func getCaptureSession(completion: @escaping (AVCaptureSession?) -> ()) {
@@ -95,7 +95,7 @@ final class CameraServiceImpl: CameraService {
             try CameraServiceImpl.configureCamera(backCamera)
             
             let activeCamera: AVCaptureDevice?
-            switch initialActiveCamera {
+            switch initialActiveCameraType {
             case .back:
                 activeCamera = backCamera
             case .front:
