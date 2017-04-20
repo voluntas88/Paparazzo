@@ -44,7 +44,7 @@ final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
     
     func setTheme(_ theme: UIThemeType) {
         deleteButton.setImage(
-            theme.circleCropperRemovePhotoIcon,
+            theme.circleCropperRetakePhotoIcon,
             for: .normal
         )
     }

@@ -8,7 +8,7 @@ protocol CircleImageCroppingViewInput: class {
     func setCanvasSize(_: CGSize)
     func setControlsEnabled(_: Bool)
     
-    var onCancelButtonTap: (() -> ())? { get set }
+    var onCloseButtonTap: (() -> ())? { get set }
     var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())? { get set }
     var onRetakePhotoButtonTap: (() -> ())? { get set }
 

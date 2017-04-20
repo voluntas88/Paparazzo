@@ -58,7 +58,7 @@ public struct PaparazzoUITheme:
     
     // MARK: - CircleImageCroppingUITheme
     
-    public var circleCropperRemovePhotoIcon = PaparazzoUITheme.image(named: "delete")
+    public var circleCropperRetakePhotoIcon = PaparazzoUITheme.image(named: "delete")
 
     // MARK: - Private
 

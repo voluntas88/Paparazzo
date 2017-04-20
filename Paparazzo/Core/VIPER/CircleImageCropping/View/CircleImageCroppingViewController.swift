@@ -36,9 +36,15 @@ final class CircleImageCroppingViewController:
     
     // MARK: - CircleImageCroppingViewInput
     
-    var onConfirmButtonTap: ((CGImage?) -> ())?
+    var onConfirmButtonTap: ((CGImage?) -> ())? {
+        get { return circleImageCroppingView.onConfirmButtonTap }
+        set { circleImageCroppingView.onConfirmButtonTap = newValue }
+    }
     
-    var onCancelButtonTap: (() -> ())?
+    var onCloseButtonTap: (() -> ())? {
+        get { return circleImageCroppingView.onCloseButtonTap }
+        set { circleImageCroppingView.onCloseButtonTap = newValue }
+    }
     
     var onRetakePhotoButtonTap: (() -> ())?
     
@@ -67,7 +73,7 @@ final class CircleImageCroppingViewController:
     // MARK: - UIThemeConfigurable
     
     func setTheme(_ theme: UIThemeType) {
-        
+        circleImageCroppingView.setTheme(theme)
     }
     
     // MARK: - Private
