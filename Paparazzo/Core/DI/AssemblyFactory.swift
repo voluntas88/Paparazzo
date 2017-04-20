@@ -7,35 +7,30 @@ public final class AssemblyFactory:
 {
     
     private let theme: PaparazzoUITheme
+    private let serviceFactory = ServiceFactoryImpl()
     
     public init(theme: PaparazzoUITheme = PaparazzoUITheme()) {
         self.theme = theme
     }
     
-    func cameraAssembly(initialActiveCameraType: CameraType) -> CameraAssembly {
-        return CameraAssemblyImpl(theme: theme, initialActiveCameraType: initialActiveCameraType)
+    func cameraAssembly() -> CameraAssembly {
+        return CameraAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
     
     public func mediaPickerAssembly() -> MediaPickerAssembly {
-        return MediaPickerAssemblyImpl(assemblyFactory: self, theme: theme)
+        return MediaPickerAssemblyImpl(assemblyFactory: self, theme: theme, serviceFactory: serviceFactory)
     }
 
     func imageCroppingAssembly() -> ImageCroppingAssembly {
-        return ImageCroppingAssemblyImpl(assemblySeed: assemblySeed())
+        return ImageCroppingAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
 
     public func photoLibraryAssembly() -> PhotoLibraryAssembly {
-        return PhotoLibraryAssemblyImpl(assemblySeed: assemblySeed())
+        return PhotoLibraryAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
     
     public func circleImageCroppingAssembly() -> CircleImageCroppingAssembly {
-        return CircleImageCroppingAssemblyImpl(assemblySeed: assemblySeed())
+        return CircleImageCroppingAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
-    
-    private func assemblySeed() -> PaparazzoAssemblySeed {
-        return PaparazzoAssemblySeed(
-            theme: theme,
-            serviceFactory: ServiceFactoryImpl()
-        )
-    }
+
 }

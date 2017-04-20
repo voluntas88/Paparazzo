@@ -1,31 +1,30 @@
 import UIKit
 
-public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
+public final class MediaPickerAssemblyImpl: BasePaparazzoAssembly, MediaPickerAssembly {
     
     typealias AssemblyFactory = CameraAssemblyFactory & ImageCroppingAssemblyFactory & PhotoLibraryAssemblyFactory
     
     private let assemblyFactory: AssemblyFactory
-    private let theme: PaparazzoUITheme
     
-    init(assemblyFactory: AssemblyFactory, theme: PaparazzoUITheme) {
+    init(assemblyFactory: AssemblyFactory, theme: PaparazzoUITheme, serviceFactory: ServiceFactory) {
         self.assemblyFactory = assemblyFactory
-        self.theme = theme
+        super.init(theme: theme, serviceFactory: serviceFactory)
     }
     
     // MARK: - MediaPickerAssembly
     
     public func module(
-        seed: MediaPickerSeed,
+        data: MediaPickerData,
         configure: (MediaPickerModule) -> ())
         -> UIViewController
     {
         let interactor = MediaPickerInteractorImpl(
-            items: seed.items,
-            selectedItem: seed.selectedItem,
-            maxItemsCount: seed.maxItemsCount,
-            cropCanvasSize: seed.cropCanvasSize,
-            deviceOrientationService: DeviceOrientationServiceImpl(),
-            latestLibraryPhotoProvider: PhotoLibraryLatestPhotoProviderImpl()
+            items: data.items,
+            selectedItem: data.selectedItem,
+            maxItemsCount: data.maxItemsCount,
+            cropCanvasSize: data.cropCanvasSize,
+            deviceOrientationService: serviceFactory.deviceOrientationService(),
+            latestLibraryPhotoProvider: serviceFactory.photoLibraryLatestPhotoProvider()
         )
         
         let viewController = MediaPickerViewController()
@@ -35,8 +34,8 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
             viewController: viewController
         )
         
-        let cameraAssembly = assemblyFactory.cameraAssembly(initialActiveCameraType: seed.initialActiveCameraType)
-        let (cameraView, cameraModuleInput) = cameraAssembly.module()
+        let cameraAssembly = assemblyFactory.cameraAssembly()
+        let (cameraView, cameraModuleInput) = cameraAssembly.module(initialActiveCameraType: data.initialActiveCameraType)
         
         let presenter = MediaPickerPresenter(
             interactor: interactor,
@@ -47,7 +46,7 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
         viewController.addDisposable(presenter)
         viewController.setCameraView(cameraView)
         viewController.setTheme(theme)
-        viewController.setShowsCropButton(seed.cropEnabled)
+        viewController.setShowsCropButton(data.cropEnabled)
         
         presenter.view = viewController
         

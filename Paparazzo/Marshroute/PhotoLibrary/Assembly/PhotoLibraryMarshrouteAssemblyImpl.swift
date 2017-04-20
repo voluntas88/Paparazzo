@@ -1,13 +1,7 @@
 import UIKit
 import Marshroute
 
-public final class PhotoLibraryMarshrouteAssemblyImpl: PhotoLibraryMarshrouteAssembly {
-    
-    private let theme: PhotoLibraryUITheme
-    
-    init(theme: PhotoLibraryUITheme) {
-        self.theme = theme
-    }
+public final class PhotoLibraryMarshrouteAssemblyImpl: BasePaparazzoAssembly, PhotoLibraryMarshrouteAssembly {
     
     public func module(
         selectedItems: [PhotoLibraryItem],

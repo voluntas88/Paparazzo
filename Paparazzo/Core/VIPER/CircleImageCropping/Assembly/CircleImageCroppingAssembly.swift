@@ -3,7 +3,7 @@ import UIKit
 
 public protocol CircleImageCroppingAssembly: class {
     func module(
-        seed: CircleImageCroppingSeed,
+        data: CircleImageCroppingData,
         configure: (CircleImageCroppingModule) -> ())
         -> UIViewController
 }

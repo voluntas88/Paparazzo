@@ -1,6 +1,6 @@
 import UIKit
 
-public struct PhotoLibrarySeed {
+public struct PhotoLibraryData {
     public let selectedItems: [PhotoLibraryItem]
     public let maxSelectedItemsCount: Int?
     

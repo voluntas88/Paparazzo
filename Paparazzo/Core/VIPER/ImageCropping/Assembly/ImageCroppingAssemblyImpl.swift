@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-public final class ImageCroppingAssemblyImpl: BasePaparazzoAssembly, ImageCroppingAssembly {
+public final class ImageCroppingAssemblyImpl: BasePaparazzoAssembly , ImageCroppingAssembly {
     
     public func module(
         image: ImageSource,

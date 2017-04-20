@@ -16,13 +16,13 @@ final class MediaPickerUIKitRouter: BaseUIKitRouter, MediaPickerRouter {
     // MARK: - PhotoPickerRouter
 
     func showPhotoLibrary(
-        seed: PhotoLibrarySeed,
+        data: PhotoLibraryData,
         configure: (PhotoLibraryModule) -> ())
     {
         let assembly = assemblyFactory.photoLibraryAssembly()
         
         let viewController = assembly.module(
-            seed: seed,
+            data: data,
             configure: configure
         )
         

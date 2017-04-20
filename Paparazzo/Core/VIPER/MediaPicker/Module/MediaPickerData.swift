@@ -1,6 +1,6 @@
 import UIKit
 
-public struct MediaPickerSeed {
+public struct MediaPickerData {
     public let items: [MediaPickerItem]
     public let selectedItem: MediaPickerItem?
     public let maxItemsCount: Int?

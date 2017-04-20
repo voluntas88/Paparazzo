@@ -3,15 +3,15 @@ import UIKit
 public final class PhotoLibraryAssemblyImpl: BasePaparazzoAssembly, PhotoLibraryAssembly {
     
     public func module(
-        seed: PhotoLibrarySeed,
+        data: PhotoLibraryData,
         configure: (PhotoLibraryModule) -> ())
         -> UIViewController
     {
         let photoLibraryItemsService = PhotoLibraryItemsServiceImpl()
         
         let interactor = PhotoLibraryInteractorImpl(
-            selectedItems: seed.selectedItems,
-            maxSelectedItemsCount: seed.maxSelectedItemsCount,
+            selectedItems: data.selectedItems,
+            maxSelectedItemsCount: data.maxSelectedItemsCount,
             photoLibraryItemsService: photoLibraryItemsService
         )
         

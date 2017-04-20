@@ -2,7 +2,7 @@ import UIKit
 
 public protocol PhotoLibraryAssembly: class {
     func module(
-        seed: PhotoLibrarySeed,
+        data: PhotoLibraryData,
         configure: (PhotoLibraryModule) -> ()
     ) -> UIViewController
 }

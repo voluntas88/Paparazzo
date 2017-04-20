@@ -1,16 +1,11 @@
-struct PaparazzoAssemblySeed {
-    let theme: PaparazzoUITheme
-    let serviceFactory: ServiceFactory
-}
-
 public class BasePaparazzoAssembly {
-    // MARK: - Internal properties
+    // MARK: - Dependencies
     let theme: PaparazzoUITheme
     let serviceFactory: ServiceFactory
     
-    init(assemblySeed: PaparazzoAssemblySeed) {
-        self.theme = assemblySeed.theme
-        self.serviceFactory = assemblySeed.serviceFactory
+    init(theme: PaparazzoUITheme, serviceFactory: ServiceFactory ) {
+        self.theme = theme
+        self.serviceFactory = serviceFactory
     }
     
 }
