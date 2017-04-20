@@ -3,9 +3,6 @@ import UIKit
 
 final class CroppingPreviewView: UIView {
     
-    /// This view is shown to prevent blinking while image is loading
-    private let splashView = UIImageView()
-    
     /// Максимальный размер оригинальной картинки. Если меньше размера самой картинки, она будет даунскейлиться.
     private var sourceImageMaxSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
     
@@ -23,10 +20,7 @@ final class CroppingPreviewView: UIView {
         //backgroundColor = .white
         clipsToBounds = true
         
-        splashView.contentMode = .scaleAspectFill
-        
         addSubview(previewView)
-        //addSubview(splashView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,23 +35,6 @@ final class CroppingPreviewView: UIView {
         previewView.frame = bounds
     }
     
-    func layoutSplashViewIn(bounds: CGRect) {
-        
-        let height: CGFloat
-        
-        switch aspectRatio {
-        case .portrait_3x4:
-            height = bounds.size.width * 4 / 3
-        case .landscape_4x3:
-            height = bounds.size.width * 3 / 4
-        }
-        
-        let scaleToFit = min(1, previewView.height / height)
-        
-        splashView.size = CGSize(width: bounds.size.width, height: height).scaled(scaleToFit)
-        splashView.center = previewView.center
-    }
-    
     // MARK: - CroppingPreviewView
     
     var cropAspectRatio: CGFloat {
@@ -70,18 +47,22 @@ final class CroppingPreviewView: UIView {
         set { previewView.onCroppingParametersChange = newValue }
     }
     
+    var onPreviewImageWillLoading: (() -> ())?
+    var onPreviewImageDidLoad: ((UIImage) -> ())?
+    var onImageDidLoad: (() -> ())?
+    
     func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: (() -> ())?) {
         
         if let previewImage = previewImage {
             
             let screenSize = UIScreen.main.bounds.size
             let previewOptions = ImageRequestOptions(size: .fitSize(screenSize), deliveryMode: .progressive)
-            
-            splashView.isHidden = false
+
+            onPreviewImageWillLoading?()
             
             previewImage.requestImage(options: previewOptions) { [weak self] (result: ImageRequestResult<UIImage>) in
-                if let image = result.image, self?.splashView.isHidden == false {
-                    self?.splashView.image = image
+                if let image = result.image {
+                    self?.onPreviewImageDidLoad?(image)
                 }
             }
         }
@@ -91,8 +72,7 @@ final class CroppingPreviewView: UIView {
         image.requestImage(options: options) { [weak self] (result: ImageRequestResult<UIImage>) in
             if let image = result.image {
                 self?.previewView.setImage(image)
-                self?.splashView.isHidden = true
-                self?.splashView.image = nil
+                self?.onImageDidLoad?()
             }
             completion?()
         }

@@ -7,7 +7,10 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - Subviews
     
-    private let croppingPreviewView = CroppingPreviewView()
+    /// This view is shown to prevent blinking while image is loading
+    private let splashView = UIImageView()
+    
+    private let previewView = CroppingPreviewView()
     private let controlsView = ImageCroppingControlsView()
     private let aspectRatioButton = UIButton()
     private let titleLabel = UILabel()
@@ -36,10 +39,28 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
         )
         
         controlsView.onConfirmButtonTap = { [weak self] in
-            self?.onConfirmButtonTap?(self?.croppingPreviewView.cropPreviewImage())
+            self?.onConfirmButtonTap?(self?.previewView.cropPreviewImage())
+        }
+        
+        splashView.contentMode = .scaleAspectFill
+        
+        previewView.onPreviewImageWillLoading = { [weak self] in
+            self?.splashView.isHidden = false
+        }
+        
+        previewView.onPreviewImageDidLoad = { [weak self] image in
+            if self?.splashView.isHidden == false {
+                self?.splashView.image = image
+            }
+        }
+        
+        previewView.onImageDidLoad = { [weak self] in
+            self?.splashView.isHidden = true
+            self?.splashView.image = nil
         }
 
-        addSubview(croppingPreviewView)
+        addSubview(previewView)
+        addSubview(splashView)
         addSubview(controlsView)
         addSubview(titleLabel)
         addSubview(aspectRatioButton)
@@ -68,13 +89,30 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
             height: max(controlsMinHeight, bounds.size.height - bounds.size.width / 0.75)   // оставляем вверху место под фотку 3:4
         )
         
-        croppingPreviewView.layout(
+        previewView.layout(
             left: bounds.left,
             right: bounds.right,
             top: bounds.top,
             bottom: controlsView.top
         )
-        croppingPreviewView.layoutSplashViewIn(bounds: bounds)
+        layoutSplashView()
+    }
+    
+    func layoutSplashView() {
+        
+        let height: CGFloat
+        
+        switch aspectRatio {
+        case .portrait_3x4:
+            height = bounds.size.width * 4 / 3
+        case .landscape_4x3:
+            height = bounds.size.width * 3 / 4
+        }
+        
+        let scaleToFit = min(1, previewView.height / height)
+        
+        splashView.size = CGSize(width: bounds.size.width, height: height).scaled(scaleToFit)
+        splashView.center = previewView.center
     }
     
     // MARK: - UIThemeConfigurable
@@ -115,24 +153,24 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     var onAspectRatioButtonTap: (() -> ())?
     
     var onCroppingParametersChange: ((ImageCroppingParameters) -> ())? {
-        get { return croppingPreviewView.onCroppingParametersChange }
-        set { croppingPreviewView.onCroppingParametersChange = newValue }
+        get { return previewView.onCroppingParametersChange }
+        set { previewView.onCroppingParametersChange = newValue }
     }
     
     func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: (() -> ())?) {
-        croppingPreviewView.setImage(image, previewImage: previewImage, completion: completion)
+        previewView.setImage(image, previewImage: previewImage, completion: completion)
     }
     
     func setImageTiltAngle(_ angle: Float) {
-        croppingPreviewView.setImageTiltAngle(angle)
+        previewView.setImageTiltAngle(angle)
     }
 
     func turnCounterclockwise() {
-        croppingPreviewView.turnCounterclockwise()
+        previewView.turnCounterclockwise()
     }
     
     func setCroppingParameters(_ parameters: ImageCroppingParameters) {
-        croppingPreviewView.setCroppingParameters(parameters)
+        previewView.setCroppingParameters(parameters)
     }
     
     func setRotationSliderValue(_ value: Float) {
@@ -140,7 +178,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     }
     
     func setCanvasSize(_ size: CGSize) {
-        croppingPreviewView.setCanvasSize(size)
+        previewView.setCanvasSize(size)
     }
     
     func setControlsEnabled(_ enabled: Bool) {
@@ -157,7 +195,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
         self.aspectRatio = aspectRatio
         
         aspectRatioButton.size = aspectRatioButtonSize()
-        croppingPreviewView.cropAspectRatio = CGFloat(aspectRatio.widthToHeightRatio())
+        previewView.cropAspectRatio = CGFloat(aspectRatio.widthToHeightRatio())
         
         switch aspectRatio {
         
@@ -182,7 +220,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
             setShadowVisible(false, forView: aspectRatioButton)
         }
         
-        croppingPreviewView.layoutSplashViewIn(bounds: bounds)
+        layoutSplashView()
     }
     
     func setAspectRatioButtonTitle(_ title: String) {
@@ -206,7 +244,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     }
     
     func setGridVisible(_ visible: Bool) {
-        croppingPreviewView.setGridVisible(visible)
+        previewView.setGridVisible(visible)
     }
     
     func setGridButtonSelected(_ selected: Bool) {
