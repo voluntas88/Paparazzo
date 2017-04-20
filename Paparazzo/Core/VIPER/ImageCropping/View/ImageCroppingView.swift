@@ -7,10 +7,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - Subviews
     
-    /// Вьюха, которая показывается до того, как будет доступна полная картинка для редактирования (чтобы избежать моргания)
-    private let splashView = UIImageView()
-    
-    private let previewView = PhotoTweakView()
+    private let croppingPreviewView = CroppingPreviewView()
     private let controlsView = ImageCroppingControlsView()
     private let aspectRatioButton = UIButton()
     private let titleLabel = UILabel()
@@ -39,13 +36,10 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
         )
         
         controlsView.onConfirmButtonTap = { [weak self] in
-            self?.onConfirmButtonTap?(self?.previewView.cropPreviewImage())
+            self?.onConfirmButtonTap?(self?.croppingPreviewView.cropPreviewImage())
         }
-        
-        splashView.contentMode = .scaleAspectFill
-        
-        addSubview(previewView)
-        addSubview(splashView)
+
+        addSubview(croppingPreviewView)
         addSubview(controlsView)
         addSubview(titleLabel)
         addSubview(aspectRatioButton)
@@ -74,31 +68,13 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
             height: max(controlsMinHeight, bounds.size.height - bounds.size.width / 0.75)   // оставляем вверху место под фотку 3:4
         )
         
-        previewView.layout(
+        croppingPreviewView.layout(
             left: bounds.left,
             right: bounds.right,
             top: bounds.top,
             bottom: controlsView.top
         )
-        
-        layoutSplashView()
-    }
-    
-    private func layoutSplashView() {
-        
-        let height: CGFloat
-        
-        switch aspectRatio {
-        case .portrait_3x4:
-            height = bounds.size.width * 4 / 3
-        case .landscape_4x3:
-            height = bounds.size.width * 3 / 4
-        }
-        
-        let scaleToFit = min(1, previewView.height / height)
-        
-        splashView.size = CGSize(width: bounds.size.width, height: height).scaled(scaleToFit)
-        splashView.center = previewView.center
+        croppingPreviewView.layoutSplashViewIn(bounds: bounds)
     }
     
     // MARK: - UIThemeConfigurable
@@ -139,48 +115,24 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     var onAspectRatioButtonTap: (() -> ())?
     
     var onCroppingParametersChange: ((ImageCroppingParameters) -> ())? {
-        get { return previewView.onCroppingParametersChange }
-        set { previewView.onCroppingParametersChange = newValue }
+        get { return croppingPreviewView.onCroppingParametersChange }
+        set { croppingPreviewView.onCroppingParametersChange = newValue }
     }
     
     func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: (() -> ())?) {
-        
-        if let previewImage = previewImage {
-            
-            let screenSize = UIScreen.main.bounds.size
-            let previewOptions = ImageRequestOptions(size: .fitSize(screenSize), deliveryMode: .progressive)
-            
-            splashView.isHidden = false
-            
-            previewImage.requestImage(options: previewOptions) { [weak self] (result: ImageRequestResult<UIImage>) in
-                if let image = result.image, self?.splashView.isHidden == false {
-                    self?.splashView.image = image
-                }
-            }
-        }
-        
-        let options = ImageRequestOptions(size: .fitSize(sourceImageMaxSize), deliveryMode: .best)
-        
-        image.requestImage(options: options) { [weak self] (result: ImageRequestResult<UIImage>) in
-            if let image = result.image {
-                self?.previewView.setImage(image)
-                self?.splashView.isHidden = true
-                self?.splashView.image = nil
-            }
-            completion?()
-        }
+        croppingPreviewView.setImage(image, previewImage: previewImage, completion: completion)
     }
     
     func setImageTiltAngle(_ angle: Float) {
-        previewView.setTiltAngle(angle.degreesToRadians())
+        croppingPreviewView.setImageTiltAngle(angle)
     }
 
     func turnCounterclockwise() {
-        previewView.turnCounterclockwise()
+        croppingPreviewView.turnCounterclockwise()
     }
     
     func setCroppingParameters(_ parameters: ImageCroppingParameters) {
-        previewView.setCroppingParameters(parameters)
+        croppingPreviewView.setCroppingParameters(parameters)
     }
     
     func setRotationSliderValue(_ value: Float) {
@@ -188,7 +140,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     }
     
     func setCanvasSize(_ size: CGSize) {
-        sourceImageMaxSize = size
+        croppingPreviewView.setCanvasSize(size)
     }
     
     func setControlsEnabled(_ enabled: Bool) {
@@ -205,7 +157,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
         self.aspectRatio = aspectRatio
         
         aspectRatioButton.size = aspectRatioButtonSize()
-        previewView.cropAspectRatio = CGFloat(aspectRatio.widthToHeightRatio())
+        croppingPreviewView.cropAspectRatio = CGFloat(aspectRatio.widthToHeightRatio())
         
         switch aspectRatio {
         
@@ -230,7 +182,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
             setShadowVisible(false, forView: aspectRatioButton)
         }
         
-        layoutSplashView()
+        croppingPreviewView.layoutSplashViewIn(bounds: bounds)
     }
     
     func setAspectRatioButtonTitle(_ title: String) {
@@ -254,7 +206,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     }
     
     func setGridVisible(_ visible: Bool) {
-        previewView.setGridVisible(visible)
+        croppingPreviewView.setGridVisible(visible)
     }
     
     func setGridButtonSelected(_ selected: Bool) {
@@ -264,9 +216,6 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     // MARK: - Private
     
     private var aspectRatio: AspectRatio = .portrait_3x4
-    
-    /// Максимальный размер оригинальной картинки. Если меньше размера самой картинки, она будет даунскейлиться.
-    private var sourceImageMaxSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
     
     private func aspectRatioButtonSize() -> CGSize {
         switch aspectRatio {
