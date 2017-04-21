@@ -11,23 +11,12 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
     // MARK: - ExampleRouter
     
     func showMediaPicker(
-        items: [MediaPickerItem],
-        selectedItem: MediaPickerItem?,
-        maxItemsCount: Int?,
-        cropCanvasSize: CGSize,
+        data: MediaPickerData,
         configure: (MediaPickerModule) -> ()
     ) {
         pushViewControllerDerivedFrom { routerSeed in
             
             let assembly = mediaPickerAssemblyFactory.mediaPickerAssembly()
-            
-            let data = MediaPickerData(
-                items: items,
-                selectedItem: selectedItem,
-                maxItemsCount: maxItemsCount,
-                cropEnabled: true,
-                cropCanvasSize: cropCanvasSize
-            )
             
             return assembly.module(
                 data: data,

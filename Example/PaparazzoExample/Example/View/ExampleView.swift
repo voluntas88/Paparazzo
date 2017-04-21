@@ -3,9 +3,11 @@ import UIKit
 final class ExampleView: UIView {
     
     var onShowMediaPickerButtonTap: (() -> ())?
+    var onShowSelfieCameraButtonTap: (() -> ())?
     var onShowPhotoLibraryButtonTap: (() -> ())?
     
     private let mediaPickerButton = UIButton()
+    private let selfieCameraButton = UIButton()
     private let photoLibraryButton = UIButton()
     
     // MARK: - Init
@@ -20,6 +22,13 @@ final class ExampleView: UIView {
             for: .touchUpInside
         )
         
+        selfieCameraButton.setTitle("Show Selfie Camera", for: .normal)
+        selfieCameraButton.addTarget(
+            self,
+            action: #selector(onShowSelfieCameraButtonTap(_:)),
+            for: .touchUpInside
+        )
+        
         photoLibraryButton.setTitle("Show Photo Library", for: .normal)
         photoLibraryButton.addTarget(
             self,
@@ -28,6 +37,7 @@ final class ExampleView: UIView {
         )
         
         addSubview(mediaPickerButton)
+        addSubview(selfieCameraButton)
         addSubview(photoLibraryButton)
     }
     
@@ -41,16 +51,23 @@ final class ExampleView: UIView {
         super.layoutSubviews()
         
         mediaPickerButton.sizeToFit()
-        mediaPickerButton.center = CGPoint(x: bounds.midX, y: bounds.midY - 30)
+        mediaPickerButton.center = CGPoint(x: bounds.midX, y: bounds.midY - 50)
+        
+        selfieCameraButton.sizeToFit()
+        selfieCameraButton.center = CGPoint(x: bounds.midX, y: bounds.midY)
         
         photoLibraryButton.sizeToFit()
-        photoLibraryButton.center = CGPoint(x: bounds.midX, y: bounds.midY + 30)
+        photoLibraryButton.center = CGPoint(x: bounds.midX, y: bounds.midY + 50)
     }
     
     // MARK: - Private
     
     @objc private func onShowMediaPickerButtonTap(_: UIButton) {
         onShowMediaPickerButtonTap?()
+    }
+    
+    @objc private func onShowSelfieCameraButtonTap(_: UIButton) {
+        onShowSelfieCameraButtonTap?()
     }
     
     @objc private func onShowPhotoLibraryButtonTap(_: UIButton) {

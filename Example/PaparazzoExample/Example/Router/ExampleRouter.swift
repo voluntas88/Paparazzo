@@ -4,10 +4,7 @@ import Paparazzo
 protocol ExampleRouter: class, RouterFocusable, RouterDismissable {
 
     func showMediaPicker(
-        items: [MediaPickerItem],
-        selectedItem: MediaPickerItem?,
-        maxItemsCount: Int?,
-        cropCanvasSize: CGSize,
+        data: MediaPickerData,
         configure: (MediaPickerModule) -> ()
     )
     

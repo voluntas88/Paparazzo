@@ -328,6 +328,7 @@ final class MediaPickerView: UIView, UIThemeConfigurable {
     }
     
     var onCloseButtonTap: (() -> ())?
+    
     var onContinueButtonTap: (() -> ())?
     
     var onCameraToggleButtonTap: (() -> ())? {
@@ -345,6 +346,10 @@ final class MediaPickerView: UIView, UIThemeConfigurable {
     
     func setPhotoLibraryButtonEnabled(_ enabled: Bool) {
         cameraControlsView.setPhotoLibraryButtonEnabled(enabled)
+    }
+    
+    func setContinueButtonVisible(_ visible: Bool) {
+        continueButton.isHidden = !visible
     }
     
     func addItems(_ items: [MediaPickerItem], animated: Bool, completion: @escaping () -> ()) {

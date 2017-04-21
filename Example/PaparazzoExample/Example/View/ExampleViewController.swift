@@ -34,4 +34,9 @@ final class ExampleViewController: UIViewController, ExampleViewInput {
         get { return exampleView?.onShowPhotoLibraryButtonTap }
         set { exampleView?.onShowPhotoLibraryButtonTap = newValue }
     }
+    
+    var onShowSelfieCameraButtonTap: (() -> ())? {
+        get { return exampleView?.onShowSelfieCameraButtonTap }
+        set { exampleView?.onShowSelfieCameraButtonTap = newValue }
+    }
 }

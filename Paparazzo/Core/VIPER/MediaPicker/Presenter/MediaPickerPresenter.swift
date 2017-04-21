@@ -39,6 +39,10 @@ final class MediaPickerPresenter: MediaPickerModule {
         view?.setContinueButtonEnabled(enabled)
     }
     
+    func setContinueButtonVisible(_ visible: Bool) {
+        view?.setContinueButtonVisible(visible)
+    }
+    
     func setItems(_ items: [MediaPickerItem], selectedItem: MediaPickerItem?) {
         addItems(items, fromCamera: false) { [weak self] in
             if let selectedItem = selectedItem {
@@ -65,6 +69,7 @@ final class MediaPickerPresenter: MediaPickerModule {
         view?.setPhotoTitle("Фото 1")
         
         view?.setCameraControlsEnabled(false)
+        view?.setContinueButtonVisible(true)
         
         cameraModuleInput.getOutputParameters { [weak self] parameters in
             if let parameters = parameters {

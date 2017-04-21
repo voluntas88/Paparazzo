@@ -271,6 +271,10 @@ final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewI
     func setCameraToggleButtonVisible(_ visible: Bool) {
         mediaPickerView.setCameraToggleButtonVisible(visible)
     }
+    
+    func setContinueButtonVisible(_ visible: Bool) {
+        mediaPickerView.setContinueButtonVisible(visible)
+    }
 
     func addItems(_ items: [MediaPickerItem], animated: Bool, completion: @escaping () -> ()) {
         mediaPickerView.addItems(items, animated: animated, completion: completion)

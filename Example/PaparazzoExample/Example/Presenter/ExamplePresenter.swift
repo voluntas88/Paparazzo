@@ -48,6 +48,40 @@ final class ExamplePresenter {
                 }
             }
         }
+        
+        view?.onShowSelfieCameraButtonTap = { [weak self] in
+            self?.showSelfieCamera()
+        }
+    }
+    
+    func showSelfieCamera() {
+        let cropCanvasSize = CGSize(width: 1280, height: 960)
+        
+        let data = MediaPickerData(
+            items: items,
+            selectedItem: nil,
+            maxItemsCount: 2,
+            cropEnabled: true,
+            cropCanvasSize: cropCanvasSize,
+            initialActiveCameraType: .front
+        )
+        
+        self.router.showMediaPicker(
+            data: data,
+            configure: { module in
+                weak var module = module
+                module?.setContinueButtonVisible(false)
+                module?.onCancel = {
+                    module?.dismissModule()
+                }
+                module?.onFinish = { items in
+                    module?.dismissModule()
+                }
+                module?.onItemsAdd = { items in
+                    module?.dismissModule()
+                }
+            }
+        )
     }
     
     func showMediaPicker(remoteItems: [MediaPickerItem]) {
@@ -57,11 +91,16 @@ final class ExamplePresenter {
 
         let cropCanvasSize = CGSize(width: 1280, height: 960)
         
-        self.router.showMediaPicker(
+        let data = MediaPickerData(
             items: items,
             selectedItem: items.last,
             maxItemsCount: 20,
-            cropCanvasSize: cropCanvasSize,
+            cropEnabled: true,
+            cropCanvasSize: cropCanvasSize
+        )
+        
+        self.router.showMediaPicker(
+            data: data,
             configure: { [weak self] module in
                 self?.configureMediaPicker(module: module)
             }
