@@ -1,4 +1,4 @@
-public struct CircleImageCroppingData {
+public struct SelfieCropperData {
     
     public let photo: MediaPickerItem
     public let cropCanvasSize: CGSize

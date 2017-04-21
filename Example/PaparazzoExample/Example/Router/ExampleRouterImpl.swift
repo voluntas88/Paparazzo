@@ -27,8 +27,8 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
     }
     
     func showSelfieCropper(
-        data: CircleImageCroppingData,
-        configure: (CircleImageCroppingModule) -> ()
+        data: SelfieCropperData,
+        configure: (SelfieCropperModule) -> ()
     ) {
         pushViewControllerDerivedFrom { routerSeed in
             

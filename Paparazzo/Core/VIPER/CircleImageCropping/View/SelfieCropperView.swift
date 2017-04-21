@@ -1,12 +1,12 @@
 import ImageSource
 import UIKit
 
-final class CircleImageCroppingView: UIView, UIThemeConfigurable {
+final class SelfieCropperView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = CircleImageCroppingUITheme
+    typealias UIThemeType = SelfieCropperUITheme
     
     private let overlayView = CircleMaskOverlayView()
-    private let controlsView = CircleImageCroppingControlsView()
+    private let controlsView = SelfieCropperControlsView()
     private let previewView = CroppingPreviewView()
     private let closeButton = UIButton()
     private let confirmButton = UIButton()
@@ -45,35 +45,35 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: CircleImageCroppingUITheme) {
+    func setTheme(_ theme: SelfieCropperUITheme) {
         controlsView.setTheme(theme)
         
-        confirmButton.setTitleColor(theme.circleCropperConfirmButtonTitleColor, for: .normal)
-        confirmButton.titleLabel?.font = theme.circleCropperConfirmButtonTitleFont
+        confirmButton.setTitleColor(theme.selfieCropperConfirmButtonTitleColor, for: .normal)
+        confirmButton.titleLabel?.font = theme.selfieCropperConfirmButtonTitleFont
         
-        closeButton.setImage(theme.circleCropperCloseButtonIcon, for: .normal)
+        closeButton.setImage(theme.selfieCropperCloseButtonIcon, for: .normal)
         
         confirmButton.setTitleColor(
-            theme.circleCropperConfirmButtonTitleColor,
+            theme.selfieCropperConfirmButtonTitleColor,
             for: .normal
         )
         confirmButton.setTitleColor(
-            theme.circleCropperConfirmButtonTitleHighlightedColor,
+            theme.selfieCropperConfirmButtonTitleHighlightedColor,
             for: .highlighted
         )
         
         let onePointSize = CGSize(width: 1, height: 1)
         for button in [confirmButton, closeButton] {
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundNormalColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundNormalColor, imageSize: onePointSize),
                 for: .normal
             )
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundHighlightedColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundHighlightedColor, imageSize: onePointSize),
                 for: .highlighted
             )
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundDisabledColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundDisabledColor, imageSize: onePointSize),
                 for: .disabled
             )
         }
@@ -107,7 +107,7 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         )
     }
     
-    // MARK: - CircleImageCroppingView
+    // MARK: - SelfieCropperView
     
     var onCloseTap: (() -> ())?
     var onConfirmTap: ((_ previewImage: CGImage?) -> ())?

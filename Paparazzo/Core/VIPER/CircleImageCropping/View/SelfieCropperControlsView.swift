@@ -1,8 +1,8 @@
 import UIKit
 
-final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
+final class SelfieCropperControlsView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = CircleImageCroppingUITheme
+    typealias UIThemeType = SelfieCropperUITheme
     
     // MARK: - Subviews
     
@@ -44,12 +44,12 @@ final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
     
     func setTheme(_ theme: UIThemeType) {
         discardButton.setImage(
-            theme.circleCropperDiscardPhotoIcon,
+            theme.selfieCropperDiscardPhotoIcon,
             for: .normal
         )
     }
     
-    // MARK: - CircleImageCroppingControlsView
+    // MARK: - SelfieCropperControlsView
     
     var onDiscardTap: (() -> ())?
     

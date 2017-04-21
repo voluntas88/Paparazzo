@@ -1,17 +1,17 @@
 import ImageSource
 
-final class CircleImageCroppingPresenter: CircleImageCroppingModule {
+final class SelfieCropperPresenter: SelfieCropperModule {
     
-    private let interactor: CircleImageCroppingInteractor
-    private let router: CircleImageCroppingRouter
+    private let interactor: SelfieCropperInteractor
+    private let router: SelfieCropperRouter
     
-    weak var view: CircleImageCroppingViewInput? {
+    weak var view: SelfieCropperViewInput? {
         didSet {
             setUpView()
         }
     }
     
-    init(interactor: CircleImageCroppingInteractor, router: CircleImageCroppingRouter) {
+    init(interactor: SelfieCropperInteractor, router: SelfieCropperRouter) {
         self.interactor = interactor
         self.router = router
     }

@@ -1,29 +1,29 @@
 import Marshroute
 import UIKit
 
-public final class CircleImageCroppingMarshrouteAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingMarshrouteAssembly {
+public final class SelfieCropperMarshrouteAssemblyImpl: BasePaparazzoAssembly, SelfieCropperMarshrouteAssembly {
     
     public func module(
-        data: CircleImageCroppingData,
+        data: SelfieCropperData,
         routerSeed: RouterSeed,
-        configure: (CircleImageCroppingModule) -> ()
+        configure: (SelfieCropperModule) -> ()
         ) -> UIViewController {
         
-        let interactor = CircleImageCroppingInteractorImpl(
+        let interactor = SelfieCropperInteractorImpl(
             image: data.photo.image,
             canvasSize: data.cropCanvasSize
         )
         
-        let router = CircleImageCroppingMarshrouteRouter(
+        let router = SelfieCropperMarshrouteRouter(
             routerSeed: routerSeed
         )
         
-        let presenter = CircleImageCroppingPresenter(
+        let presenter = SelfieCropperPresenter(
             interactor: interactor,
             router: router
         )
         
-        let viewController = CircleImageCroppingViewController()
+        let viewController = SelfieCropperViewController()
         viewController.addDisposable(presenter)
         viewController.setTheme(theme)
         

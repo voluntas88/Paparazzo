@@ -89,7 +89,7 @@ final class ExamplePresenter {
     }
     
     private func showSelfieCropperIn(rootModule: MediaPickerModule?, photo: MediaPickerItem) {
-        let data = CircleImageCroppingData(
+        let data = SelfieCropperData(
             photo: photo,
             cropCanvasSize: cropCanvasSize
         )

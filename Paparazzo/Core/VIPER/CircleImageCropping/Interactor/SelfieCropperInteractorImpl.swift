@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class CircleImageCroppingInteractorImpl: CircleImageCroppingInteractor {
+final class SelfieCropperInteractorImpl: SelfieCropperInteractor {
     
     private let originalImage: ImageSource
     private let previewImage: ImageSource?

@@ -4,7 +4,7 @@ public struct PaparazzoUITheme:
     MediaPickerRootModuleUITheme,
     PhotoLibraryUITheme,
     ImageCroppingUITheme,
-    CircleImageCroppingUITheme
+    SelfieCropperUITheme
 {
     
     public init() {}
@@ -56,18 +56,18 @@ public struct PaparazzoUITheme:
     public var cancelRotationTitleColor = UIColor.white
     public var cancelRotationTitleFont = UIFont.boldSystemFont(ofSize: 14)
     
-    // MARK: - CircleImageCroppingUITheme
+    // MARK: - SelfieCropperUITheme
     
-    public var circleCropperDiscardPhotoIcon = PaparazzoUITheme.image(named: "delete")
-    public var circleCropperCloseButtonIcon = PaparazzoUITheme.image(named: "bt-close")
+    public var selfieCropperDiscardPhotoIcon = PaparazzoUITheme.image(named: "delete")
+    public var selfieCropperCloseButtonIcon = PaparazzoUITheme.image(named: "bt-close")
     
-    public var circleCropperButtonsBackgroundNormalColor = UIColor.white
-    public var circleCropperButtonsBackgroundHighlightedColor = UIColor(white: 1, alpha: 0.6)
-    public var circleCropperButtonsBackgroundDisabledColor = UIColor(white: 1, alpha: 0.6)
-    public var circleCropperConfirmButtonTitleColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
-    public var circleCropperConfirmButtonTitleHighlightedColor = UIColor(red: 0, green: 152.0/255, blue: 229.0/255, alpha: 1)
+    public var selfieCropperButtonsBackgroundNormalColor = UIColor.white
+    public var selfieCropperButtonsBackgroundHighlightedColor = UIColor(white: 1, alpha: 0.6)
+    public var selfieCropperButtonsBackgroundDisabledColor = UIColor(white: 1, alpha: 0.6)
+    public var selfieCropperConfirmButtonTitleColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
+    public var selfieCropperConfirmButtonTitleHighlightedColor = UIColor(red: 0, green: 152.0/255, blue: 229.0/255, alpha: 1)
     
-    public var circleCropperConfirmButtonTitleFont = UIFont.systemFont(ofSize: 17)
+    public var selfieCropperConfirmButtonTitleFont = UIFont.systemFont(ofSize: 17)
 
     // MARK: - Private
 

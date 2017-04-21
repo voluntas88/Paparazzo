@@ -1,25 +1,25 @@
 import ImageSource
 import UIKit
 
-public final class CircleImageCroppingAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingAssembly {
+public final class SelfieCropperAssemblyImpl: BasePaparazzoAssembly, SelfieCropperAssembly {
     
     public func module(
-        data: CircleImageCroppingData,
-        configure: (CircleImageCroppingModule) -> ()
+        data: SelfieCropperData,
+        configure: (SelfieCropperModule) -> ()
         ) -> UIViewController {
         
-        let interactor = CircleImageCroppingInteractorImpl(
+        let interactor = SelfieCropperInteractorImpl(
             image: data.photo.image,
             canvasSize: data.cropCanvasSize
         )
         
-        let viewController = CircleImageCroppingViewController()
+        let viewController = SelfieCropperViewController()
         
         let router = CircleImageCropperUIKitRouter(
             viewController: viewController
         )
         
-        let presenter = CircleImageCroppingPresenter(
+        let presenter = SelfieCropperPresenter(
             interactor: interactor,
             router: router
         )

@@ -1,6 +1,6 @@
 import ImageSource
 
-public protocol CircleImageCroppingModule: class {
+public protocol SelfieCropperModule: class {
     
     func dismissModule()
     

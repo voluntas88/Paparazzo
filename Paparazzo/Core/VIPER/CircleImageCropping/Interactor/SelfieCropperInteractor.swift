@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol CircleImageCroppingInteractor {
+protocol SelfieCropperInteractor {
     func canvasSize(completion: @escaping (CGSize) -> ())
     
     func imageWithParameters(completion: @escaping (_ original: ImageSource, _ preview: ImageSource?, _ parameters: ImageCroppingParameters?) -> ())

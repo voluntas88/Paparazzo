@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol CircleImageCroppingRouter: class {
+protocol SelfieCropperRouter: class {
     func focusOnCurrentModule()
     func dismissCurrentModule()
 }

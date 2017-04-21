@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol CircleImageCroppingViewInput: class {
+protocol SelfieCropperViewInput: class {
     func setConfirmButtonTitle(_: String)
     func setImage(_: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ())
     func setCroppingParameters(_: ImageCroppingParameters)
