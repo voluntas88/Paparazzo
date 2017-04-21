@@ -36,14 +36,14 @@ final class CircleImageCroppingViewController:
     
     // MARK: - CircleImageCroppingViewInput
     
-    var onConfirmButtonTap: ((CGImage?) -> ())? {
-        get { return circleImageCroppingView.onConfirmButtonTap }
-        set { circleImageCroppingView.onConfirmButtonTap = newValue }
+    var onConfirmTap: ((CGImage?) -> ())? {
+        get { return circleImageCroppingView.onConfirmTap }
+        set { circleImageCroppingView.onConfirmTap = newValue }
     }
     
-    var onCloseButtonTap: (() -> ())? {
-        get { return circleImageCroppingView.onCloseButtonTap }
-        set { circleImageCroppingView.onCloseButtonTap = newValue }
+    var onCloseTap: (() -> ())? {
+        get { return circleImageCroppingView.onCloseTap }
+        set { circleImageCroppingView.onCloseTap = newValue }
     }
     
     var onDiscardTap: (() -> ())? {
@@ -53,8 +53,8 @@ final class CircleImageCroppingViewController:
     
     var onCroppingParametersChange: ((ImageCroppingParameters) -> ())?
     
-    @nonobjc func setTitle(_ title: String) {
-        
+    func setConfirmButtonTitle(_ title: String) {
+        circleImageCroppingView.setConfirmButtonTitle(title)
     }
     
     func setImage(_ imageSource: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {

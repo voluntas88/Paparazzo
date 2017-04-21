@@ -82,13 +82,13 @@ final class ExamplePresenter {
                 module?.onItemsAdd = { [weak self] items in
                     guard let photo = items.first
                         else { return }
-                    self?.showSelfieCropper(photo: photo)
+                    self?.showSelfieCropperIn(rootModule: module, photo: photo)
                 }
             }
         )
     }
     
-    private func showSelfieCropper(photo: MediaPickerItem) {
+    private func showSelfieCropperIn(rootModule: MediaPickerModule?, photo: MediaPickerItem) {
         let data = CircleImageCroppingData(
             photo: photo,
             cropCanvasSize: cropCanvasSize
@@ -97,8 +97,14 @@ final class ExamplePresenter {
             data: data,
             configure: { module in
                 weak var module = module
-                module?.onDiscard = { [weak self] in
+                module?.onDiscard = {
                     module?.dismissModule()
+                }
+                module?.onClose = {
+                    rootModule?.dismissModule()
+                }
+                module?.onConfirm = { _ in
+                    rootModule?.dismissModule()
                 }
         })
     }

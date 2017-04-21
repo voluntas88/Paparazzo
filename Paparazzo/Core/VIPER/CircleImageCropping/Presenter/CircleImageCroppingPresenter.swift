@@ -18,8 +18,24 @@ final class CircleImageCroppingPresenter: CircleImageCroppingModule {
     
     func setUpView() {
         
+        view?.setConfirmButtonTitle("Готово")
+        
         view?.onDiscardTap = { [weak self] in
             self?.onDiscard?()
+        }
+        
+        view?.onCloseTap = { [weak self] in
+            self?.onClose?()
+        }
+        
+        view?.onConfirmTap = { [weak self] previewImage in
+            if let previewImage = previewImage {
+                self?.interactor.croppedImage(previewImage: previewImage) { image in
+                    self?.onConfirm?(image)
+                }
+            } else {
+                self?.onDiscard?()
+            }
         }
         
         interactor.canvasSize { [weak self] canvasSize in
@@ -38,6 +54,7 @@ final class CircleImageCroppingPresenter: CircleImageCroppingModule {
     }
     
     var onDiscard: (() -> ())?
+    var onClose: (() -> ())?
     var onConfirm: ((ImageSource) -> ())?
     
     func dismissModule() {

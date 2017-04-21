@@ -109,8 +109,8 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - CircleImageCroppingView
     
-    var onCloseButtonTap: (() -> ())?
-    var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())?
+    var onCloseTap: (() -> ())?
+    var onConfirmTap: ((_ previewImage: CGImage?) -> ())?
     
     var onDiscardTap: (() -> ())? {
         get { return controlsView.onDiscardTap }
@@ -133,6 +133,11 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         controlsView.setControlsEnabled(enabled)
     }
     
+    func setConfirmButtonTitle(_ title: String) {
+        confirmButton.setTitle(title, for: .normal)
+        confirmButton.size = CGSize(width: confirmButton.sizeThatFits().width, height: continueButtonHeight)
+    }
+    
     // MARK: - Private
     
     private func setupButtons() {
@@ -141,7 +146,7 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         closeButton.size = closeButtonSize
         closeButton.addTarget(
             self,
-            action: #selector(onCloseButtonTap(_:)),
+            action: #selector(onCloseTap(_:)),
             for: .touchUpInside
         )
         
@@ -150,17 +155,17 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         confirmButton.contentEdgeInsets = continueButtonContentInsets
         confirmButton.addTarget(
             self,
-            action: #selector(onConfirmButtonTap(_:)),
+            action: #selector(onConfirmTap(_:)),
             for: .touchUpInside
         )
     }
     
-    @objc private func onCloseButtonTap(_: UIButton) {
-        onCloseButtonTap?()
+    @objc private func onCloseTap(_: UIButton) {
+        onCloseTap?()
     }
     
-    @objc private func onConfirmButtonTap(_: UIButton) {
-        onConfirmButtonTap?(previewView.cropPreviewImage())
+    @objc private func onConfirmTap(_: UIButton) {
+        onConfirmTap?(previewView.cropPreviewImage())
     }
     
 }
