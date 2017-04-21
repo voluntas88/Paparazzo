@@ -26,6 +26,22 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
         }
     }
     
+    func showSelfieCropper(
+        data: MediaPickerData,
+        configure: (CircleImageCroppingModule) -> ()
+    ) {
+        pushViewControllerDerivedFrom { routerSeed in
+            
+            let assembly = mediaPickerAssemblyFactory.selfieCropperAssembly()
+            
+            return assembly.module(
+                data: data,
+                routerSeed: routerSeed,
+                configure: configure
+            )
+        }
+    }
+    
     func showPhotoLibrary(
         selectedItems: [PhotoLibraryItem],
         maxSelectedItemsCount: Int?,

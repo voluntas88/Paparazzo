@@ -231,6 +231,10 @@ final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewI
         mediaPickerView.setContinueButtonEnabled(enabled)
     }
     
+    func setContinueButtonVisible(_ visible: Bool) {
+        mediaPickerView.setContinueButtonVisible(visible)
+    }
+    
     func adjustForDeviceOrientation(_ orientation: DeviceOrientation) {
         UIView.animate(withDuration: 0.25) {
             self.mediaPickerView.adjustForDeviceOrientation(orientation)
@@ -270,10 +274,6 @@ final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewI
     
     func setCameraToggleButtonVisible(_ visible: Bool) {
         mediaPickerView.setCameraToggleButtonVisible(visible)
-    }
-    
-    func setContinueButtonVisible(_ visible: Bool) {
-        mediaPickerView.setContinueButtonVisible(visible)
     }
 
     func addItems(_ items: [MediaPickerItem], animated: Bool, completion: @escaping () -> ()) {

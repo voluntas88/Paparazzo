@@ -8,6 +8,11 @@ protocol ExampleRouter: class, RouterFocusable, RouterDismissable {
         configure: (MediaPickerModule) -> ()
     )
     
+    func showSelfieCropper(
+        data: MediaPickerData,
+        configure: (CircleImageCroppingModule) -> ()
+    )
+    
     func showPhotoLibrary(
         selectedItems: [PhotoLibraryItem],
         maxSelectedItemsCount: Int?,

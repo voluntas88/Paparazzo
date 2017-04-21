@@ -69,7 +69,6 @@ final class MediaPickerPresenter: MediaPickerModule {
         view?.setPhotoTitle("Фото 1")
         
         view?.setCameraControlsEnabled(false)
-        view?.setContinueButtonVisible(true)
         
         cameraModuleInput.getOutputParameters { [weak self] parameters in
             if let parameters = parameters {

@@ -1,10 +1,11 @@
-import ImageSource
+import Marshroute
 import UIKit
 
-public final class CircleImageCroppingAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingAssembly {
+public final class CircleImageCroppingMarshrouteAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingMarshrouteAssembly {
     
     public func module(
         data: MediaPickerData,
+        routerSeed: RouterSeed,
         configure: (CircleImageCroppingModule) -> ()
         ) -> UIViewController {
         
