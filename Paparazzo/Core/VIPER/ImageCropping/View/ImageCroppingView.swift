@@ -7,7 +7,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - Subviews
     
-    /// This view is shown to prevent blinking while image is loading
+    /// Вьюха, которая показывается до того, как будет доступна полная картинка для редактирования (чтобы избежать моргания)
     private let splashView = UIImageView()
     
     private let previewView = CroppingPreviewView()
