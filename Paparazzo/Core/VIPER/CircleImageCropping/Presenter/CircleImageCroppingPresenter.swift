@@ -31,7 +31,6 @@ final class CircleImageCroppingPresenter: CircleImageCroppingModule {
                 self?.view?.setControlsEnabled(true)
                 
                 if let croppingParameters = croppingParameters {
-                    
                     self?.view?.setCroppingParameters(croppingParameters)
                 }
             }

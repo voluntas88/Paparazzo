@@ -31,6 +31,12 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         addSubview(previewView)
         addSubview(overlayView)
         addSubview(controlsView)
+        addSubview(closeButton)
+        addSubview(confirmButton)
+        
+        setupButtons()
+        
+        overlayView.isUserInteractionEnabled = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,6 +47,36 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     
     func setTheme(_ theme: CircleImageCroppingUITheme) {
         controlsView.setTheme(theme)
+        
+        confirmButton.setTitleColor(theme.circleCropperConfirmButtonTitleColor, for: .normal)
+        confirmButton.titleLabel?.font = theme.circleCropperConfirmButtonTitleFont
+        
+        closeButton.setImage(theme.circleCropperCloseButtonIcon, for: .normal)
+        
+        confirmButton.setTitleColor(
+            theme.circleCropperConfirmButtonTitleColor,
+            for: .normal
+        )
+        confirmButton.setTitleColor(
+            theme.circleCropperConfirmButtonTitleHighlightedColor,
+            for: .highlighted
+        )
+        
+        let onePointSize = CGSize(width: 1, height: 1)
+        for button in [confirmButton, closeButton] {
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundNormalColor, imageSize: onePointSize),
+                for: .normal
+            )
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundHighlightedColor, imageSize: onePointSize),
+                for: .highlighted
+            )
+            button.setBackgroundImage(
+                UIImage.imageWithColor(theme.circleCropperButtonsBackgroundDisabledColor, imageSize: onePointSize),
+                for: .disabled
+            )
+        }
     }
     
     // MARK: - Layout
@@ -55,6 +91,20 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         controlsView.top = previewView.bottom
         controlsView.width = width
         controlsView.height = height - previewView.height
+        
+        closeButton.frame = CGRect(
+            x: 8,
+            y: 8,
+            width: closeButton.width,
+            height: closeButton.height
+        )
+        
+        confirmButton.frame = CGRect(
+            x: bounds.right - 8 - confirmButton.width,
+            y: 8,
+            width: confirmButton.width,
+            height: confirmButton.height
+        )
     }
     
     // MARK: - CircleImageCroppingView
@@ -73,6 +123,14 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     
     func setImage(_ imageSource: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {
         previewView.setImage(imageSource, previewImage: previewImage, completion: completion)
+    }
+    
+    func setCanvasSize(_ canvasSize: CGSize) {
+        previewView.setCanvasSize(canvasSize)
+    }
+    
+    func setControlsEnabled(_ enabled: Bool) {
+        controlsView.setControlsEnabled(enabled)
     }
     
     // MARK: - Private

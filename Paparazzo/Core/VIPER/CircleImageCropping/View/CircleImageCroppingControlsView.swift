@@ -53,6 +53,10 @@ final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
     
     var onDiscardTap: (() -> ())?
     
+    func setControlsEnabled(_ enabled: Bool) {
+        discardButton.isEnabled = enabled
+    }
+    
     // MARK: - Actions
     @objc private func onDiscardTap(_ sender: UIButton) {
         onDiscardTap?()

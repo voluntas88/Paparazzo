@@ -59,6 +59,15 @@ public struct PaparazzoUITheme:
     // MARK: - CircleImageCroppingUITheme
     
     public var circleCropperDiscardPhotoIcon = PaparazzoUITheme.image(named: "delete")
+    public var circleCropperCloseButtonIcon = PaparazzoUITheme.image(named: "bt-close")
+    
+    public var circleCropperButtonsBackgroundNormalColor = UIColor.white
+    public var circleCropperButtonsBackgroundHighlightedColor = UIColor(white: 1, alpha: 0.6)
+    public var circleCropperButtonsBackgroundDisabledColor = UIColor(white: 1, alpha: 0.6)
+    public var circleCropperConfirmButtonTitleColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
+    public var circleCropperConfirmButtonTitleHighlightedColor = UIColor(red: 0, green: 152.0/255, blue: 229.0/255, alpha: 1)
+    
+    public var circleCropperConfirmButtonTitleFont = UIFont.systemFont(ofSize: 17)
 
     // MARK: - Private
 

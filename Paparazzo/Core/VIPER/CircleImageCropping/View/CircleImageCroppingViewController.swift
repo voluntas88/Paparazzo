@@ -62,15 +62,15 @@ final class CircleImageCroppingViewController:
     }
     
     func setCanvasSize(_ canvasSize: CGSize) {
-        
-    }
-    
-    func setControlsEnabled(_ controlsEnabled: Bool) {
-        
+        circleImageCroppingView.setCanvasSize(canvasSize)
     }
     
     func setCroppingParameters(_ parameters: ImageCroppingParameters) {
-        
+        circleImageCroppingView.setCroppingParameters(parameters)
+    }
+    
+    func setControlsEnabled(_ enabled: Bool) {
+        circleImageCroppingView.setControlsEnabled(enabled)
     }
     
     // MARK: - UIThemeConfigurable
