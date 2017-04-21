@@ -1,6 +1,5 @@
+import ImageSource
 import Marshroute
-import UIKit
 
-final class CircleImageCroppingMarshrouteRouter: BaseRouter, PhotoLibraryRouter {
-    // MARK: - PhotoLibraryRouter
+final class CircleImageCroppingMarshrouteRouter: BaseRouter, CircleImageCroppingRouter {
 }

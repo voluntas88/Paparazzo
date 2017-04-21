@@ -8,13 +8,22 @@ public final class CircleImageCroppingAssemblyImpl: BasePaparazzoAssembly, Circl
         configure: (CircleImageCroppingModule) -> ()
         ) -> UIViewController {
         
-        let interactor = CircleImageCroppingInteractorImpl()
-        
-        let presenter = CircleImageCroppingPresenter(
-            interactor: interactor
+        let interactor = CircleImageCroppingInteractorImpl(
+            image: data.photo.image,
+            canvasSize: data.cropCanvasSize
         )
         
         let viewController = CircleImageCroppingViewController()
+        
+        let router = CircleImageCropperUIKitRouter(
+            viewController: viewController
+        )
+        
+        let presenter = CircleImageCroppingPresenter(
+            interactor: interactor,
+            router: router
+        )
+
         viewController.addDisposable(presenter)
         viewController.setTheme(theme)
         

@@ -21,6 +21,8 @@ final class ExamplePresenter {
     
     private var items: [MediaPickerItem] = []
     
+    private let cropCanvasSize = CGSize(width: 1280, height: 960)
+    
     // MARK: - Private
     
     private func setUpView() {
@@ -87,9 +89,17 @@ final class ExamplePresenter {
     }
     
     private func showSelfieCropper(photo: MediaPickerItem) {
-        let data = CircleImageCroppingData()
-        router.showSelfieCropper(data: data, configure: { module in
-            
+        let data = CircleImageCroppingData(
+            photo: photo,
+            cropCanvasSize: cropCanvasSize
+        )
+        router.showSelfieCropper(
+            data: data,
+            configure: { module in
+                weak var module = module
+                module?.onDiscard = { [weak self] in
+                    module?.dismissModule()
+                }
         })
     }
     
@@ -97,8 +107,6 @@ final class ExamplePresenter {
         
         var items = self.items
         items.append(contentsOf: remoteItems)
-
-        let cropCanvasSize = CGSize(width: 1280, height: 960)
         
         let data = MediaPickerData(
             items: items,

@@ -7,7 +7,7 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     
     private let overlayView = CircleMaskOverlayView()
     private let controlsView = CircleImageCroppingControlsView()
-    private let previewView = PhotoTweakView()
+    private let previewView = CroppingPreviewView()
     private let closeButton = UIButton()
     private let confirmButton = UIButton()
     
@@ -60,8 +60,17 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
     var onCloseButtonTap: (() -> ())?
     var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())?
     
+    var onDiscardTap: (() -> ())? {
+        get { return controlsView.onDiscardTap }
+        set { controlsView.onDiscardTap = newValue }
+    }
+    
     func setCroppingParameters(_ parameters: ImageCroppingParameters) {
         previewView.setCroppingParameters(parameters)
+    }
+    
+    func setImage(_ imageSource: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {
+        previewView.setImage(imageSource, previewImage: previewImage, completion: completion)
     }
     
     // MARK: - Private

@@ -10,7 +10,7 @@ protocol CircleImageCroppingViewInput: class {
     
     var onCloseButtonTap: (() -> ())? { get set }
     var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())? { get set }
-    var onRetakePhotoButtonTap: (() -> ())? { get set }
+    var onDiscardTap: (() -> ())? { get set }
 
     var onCroppingParametersChange: ((ImageCroppingParameters) -> ())? { get set }
 }

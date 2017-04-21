@@ -46,7 +46,10 @@ final class CircleImageCroppingViewController:
         set { circleImageCroppingView.onCloseButtonTap = newValue }
     }
     
-    var onRetakePhotoButtonTap: (() -> ())?
+    var onDiscardTap: (() -> ())? {
+        get { return circleImageCroppingView.onDiscardTap }
+        set { circleImageCroppingView.onDiscardTap = newValue }
+    }
     
     var onCroppingParametersChange: ((ImageCroppingParameters) -> ())?
     
@@ -55,7 +58,7 @@ final class CircleImageCroppingViewController:
     }
     
     func setImage(_ imageSource: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {
-        
+        circleImageCroppingView.setImage(imageSource, previewImage: previewImage, completion: completion)
     }
     
     func setCanvasSize(_ canvasSize: CGSize) {

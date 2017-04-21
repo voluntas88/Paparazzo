@@ -6,18 +6,18 @@ final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
     
     // MARK: - Subviews
     
-     private let deleteButton = UIButton(type: .custom)
+     private let discardButton = UIButton(type: .custom)
     
     // MARK: - Init
     
     init() {
         super.init(frame: .zero)
         
-        addSubview(deleteButton)
+        addSubview(discardButton)
         
-        deleteButton.addTarget(
+        discardButton.addTarget(
             self,
-            action: #selector(onDeleteTap(_:)),
+            action: #selector(onDiscardTap(_:)),
             for: .touchUpInside
         )
     }
@@ -31,30 +31,30 @@ final class CircleImageCroppingControlsView: UIView, UIThemeConfigurable {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        deleteButton.size = CGSize(
+        discardButton.size = CGSize(
             width: 30,
             height: 30
         )
         
-        deleteButton.centerX = centerX
-        deleteButton.bottom = height - 22
+        discardButton.centerX = centerX
+        discardButton.bottom = height - 22
     }
     
     // MARK: - UIThemeConfigurable
     
     func setTheme(_ theme: UIThemeType) {
-        deleteButton.setImage(
-            theme.circleCropperRetakePhotoIcon,
+        discardButton.setImage(
+            theme.circleCropperDiscardPhotoIcon,
             for: .normal
         )
     }
     
     // MARK: - CircleImageCroppingControlsView
     
-    var onDeleteTap: (() -> ())?
+    var onDiscardTap: (() -> ())?
     
     // MARK: - Actions
-    @objc private func onDeleteTap(_ sender: UIButton) {
-        onDeleteTap?()
+    @objc private func onDiscardTap(_ sender: UIButton) {
+        onDiscardTap?()
     }
 }

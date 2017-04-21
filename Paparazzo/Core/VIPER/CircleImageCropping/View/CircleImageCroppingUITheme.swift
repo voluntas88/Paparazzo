@@ -1,3 +1,3 @@
 public protocol CircleImageCroppingUITheme {
-    var circleCropperRetakePhotoIcon: UIImage? { get }
+    var circleCropperDiscardPhotoIcon: UIImage? { get }
 }

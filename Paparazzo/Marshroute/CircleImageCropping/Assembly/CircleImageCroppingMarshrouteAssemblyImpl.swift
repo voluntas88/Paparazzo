@@ -9,10 +9,18 @@ public final class CircleImageCroppingMarshrouteAssemblyImpl: BasePaparazzoAssem
         configure: (CircleImageCroppingModule) -> ()
         ) -> UIViewController {
         
-        let interactor = CircleImageCroppingInteractorImpl()
+        let interactor = CircleImageCroppingInteractorImpl(
+            image: data.photo.image,
+            canvasSize: data.cropCanvasSize
+        )
+        
+        let router = CircleImageCroppingMarshrouteRouter(
+            routerSeed: routerSeed
+        )
         
         let presenter = CircleImageCroppingPresenter(
-            interactor: interactor
+            interactor: interactor,
+            router: router
         )
         
         let viewController = CircleImageCroppingViewController()
