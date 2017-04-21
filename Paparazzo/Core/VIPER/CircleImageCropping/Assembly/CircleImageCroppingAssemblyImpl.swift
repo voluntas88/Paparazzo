@@ -4,7 +4,7 @@ import UIKit
 public final class CircleImageCroppingAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingAssembly {
     
     public func module(
-        data: MediaPickerData,
+        data: CircleImageCroppingData,
         configure: (CircleImageCroppingModule) -> ()
         ) -> UIViewController {
         

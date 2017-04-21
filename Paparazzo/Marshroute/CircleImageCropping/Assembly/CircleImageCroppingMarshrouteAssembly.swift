@@ -3,7 +3,7 @@ import UIKit
 
 public protocol CircleImageCroppingMarshrouteAssembly: class {
     func module(
-        data: MediaPickerData,
+        data: CircleImageCroppingData,
         routerSeed: RouterSeed,
         configure: (CircleImageCroppingModule) -> ())
         -> UIViewController

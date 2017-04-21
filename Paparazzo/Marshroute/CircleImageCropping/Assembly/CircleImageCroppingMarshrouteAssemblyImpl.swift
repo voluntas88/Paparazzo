@@ -4,7 +4,7 @@ import UIKit
 public final class CircleImageCroppingMarshrouteAssemblyImpl: BasePaparazzoAssembly, CircleImageCroppingMarshrouteAssembly {
     
     public func module(
-        data: MediaPickerData,
+        data: CircleImageCroppingData,
         routerSeed: RouterSeed,
         configure: (CircleImageCroppingModule) -> ()
         ) -> UIViewController {

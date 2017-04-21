@@ -77,11 +77,20 @@ final class ExamplePresenter {
                 module?.onFinish = { items in
                     module?.dismissModule()
                 }
-                module?.onItemsAdd = { items in
-                    module?.dismissModule()
+                module?.onItemsAdd = { [weak self] items in
+                    guard let photo = items.first
+                        else { return }
+                    self?.showSelfieCropper(photo: photo)
                 }
             }
         )
+    }
+    
+    private func showSelfieCropper(photo: MediaPickerItem) {
+        let data = CircleImageCroppingData()
+        router.showSelfieCropper(data: data, configure: { module in
+            
+        })
     }
     
     func showMediaPicker(remoteItems: [MediaPickerItem]) {
