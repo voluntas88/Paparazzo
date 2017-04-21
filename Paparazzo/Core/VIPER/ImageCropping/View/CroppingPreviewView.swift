@@ -17,7 +17,8 @@ final class CroppingPreviewView: UIView {
     init() {
         super.init(frame: .zero)
         
-        //backgroundColor = .white
+        previewView.setMaskVisible(false)
+        
         clipsToBounds = true
         
         addSubview(previewView)

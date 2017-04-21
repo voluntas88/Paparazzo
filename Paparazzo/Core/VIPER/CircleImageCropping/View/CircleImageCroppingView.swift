@@ -26,6 +26,8 @@ final class CircleImageCroppingView: UIView, UIThemeConfigurable {
         backgroundColor = .white
         clipsToBounds = true
         
+        previewView.setGridVisible(false)
+        
         addSubview(previewView)
         addSubview(overlayView)
         addSubview(controlsView)
