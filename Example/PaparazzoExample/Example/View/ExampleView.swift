@@ -54,9 +54,9 @@ final class ExampleView: UIView {
         photoLibraryButton.setTitle(title, for: .normal)
     }
     
-    var mediaPickerButtonTitle: String?
-    var maskCropperButtonTitle: String?
-    var photoLibraryButtonTitle: String?
+    var onShowMediaPickerButtonTap: (() -> ())?
+    var onCustomCropCameraButtonTap: (() -> ())?
+    var onShowPhotoLibraryButtonTap: (() -> ())?
     
     // MARK: - UIView
     

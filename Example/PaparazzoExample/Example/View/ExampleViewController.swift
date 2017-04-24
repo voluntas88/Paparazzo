@@ -26,15 +26,15 @@ final class ExampleViewController: UIViewController, ExampleViewInput {
     // MARK: - ExampleViewInput
     
     func setMediaPickerButtonTitle(_ title: String?) {
-        exampleView.setMediaPickerButtonTitle(title)
+        exampleView?.setMediaPickerButtonTitle(title)
     }
     
     func setMaskCropperButtonTitle(_ title: String?) {
-        exampleView.setMaskCropperButtonTitle(title)
+        exampleView?.setMaskCropperButtonTitle(title)
     }
     
     func setPhotoLibraryButtonTitle(_ title: String?) {
-        exampleView.setPhotoLibraryButtonTitle(title)
+        exampleView?.setPhotoLibraryButtonTitle(title)
     }
     
     var onShowMediaPickerButtonTap: (() -> ())? {
