@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class SelfieCropperInteractorImpl: SelfieCropperInteractor {
+final class MaskCropperInteractorImpl: MaskCropperInteractor {
     
     private let originalImage: ImageSource
     private let previewImage: ImageSource?

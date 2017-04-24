@@ -3,7 +3,7 @@ public final class AssemblyFactory:
     MediaPickerAssemblyFactory,
     PhotoLibraryAssemblyFactory,
     ImageCroppingAssemblyFactory,
-    SelfieCropperAssemblyFactory
+    MaskCropperAssemblyFactory
 {
     
     private let theme: PaparazzoUITheme
@@ -29,8 +29,8 @@ public final class AssemblyFactory:
         return PhotoLibraryAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
     
-    public func circleImageCroppingAssembly() -> SelfieCropperAssembly {
-        return SelfieCropperAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
+    public func circleImageCroppingAssembly() -> MaskCropperAssembly {
+        return MaskCropperAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
 
 }

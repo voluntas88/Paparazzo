@@ -1,4 +1,4 @@
 import ImageSource
 import Marshroute
 
-final class SelfieCropperMarshrouteRouter: BaseRouter, SelfieCropperRouter {}
+final class MaskCropperMarshrouteRouter: BaseRouter, MaskCropperRouter {}

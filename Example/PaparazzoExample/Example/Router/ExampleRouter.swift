@@ -8,9 +8,9 @@ protocol ExampleRouter: class, RouterFocusable, RouterDismissable {
         configure: (MediaPickerModule) -> ()
     )
     
-    func showSelfieCropper(
-        data: SelfieCropperData,
-        configure: (SelfieCropperModule) -> ()
+    func showMaskCropper(
+        data: MaskCropperData,
+        configure: (MaskCropperModule) -> ()
     )
     
     func showPhotoLibrary(

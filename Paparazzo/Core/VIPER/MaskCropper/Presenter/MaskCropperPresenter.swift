@@ -1,17 +1,17 @@
 import ImageSource
 
-final class SelfieCropperPresenter: SelfieCropperModule {
+final class MaskCropperPresenter: MaskCropperModule {
     
-    private let interactor: SelfieCropperInteractor
-    private let router: SelfieCropperRouter
+    private let interactor: MaskCropperInteractor
+    private let router: MaskCropperRouter
     
-    weak var view: SelfieCropperViewInput? {
+    weak var view: MaskCropperViewInput? {
         didSet {
             setUpView()
         }
     }
     
-    init(interactor: SelfieCropperInteractor, router: SelfieCropperRouter) {
+    init(interactor: MaskCropperInteractor, router: MaskCropperRouter) {
         self.interactor = interactor
         self.router = router
     }

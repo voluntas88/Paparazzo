@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol SelfieCropperViewInput: class {
+protocol MaskCropperViewInput: class {
     func setConfirmButtonTitle(_: String)
     func setImage(_: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ())
     func setCroppingParameters(_: ImageCroppingParameters)

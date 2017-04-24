@@ -26,13 +26,13 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
         }
     }
     
-    func showSelfieCropper(
-        data: SelfieCropperData,
-        configure: (SelfieCropperModule) -> ()
+    func showMaskCropper(
+        data: MaskCropperData,
+        configure: (MaskCropperModule) -> ()
     ) {
         pushViewControllerDerivedFrom { routerSeed in
             
-            let assembly = mediaPickerAssemblyFactory.selfieCropperAssembly()
+            let assembly = mediaPickerAssemblyFactory.maskCropperAssembly()
             
             return assembly.module(
                 data: data,

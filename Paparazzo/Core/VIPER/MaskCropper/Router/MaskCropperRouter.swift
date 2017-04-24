@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol SelfieCropperRouter: class {
+protocol MaskCropperRouter: class {
     func focusOnCurrentModule()
     func dismissCurrentModule()
 }

@@ -1,12 +1,12 @@
 import ImageSource
 import UIKit
 
-final class SelfieCropperView: UIView, UIThemeConfigurable {
+final class MaskCropperView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = SelfieCropperUITheme
+    typealias UIThemeType = MaskCropperUITheme
     
     private let overlayView = CircleMaskOverlayView()
-    private let controlsView = SelfieCropperControlsView()
+    private let controlsView = MaskCropperControlsView()
     private let previewView = CroppingPreviewView()
     private let closeButton = UIButton()
     private let confirmButton = UIButton()
@@ -45,35 +45,35 @@ final class SelfieCropperView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: SelfieCropperUITheme) {
+    func setTheme(_ theme: MaskCropperUITheme) {
         controlsView.setTheme(theme)
         
-        confirmButton.setTitleColor(theme.selfieCropperConfirmButtonTitleColor, for: .normal)
-        confirmButton.titleLabel?.font = theme.selfieCropperConfirmButtonTitleFont
+        confirmButton.setTitleColor(theme.maskCropperConfirmButtonTitleColor, for: .normal)
+        confirmButton.titleLabel?.font = theme.maskCropperConfirmButtonTitleFont
         
-        closeButton.setImage(theme.selfieCropperCloseButtonIcon, for: .normal)
+        closeButton.setImage(theme.maskCropperCloseButtonIcon, for: .normal)
         
         confirmButton.setTitleColor(
-            theme.selfieCropperConfirmButtonTitleColor,
+            theme.maskCropperConfirmButtonTitleColor,
             for: .normal
         )
         confirmButton.setTitleColor(
-            theme.selfieCropperConfirmButtonTitleHighlightedColor,
+            theme.maskCropperConfirmButtonTitleHighlightedColor,
             for: .highlighted
         )
         
         let onePointSize = CGSize(width: 1, height: 1)
         for button in [confirmButton, closeButton] {
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundNormalColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.maskCropperButtonsBackgroundNormalColor, imageSize: onePointSize),
                 for: .normal
             )
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundHighlightedColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.maskCropperButtonsBackgroundHighlightedColor, imageSize: onePointSize),
                 for: .highlighted
             )
             button.setBackgroundImage(
-                UIImage.imageWithColor(theme.selfieCropperButtonsBackgroundDisabledColor, imageSize: onePointSize),
+                UIImage.imageWithColor(theme.maskCropperButtonsBackgroundDisabledColor, imageSize: onePointSize),
                 for: .disabled
             )
         }
@@ -107,7 +107,7 @@ final class SelfieCropperView: UIView, UIThemeConfigurable {
         )
     }
     
-    // MARK: - SelfieCropperView
+    // MARK: - MaskCropperView
     
     var onCloseTap: (() -> ())?
     var onConfirmTap: ((_ previewImage: CGImage?) -> ())?

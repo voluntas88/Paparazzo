@@ -4,7 +4,7 @@ public struct PaparazzoUITheme:
     MediaPickerRootModuleUITheme,
     PhotoLibraryUITheme,
     ImageCroppingUITheme,
-    SelfieCropperUITheme
+    MaskCropperUITheme
 {
     
     public init() {}
@@ -56,18 +56,18 @@ public struct PaparazzoUITheme:
     public var cancelRotationTitleColor = UIColor.white
     public var cancelRotationTitleFont = UIFont.boldSystemFont(ofSize: 14)
     
-    // MARK: - SelfieCropperUITheme
+    // MARK: - MaskCropperUITheme
     
-    public var selfieCropperDiscardPhotoIcon = PaparazzoUITheme.image(named: "delete")
-    public var selfieCropperCloseButtonIcon = PaparazzoUITheme.image(named: "bt-close")
+    public var maskCropperDiscardPhotoIcon = PaparazzoUITheme.image(named: "delete")
+    public var maskCropperCloseButtonIcon = PaparazzoUITheme.image(named: "bt-close")
     
-    public var selfieCropperButtonsBackgroundNormalColor = UIColor.white
-    public var selfieCropperButtonsBackgroundHighlightedColor = UIColor(white: 1, alpha: 0.6)
-    public var selfieCropperButtonsBackgroundDisabledColor = UIColor(white: 1, alpha: 0.6)
-    public var selfieCropperConfirmButtonTitleColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
-    public var selfieCropperConfirmButtonTitleHighlightedColor = UIColor(red: 0, green: 152.0/255, blue: 229.0/255, alpha: 1)
+    public var maskCropperButtonsBackgroundNormalColor = UIColor.white
+    public var maskCropperButtonsBackgroundHighlightedColor = UIColor(white: 1, alpha: 0.6)
+    public var maskCropperButtonsBackgroundDisabledColor = UIColor(white: 1, alpha: 0.6)
+    public var maskCropperConfirmButtonTitleColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
+    public var maskCropperConfirmButtonTitleHighlightedColor = UIColor(red: 0, green: 152.0/255, blue: 229.0/255, alpha: 1)
     
-    public var selfieCropperConfirmButtonTitleFont = UIFont.systemFont(ofSize: 17)
+    public var maskCropperConfirmButtonTitleFont = UIFont.systemFont(ofSize: 17)
 
     // MARK: - Private
 

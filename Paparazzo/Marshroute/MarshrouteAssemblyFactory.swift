@@ -29,8 +29,8 @@ public final class MarshrouteAssemblyFactory:
         return PhotoLibraryMarshrouteAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
     
-    public func selfieCropperAssembly() -> SelfieCropperMarshrouteAssembly {
-        return SelfieCropperMarshrouteAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
+    public func maskCropperAssembly() -> MaskCropperMarshrouteAssembly {
+        return MaskCropperMarshrouteAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
 
 }

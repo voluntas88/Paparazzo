@@ -1,14 +1,14 @@
 import Marshroute
 import UIKit
 
-public protocol SelfieCropperMarshrouteAssembly: class {
+public protocol MaskCropperMarshrouteAssembly: class {
     func module(
-        data: SelfieCropperData,
+        data: MaskCropperData,
         routerSeed: RouterSeed,
-        configure: (SelfieCropperModule) -> ())
+        configure: (MaskCropperModule) -> ())
         -> UIViewController
 }
 
-public protocol SelfieCropperMarshrouteAssemblyFactory: class {
-    func circleImageCroppingMarshrouteAssembly() -> SelfieCropperAssembly
+public protocol MaskCropperMarshrouteAssemblyFactory: class {
+    func circleImageCroppingMarshrouteAssembly() -> MaskCropperAssembly
 }

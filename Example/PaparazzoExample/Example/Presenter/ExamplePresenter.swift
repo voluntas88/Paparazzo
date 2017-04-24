@@ -82,18 +82,18 @@ final class ExamplePresenter {
                 module?.onItemsAdd = { [weak self] items in
                     guard let photo = items.first
                         else { return }
-                    self?.showSelfieCropperIn(rootModule: module, photo: photo)
+                    self?.showMaskCropperIn(rootModule: module, photo: photo)
                 }
             }
         )
     }
     
-    private func showSelfieCropperIn(rootModule: MediaPickerModule?, photo: MediaPickerItem) {
-        let data = SelfieCropperData(
+    private func showMaskCropperIn(rootModule: MediaPickerModule?, photo: MediaPickerItem) {
+        let data = MaskCropperData(
             photo: photo,
             cropCanvasSize: cropCanvasSize
         )
-        router.showSelfieCropper(
+        router.showMaskCropper(
             data: data,
             configure: { module in
                 weak var module = module

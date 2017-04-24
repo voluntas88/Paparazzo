@@ -8,7 +8,7 @@ final class CircleMaskOverlayView: UIView {
         isOpaque = false
     }
     
-    func frameToCrop() -> CGRect {
+    private func frameToCrop() -> CGRect {
         let diameter = width - 16
         return CGRect(
             origin: CGPoint(

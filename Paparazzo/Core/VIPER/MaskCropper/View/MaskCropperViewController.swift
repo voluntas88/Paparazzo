@@ -1,14 +1,14 @@
 import ImageSource
 
-final class SelfieCropperViewController:
+final class MaskCropperViewController:
     PaparazzoViewController,
-    SelfieCropperViewInput,
+    MaskCropperViewInput,
     UIThemeConfigurable
 {
     
-    typealias UIThemeType = SelfieCropperUITheme
+    typealias UIThemeType = MaskCropperUITheme
     
-    private let circleImageCroppingView = SelfieCropperView()
+    private let circleImageCroppingView = MaskCropperView()
     
     // MARK: - UIViewController
     
@@ -34,7 +34,7 @@ final class SelfieCropperViewController:
         return .portrait
     }
     
-    // MARK: - SelfieCropperViewInput
+    // MARK: - MaskCropperViewInput
     
     var onConfirmTap: ((CGImage?) -> ())? {
         get { return circleImageCroppingView.onConfirmTap }
