@@ -9,9 +9,13 @@ public final class MaskCropperMarshrouteAssemblyImpl: BasePaparazzoAssembly, Mas
         configure: (MaskCropperModule) -> ()
         ) -> UIViewController {
         
-        let interactor = MaskCropperInteractorImpl(
+        let imageCroppingService = serviceFactory.imageCroppingService(
             image: data.photo.image,
             canvasSize: data.cropCanvasSize
+        )
+        
+        let interactor = MaskCropperInteractorImpl(
+            imageCroppingService: imageCroppingService
         )
         
         let router = MaskCropperMarshrouteRouter(

@@ -8,8 +8,15 @@ public final class ImageCroppingAssemblyImpl: BasePaparazzoAssembly , ImageCropp
         canvasSize: CGSize,
         configure: (ImageCroppingModule) -> ()
     ) -> UIViewController {
+        
+        let imageCroppingService = serviceFactory.imageCroppingService(
+            image: image,
+            canvasSize: canvasSize
+        )
 
-        let interactor = ImageCroppingInteractorImpl(image: image, canvasSize: canvasSize)
+        let interactor = ImageCroppingInteractorImpl(
+            imageCroppingService: imageCroppingService
+        )
 
         let presenter = ImageCroppingPresenter(
             interactor: interactor

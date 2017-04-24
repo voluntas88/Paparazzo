@@ -3,41 +3,23 @@ import UIKit
 
 final class MaskCropperInteractorImpl: MaskCropperInteractor {
     
-    private let originalImage: ImageSource
-    private let previewImage: ImageSource?
-    private var parameters: ImageCroppingParameters?
-    private let canvasSize: CGSize
+    private let imageCroppingService: ImageCroppingService
     
-    init(image: ImageSource, canvasSize: CGSize) {
-        
-        if let image = image as? CroppedImageSource {
-            originalImage = image.originalImage
-            parameters = image.croppingParameters
-        } else {
-            originalImage = image
-        }
-        
-        previewImage = image
-        
-        self.canvasSize = canvasSize
+    init(imageCroppingService: ImageCroppingService) {
+        self.imageCroppingService = imageCroppingService
     }
     
     // MARK: - CroppingInteractor
     
     func canvasSize(completion: @escaping (CGSize) -> ()) {
-        completion(canvasSize)
+        imageCroppingService.canvasSize(completion: completion)
     }
     
-    func imageWithParameters(completion: @escaping (_ original: ImageSource, _ preview: ImageSource?, _ parameters: ImageCroppingParameters?) -> ()) {
-        completion(originalImage, previewImage, parameters)
+    func imageWithParameters(completion: @escaping (ImageCroppingData) -> ()) {
+        imageCroppingService.imageWithParameters(completion: completion)
     }
     
     func croppedImage(previewImage: CGImage, completion: @escaping (CroppedImageSource) -> ()) {
-        completion(CroppedImageSource(
-            originalImage: originalImage,
-            sourceSize: canvasSize,
-            parameters: parameters,
-            previewImage: previewImage
-        ))
+        imageCroppingService.croppedImage(previewImage: previewImage, completion: completion)
     }
 }

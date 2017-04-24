@@ -42,11 +42,11 @@ final class MaskCropperPresenter: MaskCropperModule {
             self?.view?.setCanvasSize(canvasSize)
         }
         
-        interactor.imageWithParameters { [weak self] originalImage, previewImage, croppingParameters in
-            self?.view?.setImage(originalImage, previewImage: previewImage) {
+        interactor.imageWithParameters { [weak self] data in
+            self?.view?.setImage(data.originalImage, previewImage: data.previewImage) {
                 self?.view?.setControlsEnabled(true)
                 
-                if let croppingParameters = croppingParameters {
+                if let croppingParameters = data.parameters {
                     self?.view?.setCroppingParameters(croppingParameters)
                 }
             }
