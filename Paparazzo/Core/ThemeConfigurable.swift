@@ -1,4 +1,4 @@
-public protocol UIThemeConfigurable {
+public protocol ThemeConfigurable {
     associatedtype ThemeType
     
     func setTheme(_ theme: ThemeType)

@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class ImageCroppingViewController: PaparazzoViewController, ImageCroppingViewInput, UIThemeConfigurable {
+final class ImageCroppingViewController: PaparazzoViewController, ImageCroppingViewInput, ThemeConfigurable {
     
     typealias ThemeType = ImageCroppingUITheme
     
@@ -137,7 +137,7 @@ final class ImageCroppingViewController: PaparazzoViewController, ImageCroppingV
         imageCroppingView.setGridButtonSelected(selected)
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         imageCroppingView.setTheme(theme)

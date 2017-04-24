@@ -1,6 +1,6 @@
 import UIKit
 
-final class PhotoLibraryViewController: PaparazzoViewController, PhotoLibraryViewInput, UIThemeConfigurable {
+final class PhotoLibraryViewController: PaparazzoViewController, PhotoLibraryViewInput, ThemeConfigurable {
     
     typealias ThemeType = PhotoLibraryUITheme
     
@@ -30,7 +30,7 @@ final class PhotoLibraryViewController: PaparazzoViewController, PhotoLibraryVie
         return true
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         self.theme = theme

@@ -2,7 +2,7 @@ import JNWSpringAnimation
 import ImageSource
 import UIKit
 
-final class CameraControlsView: UIView, UIThemeConfigurable {
+final class CameraControlsView: UIView, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -155,7 +155,7 @@ final class CameraControlsView: UIView, UIThemeConfigurable {
         photoView.isUserInteractionEnabled = enabled
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         

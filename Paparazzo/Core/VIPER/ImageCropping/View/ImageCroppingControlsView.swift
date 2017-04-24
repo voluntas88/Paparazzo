@@ -1,6 +1,6 @@
 import UIKit
 
-final class ImageCroppingControlsView: UIView, UIThemeConfigurable {
+final class ImageCroppingControlsView: UIView, ThemeConfigurable {
     
     typealias ThemeType = ImageCroppingUITheme
     
@@ -97,7 +97,7 @@ final class ImageCroppingControlsView: UIView, UIThemeConfigurable {
         confirmButton.center = CGPoint(x: bounds.right - bounds.size.width * 0.25, y: discardButton.centerY)
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         rotationButton.setImage(theme.rotationIcon, for: .normal)

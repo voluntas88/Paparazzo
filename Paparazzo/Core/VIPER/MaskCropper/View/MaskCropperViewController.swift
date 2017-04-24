@@ -3,7 +3,7 @@ import ImageSource
 final class MaskCropperViewController:
     PaparazzoViewController,
     MaskCropperViewInput,
-    UIThemeConfigurable
+    ThemeConfigurable
 {
     
     typealias ThemeType = MaskCropperUITheme
@@ -90,7 +90,7 @@ final class MaskCropperViewController:
         
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         circleImageCroppingView.setTheme(theme)

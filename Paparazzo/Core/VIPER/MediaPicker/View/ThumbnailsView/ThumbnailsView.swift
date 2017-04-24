@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class ThumbnailsView: UIView, UICollectionViewDataSource, MediaRibbonLayoutDelegate, UIThemeConfigurable {
+final class ThumbnailsView: UIView, UICollectionViewDataSource, MediaRibbonLayoutDelegate, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -53,7 +53,7 @@ final class ThumbnailsView: UIView, UICollectionViewDataSource, MediaRibbonLayou
         collectionView.frame = bounds
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         self.theme = theme

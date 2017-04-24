@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class ImageCroppingView: UIView, UIThemeConfigurable {
+final class ImageCroppingView: UIView, ThemeConfigurable {
     
     typealias ThemeType = ImageCroppingUITheme
     
@@ -115,7 +115,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
         splashView.center = previewView.center
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         controlsView.setTheme(theme)

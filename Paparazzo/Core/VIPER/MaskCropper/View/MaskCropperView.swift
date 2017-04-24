@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class MaskCropperView: UIView, UIThemeConfigurable {
+final class MaskCropperView: UIView, ThemeConfigurable {
     
     typealias ThemeType = MaskCropperUITheme
     
@@ -48,7 +48,7 @@ final class MaskCropperView: UIView, UIThemeConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: MaskCropperUITheme) {
         controlsView.setTheme(theme)

@@ -1,6 +1,6 @@
 import UIKit
 
-final class AccessDeniedView: UIView, UIThemeConfigurable {
+final class AccessDeniedView: UIView, ThemeConfigurable {
     
     typealias ThemeType = AccessDeniedViewTheme
     
@@ -70,7 +70,7 @@ final class AccessDeniedView: UIView, UIThemeConfigurable {
         button.frame = frames.buttonFrame
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         titleLabel.font = theme.accessDeniedTitleFont

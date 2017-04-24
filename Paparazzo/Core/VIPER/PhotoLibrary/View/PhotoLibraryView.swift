@@ -1,6 +1,6 @@
 import UIKit
 
-final class PhotoLibraryView: UIView, UICollectionViewDelegateFlowLayout, UIThemeConfigurable {
+final class PhotoLibraryView: UIView, UICollectionViewDelegateFlowLayout, ThemeConfigurable {
     
     typealias ThemeType = PhotoLibraryUITheme
     
@@ -56,7 +56,7 @@ final class PhotoLibraryView: UIView, UICollectionViewDelegateFlowLayout, UIThem
         accessDeniedView.frame = bounds
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         self.theme = theme

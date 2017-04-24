@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewInput, UIThemeConfigurable {
+final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewInput, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -330,7 +330,7 @@ final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewI
         mediaPickerView.setPhotoLibraryButtonEnabled(enabled)
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         mediaPickerView.setTheme(theme)

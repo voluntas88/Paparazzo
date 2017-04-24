@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class MediaPickerView: UIView, UIThemeConfigurable {
+final class MediaPickerView: UIView, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -173,7 +173,7 @@ final class MediaPickerView: UIView, UIThemeConfigurable {
         flashView.frame = cameraFrame
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         

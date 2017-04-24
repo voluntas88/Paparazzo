@@ -1,6 +1,6 @@
 import UIKit
 
-final class MaskCropperControlsView: UIView, UIThemeConfigurable {
+final class MaskCropperControlsView: UIView, ThemeConfigurable {
     
     typealias ThemeType = MaskCropperUITheme
     
@@ -40,7 +40,7 @@ final class MaskCropperControlsView: UIView, UIThemeConfigurable {
         discardButton.bottom = height - 22
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         discardButton.setImage(

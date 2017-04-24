@@ -1,7 +1,7 @@
 import ImageSource
 import UIKit
 
-final class CameraView: UIView, CameraViewInput, UIThemeConfigurable {
+final class CameraView: UIView, CameraViewInput, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -99,7 +99,7 @@ final class CameraView: UIView, CameraViewInput, UIThemeConfigurable {
         }
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         accessDeniedView.setTheme(theme)

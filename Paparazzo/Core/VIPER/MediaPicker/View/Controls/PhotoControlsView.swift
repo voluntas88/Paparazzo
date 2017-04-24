@@ -1,6 +1,6 @@
 import UIKit
 
-final class PhotoControlsView: UIView, UIThemeConfigurable {
+final class PhotoControlsView: UIView, ThemeConfigurable {
     
     typealias ThemeType = MediaPickerRootModuleUITheme
     
@@ -50,7 +50,7 @@ final class PhotoControlsView: UIView, UIThemeConfigurable {
         }
     }
     
-    // MARK: - UIThemeConfigurable
+    // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
         removeButton.setImage(theme.removePhotoIcon, for: .normal)
