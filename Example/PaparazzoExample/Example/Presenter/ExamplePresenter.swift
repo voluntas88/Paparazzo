@@ -27,6 +27,10 @@ final class ExamplePresenter {
     
     private func setUpView() {
         
+        view?.setMediaPickerButtonTitle("Media Picker")
+        view?.setMaskCropperButtonTitle("Custom Crop Camera")
+        view?.setPhotoLibraryButtonTitle("Photo Library")
+        
         view?.onShowMediaPickerButtonTap = { [weak self] in
             self?.interactor.remoteItems { remoteItems in
                 self?.showMediaPicker(remoteItems: remoteItems)
@@ -51,14 +55,12 @@ final class ExamplePresenter {
             }
         }
         
-        view?.onShowSelfieCameraButtonTap = { [weak self] in
-            self?.showSelfieCamera()
+        view?.onCustomCropCameraButtonTap = { [weak self] in
+            self?.showCustomCropCamera()
         }
     }
     
-    func showSelfieCamera() {
-        let cropCanvasSize = CGSize(width: 1280, height: 960)
-        
+    func showCustomCropCamera() {
         let data = MediaPickerData(
             items: items,
             selectedItem: nil,

@@ -2,10 +2,6 @@ import UIKit
 
 final class ExampleView: UIView {
     
-    var onShowMediaPickerButtonTap: (() -> ())?
-    var onShowSelfieCameraButtonTap: (() -> ())?
-    var onShowPhotoLibraryButtonTap: (() -> ())?
-    
     private let mediaPickerButton = UIButton()
     private let maskCropperButton = UIButton()
     private let photoLibraryButton = UIButton()
@@ -15,7 +11,6 @@ final class ExampleView: UIView {
     init() {
         super.init(frame: .zero)
         
-        mediaPickerButton.setTitle("Show Media Picker", for: .normal)
         mediaPickerButton.addTarget(
             self,
             action: #selector(onShowMediaPickerButtonTap(_:)),
@@ -25,7 +20,7 @@ final class ExampleView: UIView {
         maskCropperButton.setTitle("Show Mask Cropper", for: .normal)
         maskCropperButton.addTarget(
             self,
-            action: #selector(onShowSelfieCameraButtonTap(_:)),
+            action: #selector(onCustomCropCameraButtonTap(_:)),
             for: .touchUpInside
         )
         
@@ -44,6 +39,24 @@ final class ExampleView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - ExampleView
+    
+    func setMediaPickerButtonTitle(_ title: String?) {
+        mediaPickerButton.setTitle(title, for: .normal)
+    }
+    
+    func setMaskCropperButtonTitle(_ title: String?) {
+        maskCropperButton.setTitle(title, for: .normal)
+    }
+    
+    func setPhotoLibraryButtonTitle(_ title: String?) {
+        photoLibraryButton.setTitle(title, for: .normal)
+    }
+    
+    var mediaPickerButtonTitle: String?
+    var maskCropperButtonTitle: String?
+    var photoLibraryButtonTitle: String?
     
     // MARK: - UIView
     
@@ -66,8 +79,8 @@ final class ExampleView: UIView {
         onShowMediaPickerButtonTap?()
     }
     
-    @objc private func onShowSelfieCameraButtonTap(_: UIButton) {
-        onShowSelfieCameraButtonTap?()
+    @objc private func onCustomCropCameraButtonTap(_: UIButton) {
+        onCustomCropCameraButtonTap?()
     }
     
     @objc private func onShowPhotoLibraryButtonTap(_: UIButton) {
