@@ -1,6 +1,7 @@
 import ImageSource
 
 protocol MaskCropperViewInput: class {
+    func setCroppingOverlayProvider(_: CroppingOverlayProvider)
     func setConfirmButtonTitle(_: String)
     func setImage(_: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ())
     func setCroppingParameters(_: ImageCroppingParameters)

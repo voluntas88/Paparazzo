@@ -89,9 +89,11 @@ final class ExamplePresenter {
     }
     
     private func showMaskCropperIn(rootModule: MediaPickerModule?, photo: MediaPickerItem) {
+        
         let data = MaskCropperData(
             photo: photo,
-            cropCanvasSize: cropCanvasSize
+            cropCanvasSize: cropCanvasSize,
+            overlayType: .heartShape
         )
         router.showMaskCropper(
             data: data,

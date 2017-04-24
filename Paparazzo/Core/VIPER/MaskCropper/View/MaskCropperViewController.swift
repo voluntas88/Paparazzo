@@ -8,7 +8,20 @@ final class MaskCropperViewController:
     
     typealias UIThemeType = MaskCropperUITheme
     
-    private let circleImageCroppingView = MaskCropperView()
+    private let circleImageCroppingView: MaskCropperView
+    
+    // MARK: - Init
+    
+    init(croppingOverlayProvider: CroppingOverlayProvider) {
+        circleImageCroppingView = MaskCropperView(
+            croppingOverlayProvider: croppingOverlayProvider)
+        
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UIViewController
     
@@ -71,6 +84,10 @@ final class MaskCropperViewController:
     
     func setControlsEnabled(_ enabled: Bool) {
         circleImageCroppingView.setControlsEnabled(enabled)
+    }
+    
+    func setCroppingOverlayProvider(_: CroppingOverlayProvider) {
+        
     }
     
     // MARK: - UIThemeConfigurable

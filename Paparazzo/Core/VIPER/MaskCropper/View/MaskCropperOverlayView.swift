@@ -1,25 +1,18 @@
-final class CircleMaskOverlayView: UIView {
+import UIKit
+
+final class MaskCropperOverlayView: UIView {
+    
+    private let croppingOverlayProvider: CroppingOverlayProvider
     
     // MARK: - Init
     
-    init() {
+    init(croppingOverlayProvider: CroppingOverlayProvider) {
+        
+        self.croppingOverlayProvider = croppingOverlayProvider
+        
         super.init(frame: .zero)
         
         isOpaque = false
-    }
-    
-    private func frameToCrop() -> CGRect {
-        let diameter = width - 16
-        return CGRect(
-            origin: CGPoint(
-                x: center.x - diameter / 2,
-                y: center.y - diameter / 2
-            ),
-            size: CGSize(
-                width: diameter,
-                height: diameter
-            )
-        )
     }
     
     // MARK: - Draw
@@ -33,10 +26,12 @@ final class CircleMaskOverlayView: UIView {
         context?.saveGState()
         context?.setBlendMode(.clear)
         
-        let frame = frameToCrop()
-        if rect.intersects(frame) {
+        let rectToCrop = croppingOverlayProvider.calculateRectToCrop(in: bounds)
+        if rect.intersects(rectToCrop) {
             context?.setFillColor(UIColor.clear.cgColor)
-            context?.fillEllipse(in: frame)
+            
+            context?.addPath(croppingOverlayProvider.croppingPath(in: rectToCrop))
+            context?.drawPath(using: .fill)
         }
         
         context?.restoreGState()

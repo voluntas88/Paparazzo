@@ -5,7 +5,7 @@ final class MaskCropperView: UIView, UIThemeConfigurable {
     
     typealias UIThemeType = MaskCropperUITheme
     
-    private let overlayView = CircleMaskOverlayView()
+    private let overlayView: MaskCropperOverlayView
     private let controlsView = MaskCropperControlsView()
     private let previewView = CroppingPreviewView()
     private let closeButton = UIButton()
@@ -20,8 +20,13 @@ final class MaskCropperView: UIView, UIThemeConfigurable {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(croppingOverlayProvider: CroppingOverlayProvider) {
+        
+        overlayView = MaskCropperOverlayView(
+            croppingOverlayProvider: croppingOverlayProvider
+        )
+        
+        super.init(frame: .zero)
         
         backgroundColor = .white
         clipsToBounds = true

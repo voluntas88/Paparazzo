@@ -7,7 +7,7 @@ final class ExampleView: UIView {
     var onShowPhotoLibraryButtonTap: (() -> ())?
     
     private let mediaPickerButton = UIButton()
-    private let selfieCameraButton = UIButton()
+    private let maskCropperButton = UIButton()
     private let photoLibraryButton = UIButton()
     
     // MARK: - Init
@@ -22,8 +22,8 @@ final class ExampleView: UIView {
             for: .touchUpInside
         )
         
-        selfieCameraButton.setTitle("Show Selfie Camera", for: .normal)
-        selfieCameraButton.addTarget(
+        maskCropperButton.setTitle("Show Mask Cropper", for: .normal)
+        maskCropperButton.addTarget(
             self,
             action: #selector(onShowSelfieCameraButtonTap(_:)),
             for: .touchUpInside
@@ -37,7 +37,7 @@ final class ExampleView: UIView {
         )
         
         addSubview(mediaPickerButton)
-        addSubview(selfieCameraButton)
+        addSubview(maskCropperButton)
         addSubview(photoLibraryButton)
     }
     
@@ -53,8 +53,8 @@ final class ExampleView: UIView {
         mediaPickerButton.sizeToFit()
         mediaPickerButton.center = CGPoint(x: bounds.midX, y: bounds.midY - 50)
         
-        selfieCameraButton.sizeToFit()
-        selfieCameraButton.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        maskCropperButton.sizeToFit()
+        maskCropperButton.center = CGPoint(x: bounds.midX, y: bounds.midY)
         
         photoLibraryButton.sizeToFit()
         photoLibraryButton.center = CGPoint(x: bounds.midX, y: bounds.midY + 50)
