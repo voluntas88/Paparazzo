@@ -3,7 +3,7 @@ import UIKit
 
 final class MaskCropperView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = MaskCropperUITheme
+    typealias ThemeType = MaskCropperUITheme
     
     private let overlayView: MaskCropperOverlayView
     private let controlsView = MaskCropperControlsView()

@@ -56,7 +56,7 @@ final class HeartShapeCroppingOverlayProvider: CroppingOverlayProvider {
         //Left Bottom Line
         path.close()
         
-        let transform = CGAffineTransform(translationX: 0, y: rect.centerY / 2 - rect.height / 2)
+        let transform = CGAffineTransform(translationX: 0, y: rect.centerY / 2 - 22.5)
         path.apply(transform)
         
         return path.cgPath

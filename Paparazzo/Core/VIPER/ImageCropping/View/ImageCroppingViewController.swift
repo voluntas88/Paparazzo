@@ -3,7 +3,7 @@ import UIKit
 
 final class ImageCroppingViewController: PaparazzoViewController, ImageCroppingViewInput, UIThemeConfigurable {
     
-    typealias UIThemeType = ImageCroppingUITheme
+    typealias ThemeType = ImageCroppingUITheme
     
     private let imageCroppingView = ImageCroppingView()
     
@@ -139,7 +139,7 @@ final class ImageCroppingViewController: PaparazzoViewController, ImageCroppingV
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         imageCroppingView.setTheme(theme)
     }
     

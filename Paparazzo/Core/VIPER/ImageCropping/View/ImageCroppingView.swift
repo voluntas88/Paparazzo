@@ -3,7 +3,7 @@ import UIKit
 
 final class ImageCroppingView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = ImageCroppingUITheme
+    typealias ThemeType = ImageCroppingUITheme
     
     // MARK: - Subviews
     
@@ -117,7 +117,7 @@ final class ImageCroppingView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         controlsView.setTheme(theme)
     }
     

@@ -2,7 +2,7 @@ import UIKit
 
 final class MaskCropperControlsView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = MaskCropperUITheme
+    typealias ThemeType = MaskCropperUITheme
     
     // MARK: - Subviews
     
@@ -42,7 +42,7 @@ final class MaskCropperControlsView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         discardButton.setImage(
             theme.maskCropperDiscardPhotoIcon,
             for: .normal

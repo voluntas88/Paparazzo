@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol MaskCropperInteractor {
+protocol MaskCropperInteractor: class {
     func canvasSize(completion: @escaping (CGSize) -> ())
     func imageWithParameters(completion: @escaping (_ original: ImageSource, _ preview: ImageSource?, _ parameters: ImageCroppingParameters?) -> ())
     func croppedImage(previewImage: CGImage, completion: @escaping (CroppedImageSource) -> ())

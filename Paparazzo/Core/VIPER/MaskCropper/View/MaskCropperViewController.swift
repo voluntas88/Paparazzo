@@ -6,7 +6,7 @@ final class MaskCropperViewController:
     UIThemeConfigurable
 {
     
-    typealias UIThemeType = MaskCropperUITheme
+    typealias ThemeType = MaskCropperUITheme
     
     private let circleImageCroppingView: MaskCropperView
     
@@ -92,7 +92,7 @@ final class MaskCropperViewController:
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         circleImageCroppingView.setTheme(theme)
     }
     

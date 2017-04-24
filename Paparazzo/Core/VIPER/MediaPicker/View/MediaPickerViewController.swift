@@ -3,7 +3,7 @@ import UIKit
 
 final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewInput, UIThemeConfigurable {
     
-    typealias UIThemeType = MediaPickerRootModuleUITheme
+    typealias ThemeType = MediaPickerRootModuleUITheme
     
     private var isBeingRotated: Bool = false
     private let mediaPickerView = MediaPickerView()
@@ -332,7 +332,7 @@ final class MediaPickerViewController: PaparazzoViewController, MediaPickerViewI
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         mediaPickerView.setTheme(theme)
     }
     

@@ -2,7 +2,7 @@ import UIKit
 
 final class PhotoControlsView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = MediaPickerRootModuleUITheme
+    typealias ThemeType = MediaPickerRootModuleUITheme
     
     // MARK: - Subviews
     
@@ -52,7 +52,7 @@ final class PhotoControlsView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         removeButton.setImage(theme.removePhotoIcon, for: .normal)
         cropButton.setImage(theme.cropPhotoIcon, for: .normal)
     }

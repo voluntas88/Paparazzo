@@ -1,5 +1,5 @@
 public protocol UIThemeConfigurable {
-    associatedtype UIThemeType
+    associatedtype ThemeType
     
-    func setTheme(_ theme: UIThemeType)
+    func setTheme(_ theme: ThemeType)
 }

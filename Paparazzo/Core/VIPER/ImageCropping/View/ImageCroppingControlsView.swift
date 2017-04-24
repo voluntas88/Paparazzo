@@ -2,7 +2,7 @@ import UIKit
 
 final class ImageCroppingControlsView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = ImageCroppingUITheme
+    typealias ThemeType = ImageCroppingUITheme
     
     // MARK: - Subviews
     
@@ -99,7 +99,7 @@ final class ImageCroppingControlsView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         rotationButton.setImage(theme.rotationIcon, for: .normal)
         gridButton.setImage(theme.gridIcon, for: .normal)
         gridButton.setImage(theme.gridSelectedIcon, for: .selected)

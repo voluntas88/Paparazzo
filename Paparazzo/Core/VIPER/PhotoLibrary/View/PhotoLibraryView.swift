@@ -2,7 +2,7 @@ import UIKit
 
 final class PhotoLibraryView: UIView, UICollectionViewDelegateFlowLayout, UIThemeConfigurable {
     
-    typealias UIThemeType = PhotoLibraryUITheme
+    typealias ThemeType = PhotoLibraryUITheme
     
     // MARK: - State
     
@@ -58,7 +58,7 @@ final class PhotoLibraryView: UIView, UICollectionViewDelegateFlowLayout, UIThem
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         self.theme = theme
         accessDeniedView.setTheme(theme)
     }

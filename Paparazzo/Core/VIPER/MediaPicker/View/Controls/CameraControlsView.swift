@@ -4,7 +4,7 @@ import UIKit
 
 final class CameraControlsView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = MediaPickerRootModuleUITheme
+    typealias ThemeType = MediaPickerRootModuleUITheme
     
     var onShutterButtonTap: (() -> ())?
     var onPhotoLibraryButtonTap: (() -> ())?
@@ -157,7 +157,7 @@ final class CameraControlsView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         
         self.theme = theme
 

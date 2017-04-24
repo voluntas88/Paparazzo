@@ -3,7 +3,7 @@ import UIKit
 
 final class MediaPickerView: UIView, UIThemeConfigurable {
     
-    typealias UIThemeType = MediaPickerRootModuleUITheme
+    typealias ThemeType = MediaPickerRootModuleUITheme
     
     // MARK: - Subviews
     
@@ -175,7 +175,7 @@ final class MediaPickerView: UIView, UIThemeConfigurable {
     
     // MARK: - UIThemeConfigurable
     
-    func setTheme(_ theme: UIThemeType) {
+    func setTheme(_ theme: ThemeType) {
         
         cameraControlsView.setTheme(theme)
         photoControlsView.setTheme(theme)
