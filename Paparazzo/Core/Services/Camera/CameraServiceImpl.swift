@@ -2,11 +2,6 @@ import AVFoundation
 import ImageIO
 import ImageSource
 
-public enum CameraType {
-    case back
-    case front
-}
-
 final class CameraServiceImpl: CameraService {
     
     // MARK: - Private types and properties
@@ -17,10 +12,12 @@ final class CameraServiceImpl: CameraService {
     private var output: AVCaptureStillImageOutput?
     private var backCamera: AVCaptureDevice?
     private var frontCamera: AVCaptureDevice?
-    private var activeCamera: AVCaptureDevice?
     
-    private let initialActiveCameraType: CameraType
-
+    private var activeCamera: AVCaptureDevice? {
+        return camera(for: activeCameraType)
+    }
+    
+    private var activeCameraType: CameraType
 
     // MARK: - Init
     
@@ -30,7 +27,7 @@ final class CameraServiceImpl: CameraService {
         backCamera = videoDevices?.filter({ $0.position == .back }).first
         frontCamera = videoDevices?.filter({ $0.position == .front }).first
         
-        self.initialActiveCameraType = initialActiveCameraType
+        self.activeCameraType = initialActiveCameraType
     }
     
     func getCaptureSession(completion: @escaping (AVCaptureSession?) -> ()) {
@@ -94,14 +91,6 @@ final class CameraServiceImpl: CameraService {
             
             try CameraServiceImpl.configureCamera(backCamera)
             
-            let activeCamera: AVCaptureDevice?
-            switch initialActiveCameraType {
-            case .back:
-                activeCamera = backCamera
-            case .front:
-                activeCamera = frontCamera
-            }
-            
             let input = try AVCaptureDeviceInput(device: activeCamera)
             
             let output = AVCaptureStillImageOutput()
@@ -116,7 +105,6 @@ final class CameraServiceImpl: CameraService {
             
             captureSession.startRunning()
             
-            self.activeCamera = activeCamera
             self.output = output
             self.captureSession = captureSession
             
@@ -145,7 +133,8 @@ final class CameraServiceImpl: CameraService {
         
         do {
             
-            let targetCamera = (activeCamera == backCamera) ? frontCamera : backCamera
+            let targetCameraType: CameraType = (activeCamera == backCamera) ? .front : .back
+            let targetCamera = camera(for: targetCameraType)
             let newInput = try AVCaptureDeviceInput(device: targetCamera)
             
             try captureSession.configure {
@@ -165,7 +154,7 @@ final class CameraServiceImpl: CameraService {
                 try CameraServiceImpl.configureCamera(targetCamera)
             }
             
-            activeCamera = targetCamera
+            activeCameraType = targetCameraType
             
         } catch {
             debugPrint("Couldn't toggle camera: \(error)")
@@ -251,7 +240,12 @@ final class CameraServiceImpl: CameraService {
             if let data = sampleBuffer.flatMap({ AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation($0) }) {
                 do {
                     try data.write(to: URL(fileURLWithPath: path), options: [.atomicWrite])
-                    completion(PhotoFromCamera(path: path))
+                    completion(
+                        PhotoFromCamera(
+                            path: path,
+                            cameraType: self.activeCameraType
+                        )
+                    )
                 } catch {
                     completion(nil)
                 }
@@ -300,4 +294,14 @@ final class CameraServiceImpl: CameraService {
             return .left
         }
     }
+    
+    private func camera(for cameraType: CameraType) -> AVCaptureDevice? {
+        switch cameraType {
+        case .back:
+            return backCamera
+        case .front:
+            return frontCamera
+        }
+    }
+    
 }

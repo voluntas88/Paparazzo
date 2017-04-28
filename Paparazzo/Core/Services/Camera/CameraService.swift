@@ -1,6 +1,11 @@
 import AVFoundation
 import ImageSource
 
+public enum CameraType {
+    case back
+    case front
+}
+
 protocol CameraService: class {
     
     var isFlashAvailable: Bool { get }
@@ -21,4 +26,5 @@ protocol CameraService: class {
 
 struct PhotoFromCamera {
     let path: String
+    let cameraType: CameraType
 }
