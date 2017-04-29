@@ -2,6 +2,11 @@ import AVFoundation
 import ImageIO
 import ImageSource
 
+public enum CameraType {
+    case back
+    case front
+}
+
 final class CameraServiceImpl: CameraService {
     
     // MARK: - Private types and properties
