@@ -1,6 +1,6 @@
 import ImageSource
 
-protocol ServiceFactory: CroppingOverlayProvidersFactory {
+protocol ServiceFactory: class {
     func deviceOrientationService() -> DeviceOrientationService
     func cameraService(initialActiveCameraType: CameraType) -> CameraService
     func photoLibraryLatestPhotoProvider() -> PhotoLibraryLatestPhotoProvider
@@ -19,18 +19,6 @@ final class ServiceFactoryImpl: ServiceFactory {
     
     func photoLibraryLatestPhotoProvider() -> PhotoLibraryLatestPhotoProvider {
         return PhotoLibraryLatestPhotoProviderImpl()
-    }
-    
-    func circleCroppingOverlayProvider() -> CroppingOverlayProvider {
-        return CircleCroppingOverlayProvider()
-    }
-    
-    func rectangleCroppingOverlayProvider(cornerRadius: CGFloat, margin: CGFloat) -> CroppingOverlayProvider {
-        return RectangleCroppingOverlayProvider(cornerRadius: cornerRadius, margin: margin)
-    }
-    
-    func heartShapeCroppingOverlayProvider() -> CroppingOverlayProvider {
-        return HeartShapeCroppingOverlayProvider()
     }
     
     func imageCroppingService(image: ImageSource, canvasSize: CGSize) -> ImageCroppingService {

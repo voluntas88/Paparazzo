@@ -25,15 +25,15 @@ final class ExampleViewController: UIViewController, ExampleViewInput {
     
     // MARK: - ExampleViewInput
     
-    func setMediaPickerButtonTitle(_ title: String?) {
+    func setMediaPickerButtonTitle(_ title: String) {
         exampleView?.setMediaPickerButtonTitle(title)
     }
     
-    func setMaskCropperButtonTitle(_ title: String?) {
+    func setMaskCropperButtonTitle(_ title: String) {
         exampleView?.setMaskCropperButtonTitle(title)
     }
     
-    func setPhotoLibraryButtonTitle(_ title: String?) {
+    func setPhotoLibraryButtonTitle(_ title: String) {
         exampleView?.setPhotoLibraryButtonTitle(title)
     }
     
@@ -47,8 +47,8 @@ final class ExampleViewController: UIViewController, ExampleViewInput {
         set { exampleView?.onShowPhotoLibraryButtonTap = newValue }
     }
     
-    var onCustomCropCameraButtonTap: (() -> ())? {
-        get { return exampleView?.onCustomCropCameraButtonTap }
-        set { exampleView?.onCustomCropCameraButtonTap = newValue }
+    var onMaskCropperButtonTap: (() -> ())? {
+        get { return exampleView?.onMaskCropperButtonTap }
+        set { exampleView?.onMaskCropperButtonTap = newValue }
     }
 }

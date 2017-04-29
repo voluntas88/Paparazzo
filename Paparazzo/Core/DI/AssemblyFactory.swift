@@ -29,7 +29,7 @@ public final class AssemblyFactory:
         return PhotoLibraryAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
     
-    public func circleImageCroppingAssembly() -> MaskCropperAssembly {
+    public func maskCropperAssembly() -> MaskCropperAssembly {
         return MaskCropperAssemblyImpl(theme: theme, serviceFactory: serviceFactory)
     }
 

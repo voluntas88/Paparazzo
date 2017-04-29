@@ -3,6 +3,8 @@ import ImageSource
 
 final class ExamplePresenter {
     
+    // MARK: - Dependencies
+    
     private let interactor: ExampleInteractor
     private let router: ExampleRouter
     
@@ -25,10 +27,12 @@ final class ExamplePresenter {
     
     // MARK: - Private
     
+    private let croppingOverlayProvidersFactory = Paparazzo.CroppingOverlayProvidersFactoryImpl()
+    
     private func setUpView() {
         
         view?.setMediaPickerButtonTitle("Media Picker")
-        view?.setMaskCropperButtonTitle("Custom Crop Camera")
+        view?.setMaskCropperButtonTitle("Mask Cropper")
         view?.setPhotoLibraryButtonTitle("Photo Library")
         
         view?.onShowMediaPickerButtonTap = { [weak self] in
@@ -55,12 +59,12 @@ final class ExamplePresenter {
             }
         }
         
-        view?.onCustomCropCameraButtonTap = { [weak self] in
-            self?.showCustomCropCamera()
+        view?.onMaskCropperButtonTap = { [weak self] in
+            self?.showMaskCropperCamera()
         }
     }
     
-    func showCustomCropCamera() {
+    func showMaskCropperCamera() {
         let data = MediaPickerData(
             items: items,
             selectedItem: nil,
@@ -94,11 +98,11 @@ final class ExamplePresenter {
         
         let data = MaskCropperData(
             photo: photo,
-            cropCanvasSize: cropCanvasSize,
-            overlayType: .heartShape
+            cropCanvasSize: cropCanvasSize
         )
         router.showMaskCropper(
             data: data,
+            croppingOverlayProvider: croppingOverlayProvidersFactory.heartShapeCroppingOverlayProvider(),
             configure: { module in
                 weak var module = module
                 module?.onDiscard = {

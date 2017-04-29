@@ -10,6 +10,7 @@ protocol ExampleRouter: class, RouterFocusable, RouterDismissable {
     
     func showMaskCropper(
         data: MaskCropperData,
+        croppingOverlayProvider: CroppingOverlayProvider,
         configure: (MaskCropperModule) -> ()
     )
     

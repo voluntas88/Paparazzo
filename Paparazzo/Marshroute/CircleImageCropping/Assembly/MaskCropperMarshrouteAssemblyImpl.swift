@@ -5,6 +5,7 @@ public final class MaskCropperMarshrouteAssemblyImpl: BasePaparazzoAssembly, Mas
     
     public func module(
         data: MaskCropperData,
+        croppingOverlayProvider: CroppingOverlayProvider,
         routerSeed: RouterSeed,
         configure: (MaskCropperModule) -> ()
         ) -> UIViewController {
@@ -28,7 +29,7 @@ public final class MaskCropperMarshrouteAssemblyImpl: BasePaparazzoAssembly, Mas
         )
         
         let viewController = MaskCropperViewController(
-            croppingOverlayProvider: croppingOverlayProvider(overlayType: data.overlayType)
+            croppingOverlayProvider: croppingOverlayProvider
         )
         viewController.addDisposable(presenter)
         viewController.setTheme(theme)
@@ -39,17 +40,5 @@ public final class MaskCropperMarshrouteAssemblyImpl: BasePaparazzoAssembly, Mas
         
         return viewController
     }
-    
-    private func croppingOverlayProvider(overlayType: OverlayType) -> CroppingOverlayProvider {
-        switch overlayType {
-        case .circle:
-            return serviceFactory.circleCroppingOverlayProvider()
-        case .rectangle(let cornerRadius, let margin):
-            return serviceFactory.rectangleCroppingOverlayProvider(cornerRadius: cornerRadius, margin: margin)
-        case .heartShape:
-            return serviceFactory.heartShapeCroppingOverlayProvider()
-        case .custom(let provider):
-            return provider
-        }
-    }
+
 }

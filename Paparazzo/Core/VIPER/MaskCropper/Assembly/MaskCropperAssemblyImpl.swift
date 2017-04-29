@@ -5,6 +5,7 @@ public final class MaskCropperAssemblyImpl: BasePaparazzoAssembly, MaskCropperAs
     
     public func module(
         data: MaskCropperData,
+        croppingOverlayProvider: CroppingOverlayProvider,
         configure: (MaskCropperModule) -> ()
         ) -> UIViewController {
         
@@ -18,7 +19,7 @@ public final class MaskCropperAssemblyImpl: BasePaparazzoAssembly, MaskCropperAs
         )
         
         let viewController = MaskCropperViewController(
-            croppingOverlayProvider: croppingOverlayProvider(overlayType: data.overlayType)
+            croppingOverlayProvider: croppingOverlayProvider
         )
         
         let router = CircleImageCropperUIKitRouter(
@@ -40,16 +41,4 @@ public final class MaskCropperAssemblyImpl: BasePaparazzoAssembly, MaskCropperAs
         return viewController
     }
     
-    private func croppingOverlayProvider(overlayType: OverlayType) -> CroppingOverlayProvider {
-        switch overlayType {
-        case .circle:
-            return serviceFactory.circleCroppingOverlayProvider()
-        case .rectangle(let cornerRadius, let margin):
-            return serviceFactory.rectangleCroppingOverlayProvider(cornerRadius: cornerRadius, margin: margin)
-        case .heartShape:
-            return serviceFactory.heartShapeCroppingOverlayProvider()
-        case .custom(let provider):
-            return provider
-        }
-    }
 }

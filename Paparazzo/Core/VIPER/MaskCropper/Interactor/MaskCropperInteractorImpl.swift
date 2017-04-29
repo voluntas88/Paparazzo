@@ -1,5 +1,4 @@
 import ImageSource
-import UIKit
 
 final class MaskCropperInteractorImpl: MaskCropperInteractor {
     

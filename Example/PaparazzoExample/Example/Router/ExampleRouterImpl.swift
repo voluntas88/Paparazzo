@@ -28,6 +28,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
     
     func showMaskCropper(
         data: MaskCropperData,
+        croppingOverlayProvider: CroppingOverlayProvider,
         configure: (MaskCropperModule) -> ()
     ) {
         pushViewControllerDerivedFrom { routerSeed in
@@ -36,6 +37,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
             
             return assembly.module(
                 data: data,
+                croppingOverlayProvider: croppingOverlayProvider,
                 routerSeed: routerSeed,
                 configure: configure
             )

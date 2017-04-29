@@ -245,12 +245,7 @@ final class CameraServiceImpl: CameraService {
             if let data = sampleBuffer.flatMap({ AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation($0) }) {
                 do {
                     try data.write(to: URL(fileURLWithPath: path), options: [.atomicWrite])
-                    completion(
-                        PhotoFromCamera(
-                            path: path,
-                            cameraType: self.activeCameraType
-                        )
-                    )
+                    completion(PhotoFromCamera(path: path))
                 } catch {
                     completion(nil)
                 }

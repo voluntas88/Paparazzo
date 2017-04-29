@@ -20,7 +20,7 @@ final class ExampleView: UIView {
         maskCropperButton.setTitle("Show Mask Cropper", for: .normal)
         maskCropperButton.addTarget(
             self,
-            action: #selector(onCustomCropCameraButtonTap(_:)),
+            action: #selector(onMaskCropperButtonTap(_:)),
             for: .touchUpInside
         )
         
@@ -42,20 +42,20 @@ final class ExampleView: UIView {
     
     // MARK: - ExampleView
     
-    func setMediaPickerButtonTitle(_ title: String?) {
+    func setMediaPickerButtonTitle(_ title: String) {
         mediaPickerButton.setTitle(title, for: .normal)
     }
     
-    func setMaskCropperButtonTitle(_ title: String?) {
+    func setMaskCropperButtonTitle(_ title: String) {
         maskCropperButton.setTitle(title, for: .normal)
     }
     
-    func setPhotoLibraryButtonTitle(_ title: String?) {
+    func setPhotoLibraryButtonTitle(_ title: String) {
         photoLibraryButton.setTitle(title, for: .normal)
     }
     
     var onShowMediaPickerButtonTap: (() -> ())?
-    var onCustomCropCameraButtonTap: (() -> ())?
+    var onMaskCropperButtonTap: (() -> ())?
     var onShowPhotoLibraryButtonTap: (() -> ())?
     
     // MARK: - UIView
@@ -79,8 +79,8 @@ final class ExampleView: UIView {
         onShowMediaPickerButtonTap?()
     }
     
-    @objc private func onCustomCropCameraButtonTap(_: UIButton) {
-        onCustomCropCameraButtonTap?()
+    @objc private func onMaskCropperButtonTap(_: UIButton) {
+        onMaskCropperButtonTap?()
     }
     
     @objc private func onShowPhotoLibraryButtonTap(_: UIButton) {

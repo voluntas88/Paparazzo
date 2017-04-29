@@ -4,6 +4,7 @@ import UIKit
 public protocol MaskCropperMarshrouteAssembly: class {
     func module(
         data: MaskCropperData,
+        croppingOverlayProvider: CroppingOverlayProvider,
         routerSeed: RouterSeed,
         configure: (MaskCropperModule) -> ())
         -> UIViewController
