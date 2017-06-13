@@ -30,6 +30,22 @@ final class PhotoLibraryViewController: PaparazzoViewController, PhotoLibraryVie
         return true
     }
     
+    override open var shouldAutorotate: Bool {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return .all
+        } else {
+            return .portrait
+        }
+    }
+    
     // MARK: - ThemeConfigurable
     
     func setTheme(_ theme: ThemeType) {
