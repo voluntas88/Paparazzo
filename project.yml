@@ -5,7 +5,7 @@ options:
     iOS: 9.0
 targets:
   Paparazzo:
-    type: application
+    type: framework
     platform: iOS
     sources: 
       - Paparazzo/Assets

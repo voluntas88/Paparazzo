@@ -62,7 +62,7 @@
 		BF_329880011060 /* AccessDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_363429668120 /* AccessDeniedView.swift */; };
 		BF_332773121381 /* MediaPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_140789118171 /* MediaPickerView.swift */; };
 		BF_339111675323 /* ImageSizeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_556870294893 /* ImageSizeOption.swift */; };
-		BF_340297373476 = {isa = PBXBuildFile; fileRef = FR_219330173781 /* Paparazzo.app */; };
+		BF_340297373476 = {isa = PBXBuildFile; fileRef = FR_219330173781 /* Paparazzo.framework */; };
 		BF_342792133844 /* ScannerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_737877274337 /* ScannerModule.swift */; };
 		BF_344097779235 /* ImageCroppingAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_774093191056 /* ImageCroppingAssemblyImpl.swift */; };
 		BF_346362306672 /* MaskCropperOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_488503520421 /* MaskCropperOverlayView.swift */; };
@@ -116,7 +116,7 @@
 		BF_569977513346 /* ScannerUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_382281093924 /* ScannerUIKitRouter.swift */; };
 		BF_570007886536 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_524129957287 /* CameraInteractor.swift */; };
 		BF_577411615737 /* InfoMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_236764730515 /* InfoMessageView.swift */; };
-		BF_580079175755 = {isa = PBXBuildFile; fileRef = FR_728827980900 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_580079175755 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_728827980900 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_591224897937 /* PhotoLibraryV2InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_402504444605 /* PhotoLibraryV2InteractorImpl.swift */; };
 		BF_604625824711 /* PhotoLibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_198607909943 /* PhotoLibraryPresenter.swift */; };
 		BF_607957824271 /* HeartShapeCroppingOverlayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_887655970990 /* HeartShapeCroppingOverlayProvider.swift */; };
@@ -160,7 +160,7 @@
 		BF_715380651872 /* DeviceOrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_226903187149 /* DeviceOrientationService.swift */; };
 		BF_715548462457 /* MaskCropperUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_753396283081 /* MaskCropperUITheme.swift */; };
 		BF_715563103984 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_410645050443 /* Alamofire.framework */; };
-		BF_716376354714 = {isa = PBXBuildFile; fileRef = FR_132447873072 /* CIContext+XCode8Workaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_716376354714 /* CIContext+XCode8Workaround.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_132447873072 /* CIContext+XCode8Workaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_717987319698 /* PhotoLibraryV2UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_529746055519 /* PhotoLibraryV2UITheme.swift */; };
 		BF_720951703807 /* RemoteImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_872064269984 /* RemoteImageRequestOperation.swift */; };
 		BF_728553381100 /* CGImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448564092156 /* CGImageExtensions.swift */; };
@@ -237,7 +237,7 @@
 		FR_198607909943 /* PhotoLibraryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPresenter.swift; sourceTree = "<group>"; };
 		FR_201461349613 /* PhotoLibraryCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCameraView.swift; sourceTree = "<group>"; };
 		FR_217703386629 /* InfoMessageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMessageViewFactory.swift; sourceTree = "<group>"; };
-		FR_219330173781 /* Paparazzo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Paparazzo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_219330173781 /* Paparazzo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Paparazzo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_219767291746 /* MaskCropperRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskCropperRouter.swift; sourceTree = "<group>"; };
 		FR_220314684049 /* PhotoLibraryV2Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryV2Layout.swift; sourceTree = "<group>"; };
 		FR_226903187149 /* DeviceOrientationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationService.swift; sourceTree = "<group>"; };
@@ -1218,7 +1218,7 @@
 		G_8620238527590 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FR_219330173781 /* Paparazzo.app */,
+				FR_219330173781 /* Paparazzo.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1271,6 +1271,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		HBP_21933017378 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_580079175755 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h in Headers */,
+				BF_716376354714 /* CIContext+XCode8Workaround.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		NT_219330173781 /* Paparazzo */ = {
 			isa = PBXNativeTarget;
@@ -1278,8 +1290,8 @@
 			buildPhases = (
 				SBP_21933017378 /* Sources */,
 				RBP_21933017378 /* Resources */,
+				HBP_21933017378 /* Headers */,
 				FBP_21933017378 /* Frameworks */,
-				SSBP_2992754769 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -1287,8 +1299,8 @@
 			);
 			name = Paparazzo;
 			productName = Paparazzo;
-			productReference = FR_219330173781 /* Paparazzo.app */;
-			productType = "com.apple.product-type.application";
+			productReference = FR_219330173781 /* Paparazzo.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -1326,29 +1338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		SSBP_2992754769 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/JNWSpringAnimation.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/JNWSpringAnimation.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		SBP_21933017378 /* Sources */ = {
@@ -1633,34 +1622,48 @@
 		BC_686875230543 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = avito.Paparazzo;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		BC_779055338645 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = avito.Paparazzo;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
