@@ -1,5 +1,4 @@
 import Foundation
-import ImageSource
 import CoreGraphics
 
 protocol ImageCroppingInteractor: class {

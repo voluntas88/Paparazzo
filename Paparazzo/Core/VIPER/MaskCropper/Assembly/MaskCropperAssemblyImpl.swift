@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 public final class MaskCropperAssemblyImpl: BasePaparazzoAssembly, MaskCropperAssembly {

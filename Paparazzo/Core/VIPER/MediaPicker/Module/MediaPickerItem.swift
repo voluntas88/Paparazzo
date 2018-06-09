@@ -1,4 +1,3 @@
-import ImageSource
 import Foundation
 
 /// Главная модель, представляющая фотку в пикере

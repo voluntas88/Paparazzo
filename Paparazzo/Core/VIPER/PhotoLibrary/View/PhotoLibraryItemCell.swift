@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 final class PhotoLibraryItemCell: PhotoCollectionViewCell, Customizable {

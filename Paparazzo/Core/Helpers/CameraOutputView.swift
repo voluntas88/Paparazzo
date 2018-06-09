@@ -1,5 +1,4 @@
 import AVFoundation
-import ImageSource
 import UIKit
 
 public final class CameraOutputView: UIView {

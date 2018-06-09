@@ -1,5 +1,4 @@
 import AVFoundation
-import ImageSource
 
 /// Delete `@objc` when the problem in Swift will be resolved
 /// https://bugs.swift.org/browse/SR-55

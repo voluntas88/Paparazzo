@@ -1,4 +1,3 @@
-import ImageSource
 import CoreGraphics
 
 public struct MaskCropperData {

@@ -12,27 +12,28 @@
 		BF_118386414099 /* MaskCropperViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_477307542413 /* MaskCropperViewInput.swift */; };
 		BF_119512066889 /* ImageCroppingInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_344842480472 /* ImageCroppingInteractorImpl.swift */; };
 		BF_128484522580 /* CameraInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_745604593428 /* CameraInteractorImpl.swift */; };
-		BF_134426800912 /* ImageRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_241575612174 /* ImageRequestResult.swift */; };
 		BF_136795793747 /* PhotoLibraryV2ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_235586037370 /* PhotoLibraryV2ViewInput.swift */; };
+		BF_137718081840 /* AlamofireCachingImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_764524652149 /* AlamofireCachingImageDownloader.swift */; };
 		BF_138337680210 /* PhotoLibraryV2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_747138520049 /* PhotoLibraryV2Presenter.swift */; };
-		BF_139333132887 /* ImageRequestIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_237925211974 /* ImageRequestIdentifiable.swift */; };
 		BF_145752034867 /* RotationSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_157653130175 /* RotationSliderView.swift */; };
 		BF_148060892078 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_307482481894 /* CollectionViewDataSource.swift */; };
 		BF_149288173248 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_643378793067 /* ImageStorage.swift */; };
 		BF_149434803577 /* CroppingOverlayProvidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_740381665532 /* CroppingOverlayProvidersFactory.swift */; };
 		BF_150925286836 /* ThemeConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_902367677064 /* ThemeConfigurable.swift */; };
-		BF_157927353714 /* ImageSizeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_556870294893 /* ImageSizeOption.swift */; };
 		BF_162644345642 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_749677750953 /* ServiceFactory.swift */; };
 		BF_163235633530 /* PaparazzoFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_595390913498 /* PaparazzoFacade.swift */; };
 		BF_163348107488 /* MaskCropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_879873910741 /* MaskCropperViewController.swift */; };
 		BF_164613842552 /* PaparazzoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_709256353982 /* PaparazzoViewController.swift */; };
 		BF_176405374659 /* JNWSpringAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_477183659944 /* JNWSpringAnimation.framework */; };
 		BF_179926115484 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_888930741190 /* PhotoLibraryViewController.swift */; };
+		BF_183569264900 /* UIImageSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_156412000703 /* UIImageSourceView.swift */; };
+		BF_184139409921 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_567281519829 /* RemoteImageSource.swift */; };
 		BF_188096766035 /* PhotoLibraryV2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_810155434569 /* PhotoLibraryV2View.swift */; };
 		BF_196281227013 /* PhotoLibraryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_527872103255 /* PhotoLibraryItemCell.swift */; };
 		BF_205223726223 /* ImageCroppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_827517688307 /* ImageCroppingView.swift */; };
 		BF_205606363143 /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_571461150708 /* PhotoPreviewCell.swift */; };
 		BF_209869469207 /* ImageCroppingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_791873179511 /* ImageCroppingAssembly.swift */; };
+		BF_213157065939 /* ThreadSafeIntGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_347860714566 /* ThreadSafeIntGenerator.swift */; };
 		BF_215639230149 /* PhotoLibraryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_715424920401 /* PhotoLibraryTitleView.swift */; };
 		BF_215926436189 /* PhotoLibraryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_846034694251 /* PhotoLibraryAssembly.swift */; };
 		BF_218903778302 /* CameraAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_544208660498 /* CameraAssembly.swift */; };
@@ -43,9 +44,7 @@
 		BF_231414875970 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_504212118369 /* Filter.swift */; };
 		BF_231584805763 /* MediaPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_524226929905 /* MediaPickerData.swift */; };
 		BF_244910814502 /* CaptureSessionPreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_431352198449 /* CaptureSessionPreviewService.swift */; };
-		BF_256534625817 /* ImageRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_623414830018 /* ImageRequestOptions.swift */; };
 		BF_256909297400 /* ImageCroppingControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_402042603627 /* ImageCroppingControlsView.swift */; };
-		BF_257292707824 /* LocalImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_518436852590 /* LocalImageRequestOperation.swift */; };
 		BF_259761089092 /* CameraOutputGLKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_460252782771 /* CameraOutputGLKView.swift */; };
 		BF_265041059655 /* SingleObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_815264584979 /* SingleObjectCache.swift */; };
 		BF_273438405432 /* CameraThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_785181448913 /* CameraThumbnailCell.swift */; };
@@ -53,16 +52,16 @@
 		BF_276019926964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_903825583341 /* Assets.xcassets */; };
 		BF_276495694381 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_908546305931 /* Localization.swift */; };
 		BF_277415139510 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_904819315881 /* CameraView.swift */; };
-		BF_291134338280 /* UIImageSourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_572885584665 /* UIImageSourceCollectionViewCell.swift */; };
+		BF_286232651005 /* UIImage+InitializableWithCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_457902252286 /* UIImage+InitializableWithCGImage.swift */; };
 		BF_292360371786 /* MaskCropperData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_584194859503 /* MaskCropperData.swift */; };
-		BF_292622921484 /* AlamofireCachingImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_764524652149 /* AlamofireCachingImageDownloader.swift */; };
 		BF_298298532068 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = VG_767433784470 /* Localizable.strings */; };
+		BF_310531238886 /* ImageRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_623414830018 /* ImageRequestOptions.swift */; };
 		BF_318351794888 /* ImageCroppingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_683224054652 /* ImageCroppingInteractor.swift */; };
 		BF_318953257105 /* MediaPickerUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_650624101539 /* MediaPickerUIKitRouter.swift */; };
-		BF_320539954896 /* UIImageSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_156412000703 /* UIImageSourceView.swift */; };
 		BF_322741259954 /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_184994956885 /* AspectRatio.swift */; };
 		BF_329880011060 /* AccessDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_363429668120 /* AccessDeniedView.swift */; };
 		BF_332773121381 /* MediaPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_140789118171 /* MediaPickerView.swift */; };
+		BF_339111675323 /* ImageSizeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_556870294893 /* ImageSizeOption.swift */; };
 		BF_340297373476 = {isa = PBXBuildFile; fileRef = FR_219330173781 /* Paparazzo.framework */; };
 		BF_342792133844 /* ScannerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_737877274337 /* ScannerModule.swift */; };
 		BF_344097779235 /* ImageCroppingAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_774093191056 /* ImageCroppingAssemblyImpl.swift */; };
@@ -73,72 +72,68 @@
 		BF_353145428018 /* PhotoLibraryV2Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_692160347195 /* PhotoLibraryV2Assembly.swift */; };
 		BF_353872724305 /* MaskCropperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_519550073228 /* MaskCropperPresenter.swift */; };
 		BF_358000493831 /* ImageCroppingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_891609435312 /* ImageCroppingViewInput.swift */; };
-		BF_359787013277 = {isa = PBXBuildFile; fileRef = FR_623743121024 /* ImageSource.framework */; };
 		BF_368367472100 /* InfoMessageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_217703386629 /* InfoMessageViewFactory.swift */; };
 		BF_370006638100 /* PhotoLibraryCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_201461349613 /* PhotoLibraryCameraView.swift */; };
 		BF_371268432946 /* MediaRibbonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_156107698515 /* MediaRibbonDataSource.swift */; };
 		BF_371858766559 /* PhotoLibraryV2UIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_673895551640 /* PhotoLibraryV2UIKitRouter.swift */; };
 		BF_378443822130 /* PhotoLibraryV2Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_220314684049 /* PhotoLibraryV2Layout.swift */; };
 		BF_378968265402 /* PaparazzoUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_456577863050 /* PaparazzoUITheme.swift */; };
+		BF_379828194269 /* CIContext+XCode8Workaround.m in Sources */ = {isa = PBXBuildFile; fileRef = "FR_132447873072-1" /* CIContext+XCode8Workaround.m */; };
 		BF_380148068948 /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_818581713743 /* PhotoLibraryView.swift */; };
 		BF_383152845990 /* MediaPickerViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_266188937758 /* MediaPickerViewInput.swift */; };
 		BF_387485483317 /* PhotoLibraryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_809531225500 /* PhotoLibraryInteractor.swift */; };
-		BF_400348413119 /* ImageDeliveryMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_830401885287 /* ImageDeliveryMode.swift */; };
+		BF_395175836343 /* UIImageSourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_572885584665 /* UIImageSourceCollectionViewCell.swift */; };
 		BF_410282753550 /* PhotoLibraryLatestPhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_104047837425 /* PhotoLibraryLatestPhotoProvider.swift */; };
-		BF_415261850123 /* CIContext+XCode8Workaround.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_132447873072 /* CIContext+XCode8Workaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_412952166251 /* ImageRequestIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_237925211974 /* ImageRequestIdentifiable.swift */; };
 		BF_416866270138 /* ScannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_344632686798 /* ScannerData.swift */; };
 		BF_422121306525 /* ImageCroppingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_905354442397 /* ImageCroppingPresenter.swift */; };
 		BF_425600440839 /* WeakWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_903342449962 /* WeakWrapper.swift */; };
 		BF_426028930016 /* PhotoLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_577268562023 /* PhotoLibraryRouter.swift */; };
-		BF_431492429369 /* SharedQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_910441687837 /* SharedQueues.swift */; };
 		BF_434287460182 /* PhotoLibraryUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_709604621089 /* PhotoLibraryUIKitRouter.swift */; };
 		BF_446496102664 /* PhotoLibraryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_869076043279 /* PhotoLibraryModule.swift */; };
+		BF_447432911726 /* LocalImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_178334301547 /* LocalImageSource.swift */; };
 		BF_452318136765 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_609832192986 /* CameraViewInput.swift */; };
 		BF_452336270188 /* MaskCropperUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_776489187008 /* MaskCropperUIKitRouter.swift */; };
 		BF_458858542849 /* MainCameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_793826086786 /* MainCameraCell.swift */; };
 		BF_464547658833 /* FocusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_539461519415 /* FocusIndicator.swift */; };
+		BF_464881455401 /* GCDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_440727754756 /* GCDAdditions.swift */; };
 		BF_466176139439 /* PhotoLibraryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_552440525080 /* PhotoLibraryViewInput.swift */; };
 		BF_466544958158 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448988342721 /* CameraService.swift */; };
 		BF_470144082789 /* MediaPickerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_826355329107 /* MediaPickerModule.swift */; };
 		BF_484650454053 /* PhotoLibraryV2AssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_639368239885 /* PhotoLibraryV2AssemblyImpl.swift */; };
 		BF_487701351526 /* ImageCroppingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_506421179469 /* ImageCroppingModule.swift */; };
-		BF_489707460695 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_106478369419 /* ImageSource.swift */; };
-		BF_491415682603 /* CIContext+XCode8Workaround.m in Sources */ = {isa = PBXBuildFile; fileRef = "FR_132447873072-1" /* CIContext+XCode8Workaround.m */; };
+		BF_488649875866 /* UIImageView+ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_903473977605 /* UIImageView+ImageSource.swift */; };
 		BF_502295477007 /* MediaPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_513439938816 /* MediaPickerViewController.swift */; };
 		BF_504311090690 /* MaskCropperAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_662072950741 /* MaskCropperAssembly.swift */; };
 		BF_506536494524 /* ScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_393164151725 /* ScannerPresenter.swift */; };
 		BF_513295337186 /* RightIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_327447690684 /* RightIconButton.swift */; };
-		BF_522253135063 /* UIImageOrientation+ExifOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_302362898589 /* UIImageOrientation+ExifOrientation.swift */; };
 		BF_526689413050 /* CameraModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_410962677633 /* CameraModuleInput.swift */; };
 		BF_528998213907 /* ScannerViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_388067016944 /* ScannerViewInput.swift */; };
-		BF_529971535040 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_130774298384 /* AlamofireImage.framework */; };
 		BF_532444629640 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_684583442437 /* PhotoCollectionViewCell.swift */; };
 		BF_533318521830 /* PhotoLibraryV2Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_694056440722 /* PhotoLibraryV2Interactor.swift */; };
 		BF_542165629328 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_492874345889 /* GridView.swift */; };
-		BF_559600495375 /* CGImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_698932089465 /* CGImageWrapper.swift */; };
-		BF_560064747986 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_567281519829 /* RemoteImageSource.swift */; };
 		BF_561700160604 /* CGAffineTransformExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_350175834806 /* CGAffineTransformExtensions.swift */; };
 		BF_569977513346 /* ScannerUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_382281093924 /* ScannerUIKitRouter.swift */; };
 		BF_570007886536 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_524129957287 /* CameraInteractor.swift */; };
 		BF_577411615737 /* InfoMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_236764730515 /* InfoMessageView.swift */; };
 		BF_580079175755 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_728827980900 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF_587461382553 /* InitializableWithCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_341756893378 /* InitializableWithCGImage.swift */; };
 		BF_591224897937 /* PhotoLibraryV2InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_402504444605 /* PhotoLibraryV2InteractorImpl.swift */; };
 		BF_604625824711 /* PhotoLibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_198607909943 /* PhotoLibraryPresenter.swift */; };
 		BF_607957824271 /* HeartShapeCroppingOverlayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_887655970990 /* HeartShapeCroppingOverlayProvider.swift */; };
 		BF_610690995474 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_157121973064 /* ScannerViewController.swift */; };
 		BF_613713724887 /* UIDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_765676110558 /* UIDeviceExtensions.swift */; };
 		BF_615154414958 /* MaskCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_259118080663 /* MaskCropperView.swift */; };
-		BF_621446157932 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_410645050443 /* Alamofire.framework */; };
-		BF_625416360369 /* ImageSource in Frameworks */ = {isa = PBXBuildFile; fileRef = "FR_623743121024-1" /* ImageSource */; };
+		BF_618991531109 /* ImageDeliveryMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_830401885287 /* ImageDeliveryMode.swift */; };
 		BF_627149031426 /* AccessibilityId.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_794290346075 /* AccessibilityId.swift */; };
-		BF_631063057594 /* RemoteImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_872064269984 /* RemoteImageRequestOperation.swift */; };
+		BF_630830398525 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_130774298384 /* AlamofireImage.framework */; };
 		BF_633154063746 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_313063145004 /* AVFoundationExtensions.swift */; };
+		BF_633479315256 /* ImageRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_407396749329 /* ImageRequestId.swift */; };
 		BF_633755515259 /* MaskCropperModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_395765232829 /* MaskCropperModule.swift */; };
 		BF_634935669587 /* MaskCropperAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_849762902975 /* MaskCropperAssemblyImpl.swift */; };
 		BF_644680349165 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_624131791303 /* Promise.swift */; };
 		BF_652031566706 /* InfoMessageViewAnimatorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_276487878660 /* InfoMessageViewAnimatorBehavior.swift */; };
 		BF_652299453655 /* ImageCroppingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_316616172125 /* ImageCroppingService.swift */; };
+		BF_653451846121 /* CachingImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_566064724696 /* CachingImageDownloader.swift */; };
 		BF_656394822207 /* ScannerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_865843145136 /* ScannerAssembly.swift */; };
 		BF_658117807659 /* MediaItemThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_728599330367 /* MediaItemThumbnailCell.swift */; };
 		BF_661707930621 /* UIScrollView+ScrollToDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_699520328897 /* UIScrollView+ScrollToDirection.swift */; };
@@ -148,33 +143,39 @@
 		BF_668345206380 /* AccessDeniedUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_289618861714 /* AccessDeniedUITheme.swift */; };
 		BF_670682965691 /* PhotoLibraryV2Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_686834281233 /* PhotoLibraryV2Data.swift */; };
 		BF_672005339910 /* PaparazzoPickerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_101390248226 /* PaparazzoPickerModule.swift */; };
-		BF_673459399616 /* CachingImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_566064724696 /* CachingImageDownloader.swift */; };
 		BF_676551995776 /* InfoMessageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_655418827971 /* InfoMessageAnimator.swift */; };
 		BF_676900268086 /* ScannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_743755054837 /* ScannerInteractor.swift */; };
+		BF_681257775009 /* InitializableWithCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_341756893378 /* InitializableWithCGImage.swift */; };
 		BF_686666153394 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_591753046204 /* UIView+Layout.swift */; };
-		BF_687131046950 /* RemoteImageSource+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_800758530968 /* RemoteImageSource+AlamofireImage.swift */; };
 		BF_689456289534 /* PhotoLibraryV2Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_725816122753 /* PhotoLibraryV2Module.swift */; };
 		BF_694922910253 /* ScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_289790665971 /* ScannerRouter.swift */; };
+		BF_698104632791 /* SharedQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_910441687837 /* SharedQueues.swift */; };
 		BF_699338453942 /* MediaPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_483070935986 /* MediaPickerRouter.swift */; };
 		BF_699680941698 /* CroppedImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_142235320015 /* CroppedImageSource.swift */; };
 		BF_708370390860 /* AssemblyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_986410301531 /* AssemblyFactory.swift */; };
 		BF_710599731588 /* ScannerModuleUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_436484991653 /* ScannerModuleUITheme.swift */; };
 		BF_711156662380 /* MaskCropperRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_219767291746 /* MaskCropperRouter.swift */; };
 		BF_714270052310 /* ButtonWithActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_737247419304 /* ButtonWithActivity.swift */; };
+		BF_714655175595 /* RemoteImageSource+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_800758530968 /* RemoteImageSource+AlamofireImage.swift */; };
 		BF_715380651872 /* DeviceOrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_226903187149 /* DeviceOrientationService.swift */; };
 		BF_715548462457 /* MaskCropperUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_753396283081 /* MaskCropperUITheme.swift */; };
+		BF_715563103984 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_410645050443 /* Alamofire.framework */; };
+		BF_716376354714 /* CIContext+XCode8Workaround.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_132447873072 /* CIContext+XCode8Workaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_717987319698 /* PhotoLibraryV2UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_529746055519 /* PhotoLibraryV2UITheme.swift */; };
+		BF_720951703807 /* RemoteImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_872064269984 /* RemoteImageRequestOperation.swift */; };
+		BF_728553381100 /* CGImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448564092156 /* CGImageExtensions.swift */; };
 		BF_742596441106 /* BaseUIKitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_514546465268 /* BaseUIKitRouter.swift */; };
 		BF_746259299982 /* ScannerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_283648216979 /* ScannerAssemblyImpl.swift */; };
 		BF_753180410782 /* MediaPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_721660992031 /* MediaPickerInteractor.swift */; };
 		BF_756007451134 /* MediaPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_708253866717 /* MediaPickerItem.swift */; };
-		BF_757863788654 /* UIImageView+ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_903473977605 /* UIImageView+ImageSource.swift */; };
 		BF_767020692501 /* MediaPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_659503152782 /* MediaPickerPresenter.swift */; };
 		BF_767191789298 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_865570845469 /* CGRectExtensions.swift */; };
 		BF_771147707044 /* CroppingPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_822488242177 /* CroppingPreviewView.swift */; };
+		BF_776610167723 /* LocalImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_518436852590 /* LocalImageRequestOperation.swift */; };
 		BF_777711055332 /* CircleCroppingOverlayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_764677665628 /* CircleCroppingOverlayProvider.swift */; };
 		BF_783613237546 /* PhotoLibraryV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_537687392878 /* PhotoLibraryV2ViewController.swift */; };
 		BF_788790064517 /* MediaPickerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_906576095646 /* MediaPickerAssembly.swift */; };
+		BF_794932405458 /* CGImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_698932089465 /* CGImageWrapper.swift */; };
 		BF_796624475747 /* PhotoLibraryAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_717103876809 /* PhotoLibraryAssemblyImpl.swift */; };
 		BF_802599605996 /* BasePaparazzoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_112645129218 /* BasePaparazzoAssembly.swift */; };
 		BF_802873678233 /* ThumbnailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_619273199777 /* ThumbnailsView.swift */; };
@@ -182,34 +183,31 @@
 		BF_807254010379 /* RectangleCroppingOverlayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_371805728480 /* RectangleCroppingOverlayProvider.swift */; };
 		BF_808730124495 /* ImageSource+BackwardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_913807500378 /* ImageSource+BackwardCompatibility.swift */; };
 		BF_810247126196 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_400809422164 /* UIKitExtensions.swift */; };
+		BF_810445371965 /* ImageRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_241575612174 /* ImageRequestResult.swift */; };
+		BF_812933032683 /* PHAssetImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_863538512854 /* PHAssetImageSource.swift */; };
 		BF_817812414728 /* PhotoTweakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_816757113989 /* PhotoTweakView.swift */; };
 		BF_822196052539 /* InfoMessageViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_770503889148 /* InfoMessageViewInput.swift */; };
 		BF_822404577661 /* MaskCropperControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_119056800742 /* MaskCropperControlsView.swift */; };
-		BF_831432617287 /* CGImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448564092156 /* CGImageExtensions.swift */; };
 		BF_831707609817 /* PhotoLibraryAlbumsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_871513232185 /* PhotoLibraryAlbumsTableView.swift */; };
-		BF_847188111700 /* ImageRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_407396749329 /* ImageRequestId.swift */; };
+		BF_842808435165 /* UIImageOrientation+ExifOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_302362898589 /* UIImageOrientation+ExifOrientation.swift */; };
 		BF_847918336021 /* CameraOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_276208159529 /* CameraOutputView.swift */; };
 		BF_852864501083 /* ThumbnailsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_899989419293 /* ThumbnailsViewLayout.swift */; };
-		BF_855119726448 /* LocalImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_178334301547 /* LocalImageSource.swift */; };
 		BF_855821989690 /* PhotoLibraryToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_774913523743 /* PhotoLibraryToolbar.swift */; };
 		BF_856061472018 /* ImageCroppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_648786371508 /* ImageCroppingViewController.swift */; };
 		BF_859715391457 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_396438573356 /* FloatExtensions.swift */; };
 		BF_860009295283 /* MaskCropperInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_732244815815 /* MaskCropperInteractor.swift */; };
 		BF_863920650588 /* PhotoLibraryUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_385729258286 /* PhotoLibraryUITheme.swift */; };
+		BF_864961954847 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_106478369419 /* ImageSource.swift */; };
 		BF_872891415373 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FR_728827981296 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.m */; };
 		BF_877643324904 /* PhotoLibraryItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_805317521763 /* PhotoLibraryItemsService.swift */; };
 		BF_885359329142 /* ImageCroppingUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_372859614647 /* ImageCroppingUITheme.swift */; };
-		BF_885423380802 /* GCDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_440727754756 /* GCDAdditions.swift */; };
 		BF_886664896264 /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_833258977276 /* CameraPresenter.swift */; };
-		BF_886884151775 /* PHAssetImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_863538512854 /* PHAssetImageSource.swift */; };
-		BF_890397119341 /* ThreadSafeIntGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_347860714566 /* ThreadSafeIntGenerator.swift */; };
 		BF_892948988666 /* CameraAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_805042412877 /* CameraAssemblyImpl.swift */; };
 		BF_907173527871 /* MaskCropperInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_571329177366 /* MaskCropperInteractorImpl.swift */; };
 		BF_908609039610 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_695102291040 /* ArrayExtensions.swift */; };
 		BF_910577614467 /* CroppingOverlayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_502685776048 /* CroppingOverlayProvider.swift */; };
 		BF_915091391878 /* PhotoControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_699323142919 /* PhotoControlsView.swift */; };
 		BF_916525272978 /* UIView+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_636219604333 /* UIView+SafeAreaInsets.swift */; };
-		BF_918743224214 /* UIImage+InitializableWithCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_457902252286 /* UIImage+InitializableWithCGImage.swift */; };
 		BF_920397320490 /* MediaPickerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_490271806961 /* MediaPickerAssemblyImpl.swift */; };
 		BF_921954561112 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_535548862678 /* CameraControlsView.swift */; };
 		BF_942916905897 /* PhotoLibraryV2TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_551398743592 /* PhotoLibraryV2TitleView.swift */; };
@@ -333,8 +331,6 @@
 		FR_609832192986 /* CameraViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
 		FR_619273199777 /* ThumbnailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsView.swift; sourceTree = "<group>"; };
 		FR_623414830018 /* ImageRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestOptions.swift; sourceTree = "<group>"; };
-		FR_623743121024 /* ImageSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"FR_623743121024-1" /* ImageSource */ = {isa = PBXFileReference; path = ImageSource; sourceTree = "<group>"; };
 		FR_624131791303 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		FR_636219604333 /* UIView+SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SafeAreaInsets.swift"; sourceTree = "<group>"; };
 		FR_639368239885 /* PhotoLibraryV2AssemblyImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryV2AssemblyImpl.swift; sourceTree = "<group>"; };
@@ -435,16 +431,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF_176405374659 /* JNWSpringAnimation.framework in Frameworks */,
-				BF_625416360369 /* ImageSource in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBP_62374312102 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_621446157932 /* Alamofire.framework in Frameworks */,
-				BF_529971535040 /* AlamofireImage.framework in Frameworks */,
+				BF_715563103984 /* Alamofire.framework in Frameworks */,
+				BF_630830398525 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +539,6 @@
 			isa = PBXGroup;
 			children = (
 				G_2883690153011 /* Carthage */,
-				"FR_623743121024-1" /* ImageSource */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1231,7 +1218,6 @@
 		G_8620238527590 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FR_623743121024 /* ImageSource.framework */,
 				FR_219330173781 /* Paparazzo.framework */,
 			);
 			name = Products;
@@ -1291,14 +1277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF_580079175755 /* AvitoMediaPicker_ObjCExceptionCatcherHelper.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		HBP_62374312102 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_415261850123 /* CIContext+XCode8Workaround.h in Headers */,
+				BF_716376354714 /* CIContext+XCode8Workaround.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1323,23 +1302,6 @@
 			productReference = FR_219330173781 /* Paparazzo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		NT_623743121024 /* ImageSource */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CL_623743121024 /* Build configuration list for PBXNativeTarget "ImageSource" */;
-			buildPhases = (
-				SBP_62374312102 /* Sources */,
-				HBP_62374312102 /* Headers */,
-				FBP_62374312102 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ImageSource;
-			productName = ImageSource;
-			productReference = FR_623743121024 /* ImageSource.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1360,7 +1322,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				NT_623743121024 /* ImageSource */,
 				NT_219330173781 /* Paparazzo */,
 			);
 		};
@@ -1387,6 +1348,7 @@
 				BF_668345206380 /* AccessDeniedUITheme.swift in Sources */,
 				BF_329880011060 /* AccessDeniedView.swift in Sources */,
 				BF_627149031426 /* AccessibilityId.swift in Sources */,
+				BF_137718081840 /* AlamofireCachingImageDownloader.swift in Sources */,
 				BF_908609039610 /* ArrayExtensions.swift in Sources */,
 				BF_322741259954 /* AspectRatio.swift in Sources */,
 				BF_708370390860 /* AssemblyFactory.swift in Sources */,
@@ -1395,7 +1357,11 @@
 				BF_742596441106 /* BaseUIKitRouter.swift in Sources */,
 				BF_714270052310 /* ButtonWithActivity.swift in Sources */,
 				BF_561700160604 /* CGAffineTransformExtensions.swift in Sources */,
+				BF_728553381100 /* CGImageExtensions.swift in Sources */,
+				BF_794932405458 /* CGImageWrapper.swift in Sources */,
 				BF_767191789298 /* CGRectExtensions.swift in Sources */,
+				BF_379828194269 /* CIContext+XCode8Workaround.m in Sources */,
+				BF_653451846121 /* CachingImageDownloader.swift in Sources */,
 				BF_218903778302 /* CameraAssembly.swift in Sources */,
 				BF_892948988666 /* CameraAssemblyImpl.swift in Sources */,
 				BF_921954561112 /* CameraControlsView.swift in Sources */,
@@ -1423,6 +1389,7 @@
 				BF_231414875970 /* Filter.swift in Sources */,
 				BF_859715391457 /* FloatExtensions.swift in Sources */,
 				BF_464547658833 /* FocusIndicator.swift in Sources */,
+				BF_464881455401 /* GCDAdditions.swift in Sources */,
 				BF_542165629328 /* GridView.swift in Sources */,
 				BF_607957824271 /* HeartShapeCroppingOverlayProvider.swift in Sources */,
 				BF_209869469207 /* ImageCroppingAssembly.swift in Sources */,
@@ -1438,7 +1405,14 @@
 				BF_205223726223 /* ImageCroppingView.swift in Sources */,
 				BF_856061472018 /* ImageCroppingViewController.swift in Sources */,
 				BF_358000493831 /* ImageCroppingViewInput.swift in Sources */,
+				BF_618991531109 /* ImageDeliveryMode.swift in Sources */,
+				BF_633479315256 /* ImageRequestId.swift in Sources */,
+				BF_412952166251 /* ImageRequestIdentifiable.swift in Sources */,
+				BF_310531238886 /* ImageRequestOptions.swift in Sources */,
+				BF_810445371965 /* ImageRequestResult.swift in Sources */,
+				BF_339111675323 /* ImageSizeOption.swift in Sources */,
 				BF_808730124495 /* ImageSource+BackwardCompatibility.swift in Sources */,
+				BF_864961954847 /* ImageSource.swift in Sources */,
 				BF_149288173248 /* ImageStorage.swift in Sources */,
 				BF_676551995776 /* InfoMessageAnimator.swift in Sources */,
 				BF_224965541627 /* InfoMessageDisplayer.swift in Sources */,
@@ -1446,6 +1420,9 @@
 				BF_652031566706 /* InfoMessageViewAnimatorBehavior.swift in Sources */,
 				BF_368367472100 /* InfoMessageViewFactory.swift in Sources */,
 				BF_822196052539 /* InfoMessageViewInput.swift in Sources */,
+				BF_681257775009 /* InitializableWithCGImage.swift in Sources */,
+				BF_776610167723 /* LocalImageRequestOperation.swift in Sources */,
+				BF_447432911726 /* LocalImageSource.swift in Sources */,
 				BF_276495694381 /* Localization.swift in Sources */,
 				BF_458858542849 /* MainCameraCell.swift in Sources */,
 				BF_504311090690 /* MaskCropperAssembly.swift in Sources */,
@@ -1480,6 +1457,7 @@
 				BF_383152845990 /* MediaPickerViewInput.swift in Sources */,
 				BF_371268432946 /* MediaRibbonDataSource.swift in Sources */,
 				BF_229032501572 /* ObjCExceptionCatcher.swift in Sources */,
+				BF_812933032683 /* PHAssetImageSource.swift in Sources */,
 				BF_163235633530 /* PaparazzoFacade.swift in Sources */,
 				BF_672005339910 /* PaparazzoPickerModule.swift in Sources */,
 				BF_378968265402 /* PaparazzoUITheme.swift in Sources */,
@@ -1528,6 +1506,9 @@
 				BF_817812414728 /* PhotoTweakView.swift in Sources */,
 				BF_644680349165 /* Promise.swift in Sources */,
 				BF_807254010379 /* RectangleCroppingOverlayProvider.swift in Sources */,
+				BF_720951703807 /* RemoteImageRequestOperation.swift in Sources */,
+				BF_714655175595 /* RemoteImageSource+AlamofireImage.swift in Sources */,
+				BF_184139409921 /* RemoteImageSource.swift in Sources */,
 				BF_513295337186 /* RightIconButton.swift in Sources */,
 				BF_145752034867 /* RotationSliderView.swift in Sources */,
 				BF_656394822207 /* ScannerAssembly.swift in Sources */,
@@ -1544,50 +1525,23 @@
 				BF_610690995474 /* ScannerViewController.swift in Sources */,
 				BF_528998213907 /* ScannerViewInput.swift in Sources */,
 				BF_162644345642 /* ServiceFactory.swift in Sources */,
+				BF_698104632791 /* SharedQueues.swift in Sources */,
 				BF_265041059655 /* SingleObjectCache.swift in Sources */,
 				BF_150925286836 /* ThemeConfigurable.swift in Sources */,
+				BF_213157065939 /* ThreadSafeIntGenerator.swift in Sources */,
 				BF_802873678233 /* ThumbnailsView.swift in Sources */,
 				BF_852864501083 /* ThumbnailsViewLayout.swift in Sources */,
 				BF_613713724887 /* UIDeviceExtensions.swift in Sources */,
+				BF_286232651005 /* UIImage+InitializableWithCGImage.swift in Sources */,
+				BF_842808435165 /* UIImageOrientation+ExifOrientation.swift in Sources */,
+				BF_395175836343 /* UIImageSourceCollectionViewCell.swift in Sources */,
+				BF_183569264900 /* UIImageSourceView.swift in Sources */,
+				BF_488649875866 /* UIImageView+ImageSource.swift in Sources */,
 				BF_810247126196 /* UIKitExtensions.swift in Sources */,
 				BF_661707930621 /* UIScrollView+ScrollToDirection.swift in Sources */,
 				BF_686666153394 /* UIView+Layout.swift in Sources */,
 				BF_916525272978 /* UIView+SafeAreaInsets.swift in Sources */,
 				BF_425600440839 /* WeakWrapper.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		SBP_62374312102 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_292622921484 /* AlamofireCachingImageDownloader.swift in Sources */,
-				BF_831432617287 /* CGImageExtensions.swift in Sources */,
-				BF_559600495375 /* CGImageWrapper.swift in Sources */,
-				BF_491415682603 /* CIContext+XCode8Workaround.m in Sources */,
-				BF_673459399616 /* CachingImageDownloader.swift in Sources */,
-				BF_885423380802 /* GCDAdditions.swift in Sources */,
-				BF_400348413119 /* ImageDeliveryMode.swift in Sources */,
-				BF_847188111700 /* ImageRequestId.swift in Sources */,
-				BF_139333132887 /* ImageRequestIdentifiable.swift in Sources */,
-				BF_256534625817 /* ImageRequestOptions.swift in Sources */,
-				BF_134426800912 /* ImageRequestResult.swift in Sources */,
-				BF_157927353714 /* ImageSizeOption.swift in Sources */,
-				BF_489707460695 /* ImageSource.swift in Sources */,
-				BF_587461382553 /* InitializableWithCGImage.swift in Sources */,
-				BF_257292707824 /* LocalImageRequestOperation.swift in Sources */,
-				BF_855119726448 /* LocalImageSource.swift in Sources */,
-				BF_886884151775 /* PHAssetImageSource.swift in Sources */,
-				BF_631063057594 /* RemoteImageRequestOperation.swift in Sources */,
-				BF_687131046950 /* RemoteImageSource+AlamofireImage.swift in Sources */,
-				BF_560064747986 /* RemoteImageSource.swift in Sources */,
-				BF_431492429369 /* SharedQueues.swift in Sources */,
-				BF_890397119341 /* ThreadSafeIntGenerator.swift in Sources */,
-				BF_918743224214 /* UIImage+InitializableWithCGImage.swift in Sources */,
-				BF_522253135063 /* UIImageOrientation+ExifOrientation.swift in Sources */,
-				BF_291134338280 /* UIImageSourceCollectionViewCell.swift in Sources */,
-				BF_320539954896 /* UIImageSourceView.swift in Sources */,
-				BF_757863788654 /* UIImageView+ImageSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1665,30 +1619,6 @@
 			};
 			name = Debug;
 		};
-		BC_637178093463 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avito.ImageSource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
 		BC_686875230543 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1730,30 +1660,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = avito.Paparazzo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		BC_839239573515 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avito.ImageSource;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1829,15 +1735,6 @@
 			buildConfigurations = (
 				BC_779055338645 /* Debug */,
 				BC_686875230543 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
-		};
-		CL_623743121024 /* Build configuration list for PBXNativeTarget "ImageSource" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BC_839239573515 /* Debug */,
-				BC_637178093463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";

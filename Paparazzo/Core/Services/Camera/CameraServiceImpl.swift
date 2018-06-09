@@ -1,6 +1,5 @@
 import AVFoundation
 import ImageIO
-import ImageSource
 import UIKit
 
 public enum CameraType {

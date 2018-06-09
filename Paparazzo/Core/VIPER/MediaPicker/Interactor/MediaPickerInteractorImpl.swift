@@ -1,4 +1,3 @@
-import ImageSource
 import CoreGraphics
 
 final class MediaPickerInteractorImpl: MediaPickerInteractor {

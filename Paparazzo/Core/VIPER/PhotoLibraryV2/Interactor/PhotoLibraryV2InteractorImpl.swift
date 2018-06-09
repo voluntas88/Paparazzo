@@ -1,5 +1,4 @@
 import Foundation
-import ImageSource
 
 final class PhotoLibraryV2InteractorImpl: PhotoLibraryV2Interactor {
     

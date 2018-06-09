@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 public protocol MaskCropperAssembly: class {

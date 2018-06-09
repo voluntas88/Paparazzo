@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 final class CroppingPreviewView: UIView {

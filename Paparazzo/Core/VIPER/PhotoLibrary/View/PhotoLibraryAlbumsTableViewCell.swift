@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 // TODO: (ayutkin) make base table view cell for image source in ImageSource/UIKit

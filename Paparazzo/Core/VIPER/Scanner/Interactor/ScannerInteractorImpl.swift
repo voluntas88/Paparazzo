@@ -1,5 +1,3 @@
-import ImageSource
-
 final class ScannerInteractorImpl: ScannerInteractor {
     
     // MARK: - Dependencies

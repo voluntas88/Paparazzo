@@ -1,5 +1,4 @@
 import Photos
-import ImageSource
 
 protocol PhotoLibraryItemsService {
     func observeAuthorizationStatus(handler: @escaping (_ accessGranted: Bool) -> ())

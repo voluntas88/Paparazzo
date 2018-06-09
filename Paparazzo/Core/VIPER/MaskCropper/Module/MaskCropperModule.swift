@@ -1,4 +1,3 @@
-import ImageSource
 
 public protocol MaskCropperModule: class {
     

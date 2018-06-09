@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 protocol ScannerViewInput: class {

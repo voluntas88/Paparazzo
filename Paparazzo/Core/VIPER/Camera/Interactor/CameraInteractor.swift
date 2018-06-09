@@ -1,5 +1,4 @@
 import AVFoundation
-import ImageSource
 
 protocol CameraInteractor: class {
     

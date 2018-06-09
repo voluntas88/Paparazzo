@@ -1,6 +1,5 @@
 import CoreGraphics
 import ImageIO
-import ImageSource
 import UIKit
 
 final class CroppedImageSource: ImageSource {

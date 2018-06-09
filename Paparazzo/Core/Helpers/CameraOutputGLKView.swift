@@ -1,6 +1,5 @@
 import AVFoundation
 import GLKit
-import ImageSource
 
 final class CameraOutputGLKView: GLKView, CameraCaptureOutputHandler {
     

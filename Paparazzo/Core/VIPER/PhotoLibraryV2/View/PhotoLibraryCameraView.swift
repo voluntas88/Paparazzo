@@ -1,5 +1,4 @@
 import UIKit
-import ImageSource
 
 class PhotoLibraryCameraView: UICollectionReusableView {
     

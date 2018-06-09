@@ -1,5 +1,3 @@
-import ImageSource
-
 final class MaskCropperPresenter: MaskCropperModule {
     
     private let interactor: MaskCropperInteractor

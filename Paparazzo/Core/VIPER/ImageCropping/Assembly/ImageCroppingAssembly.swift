@@ -1,4 +1,3 @@
-import ImageSource
 import UIKit
 
 protocol ImageCroppingAssembly: class {

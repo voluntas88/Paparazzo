@@ -1,5 +1,4 @@
 import Foundation
-import ImageSource
 
 protocol PhotoLibraryViewInput: class {
     

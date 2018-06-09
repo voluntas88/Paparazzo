@@ -1,4 +1,3 @@
-import ImageSource
 import CoreGraphics
 
 protocol MediaPickerRouter: class {

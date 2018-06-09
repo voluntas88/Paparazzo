@@ -11,13 +11,6 @@ targets:
       - Paparazzo/Assets
       - Paparazzo/Core
       - Paparazzo/Localization
-    dependencies:
-      - carthage: JNWSpringAnimation
-      - framework: ImageSource
-  ImageSource:
-    platform: iOS
-    type: framework
-    sources: 
       - ImageSource/AlamofireImage
       - ImageSource/Core
       - ImageSource/Local
@@ -25,5 +18,6 @@ targets:
       - ImageSource/Remote
       - ImageSource/UIKit
     dependencies:
+      - carthage: JNWSpringAnimation
       - carthage: Alamofire
       - carthage: AlamofireImage
