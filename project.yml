@@ -1,0 +1,32 @@
+name: Paparazzo
+options:
+  bundleIdPrefix: avito
+  deploymentTarget:
+    iOS: 9.0
+targets:
+  Paparazzo:
+    type: framework
+    platform: iOS
+    sources: 
+      - Paparazzo/Assets
+      - Paparazzo/Core
+      - Paparazzo/Localization
+    setting:
+      base:
+        SWIFT_OBJC_BRIDGING_HEADER: Bridging-Header.h
+    dependencies:
+      - carthage: JNWSpringAnimation
+      - framework: ImageSource
+  ImageSource:
+    platform: iOS
+    type: framework
+    sources: 
+      - ImageSource/AlamofireImage
+      - ImageSource/Core
+      - ImageSource/Local
+      - ImageSource/PHAsset
+      - ImageSource/Remote
+      - ImageSource/UIKit
+    dependencies:
+      - carthage: Alamofire
+      - carthage: AlamofireImage
