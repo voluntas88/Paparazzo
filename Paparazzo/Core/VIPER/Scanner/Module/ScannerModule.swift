@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol ScannerModule: class {
 
     func focusOnModule()

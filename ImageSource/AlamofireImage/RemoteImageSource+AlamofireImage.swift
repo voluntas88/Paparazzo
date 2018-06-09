@@ -1,4 +1,5 @@
 import AlamofireImage
+import CoreGraphics
 
 public extension RemoteImageSource {
     public convenience init(url: URL, previewImage: CGImage? = nil) {

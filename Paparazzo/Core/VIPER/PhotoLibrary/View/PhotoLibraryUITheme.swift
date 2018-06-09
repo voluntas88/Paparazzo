@@ -1,3 +1,5 @@
+import UIKit
+
 public protocol PhotoLibraryUITheme: AccessDeniedViewTheme {
     
     var photoLibraryTitleFont: UIFont { get }

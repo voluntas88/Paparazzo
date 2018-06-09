@@ -1,5 +1,6 @@
 import AlamofireImage
 import Alamofire
+import CoreGraphics
 
 extension AlamofireImage.ImageDownloader: CachingImageDownloader {
     

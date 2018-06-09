@@ -1,3 +1,5 @@
+import CoreGraphics
+
 import ImageSource
 
 protocol MaskCropperInteractor: class {

@@ -1,4 +1,5 @@
 import ImageSource
+import CoreGraphics
 
 protocol ServiceFactory: class {
     func deviceOrientationService() -> DeviceOrientationService

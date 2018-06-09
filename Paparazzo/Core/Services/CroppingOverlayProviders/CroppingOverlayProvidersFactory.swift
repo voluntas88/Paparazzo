@@ -1,3 +1,5 @@
+import CoreGraphics
+
 public protocol CroppingOverlayProvidersFactory: class {
     func circleCroppingOverlayProvider() -> CroppingOverlayProvider
     func rectangleCroppingOverlayProvider(cornerRadius: CGFloat, margin: CGFloat) -> CroppingOverlayProvider

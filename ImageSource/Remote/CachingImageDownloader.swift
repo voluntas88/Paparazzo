@@ -1,3 +1,6 @@
+import CoreGraphics
+import Foundation
+
 public protocol ImageDownloader {
     func downloadImageAtUrl(
         _: URL,

@@ -1,4 +1,5 @@
 import ImageSource
+import Foundation
 
 /// Главная модель, представляющая фотку в пикере
 public final class MediaPickerItem: Equatable {

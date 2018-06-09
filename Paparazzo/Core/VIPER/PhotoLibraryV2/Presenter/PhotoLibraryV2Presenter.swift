@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 final class PhotoLibraryV2Presenter: PhotoLibraryV2Module {
     

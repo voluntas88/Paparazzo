@@ -1,3 +1,6 @@
+import CoreGraphics
+import UIKit
+
 final class MediaItemThumbnailCell: PhotoCollectionViewCell, Customizable {
     
     // MARK: - Init

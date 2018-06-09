@@ -1,5 +1,6 @@
 import ImageIO
 import MobileCoreServices
+import UIKit
 
 public class RemoteImageSource: ImageSource {
     

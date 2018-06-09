@@ -1,3 +1,5 @@
+import UIKit
+
 public protocol MediaPickerRootModuleUITheme: AccessDeniedViewTheme {
     
     var shutterButtonColor: UIColor { get }

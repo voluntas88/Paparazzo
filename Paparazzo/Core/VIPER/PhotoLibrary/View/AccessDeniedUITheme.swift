@@ -1,3 +1,5 @@
+import UIKit
+
 public protocol AccessDeniedViewTheme {
     var accessDeniedTitleFont: UIFont { get }
     var accessDeniedMessageFont: UIFont { get }

@@ -1,4 +1,6 @@
 import ImageSource
+import CoreGraphics
+import UIKit
 
 final class CameraPresenter: CameraModuleInput {
     
