@@ -90,7 +90,7 @@ final class CroppedImageSource: ImageSource {
     
     // MARK: - Private
     
-    private let ciContext = CIContext.fixed_context(options: [kCIContextUseSoftwareRenderer: false])
+    private let ciContext = CIContext(options: [kCIContextUseSoftwareRenderer: false])
     private let imageStorage: ImageStorage
     private var croppedImage: LocalImageSource?
     
